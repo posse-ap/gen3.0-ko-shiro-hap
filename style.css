@@ -1,6 +1,13 @@
+
+
 body {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0 auto;
+  height: 100%;
+}
+
+p h1 h2 h3 h4 h5 h6 {
+  margin: 0;
 }
 
 small {
@@ -8,9 +15,18 @@ small {
 }
 
 .header {
+  position: fixed;
+  width: 100vw;
+  background-color: #fff;
+  height: 80px;
+  z-index: 100;
+}
+
+.header-inner {
+  height: auto;
+  width: auto;
+  padding: 0 24px;
   display: flex;
-  height: 50px;
-  padding: 15px 24px;
   justify-content: space-between;
   align-items: center;
 }
@@ -27,7 +43,7 @@ small {
   color: #666;
 }
 
-.nav-items { 
+.nav-items {
   width: 100%;
   padding: 0;
   display: flex;
@@ -54,12 +70,10 @@ small {
 
 /* main-------------------------------------------------------------- */
 
-main {
-  max-width: 1280px;
+.main {
   width: 100%;
-  padding: 0;
+  padding-top: 80px;
   margin: 0 auto;
-  /* background-color: gray; */
 }
 
 /* hero-wrapper------------------------------- */
@@ -71,15 +85,14 @@ main {
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1280px;
-  /* max-height: 680px; */
-  /* height: 100%; */
 }
 
 .hero-left {
+  height: 281px;
   width: 500px;
   display: inline-block;
   background-color: #eff2f5;
-  padding: 50px 10px;
+  padding: 0;
   border-radius: 24px;
   text-align: center;
   white-space: nowrap;
@@ -87,7 +100,7 @@ main {
 }
 
 .hero-left p {
-  margin: 0;
+  margin: 40px 0 15px 0;
   line-height: 22px;
   color: #0071bc;
   font-weight: bold;
@@ -95,9 +108,10 @@ main {
 
 .hero-left h1 {
   margin: 0;
-  padding: 0 60px;
+  padding: 0 61px;
   font-size: 60px;
   line-height: 80px;
+  letter-spacing: 3px;
   text-align: start;
 }
 
@@ -105,7 +119,6 @@ main {
   display: inline-block;
   max-width: 1280px;
   min-width: 396px;
-  /* max-height: 680px; */
   width: 100%;
   height: 100%;
   margin-left: -125px;
@@ -123,17 +136,32 @@ main {
   object-fit: cover;
 }
 
-.hero-wrapper small {
+
+
+.scroll-down {
   position: absolute;
-  bottom: 24px;
-  left: 42px;
+  bottom: 30px;
+  left: 32px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
   z-index: 3;
+}
+
+.scroll-down::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #adadad;
+  margin-right: 6px;
 }
 
 /* about-wrapper------------------------------------------- */
 
 .about-wrapper {
-  margin: 100px auto;
+  margin: 90px auto 144px auto;
   max-width: 984px;
   padding: 0 24px;
 }
@@ -144,13 +172,15 @@ main {
 
 .about-title h2 {
   margin: 0;
+  margin-bottom: 7px;
   font-size: 36px;
   line-height: 54px;
 }
 
-.about-title p {
+.about-title small {
   margin: 0;
   font-size: 14px;
+  font-weight: bold;
   line-height: 25.2px;
   color: #0071bc;
 }
@@ -182,6 +212,8 @@ main {
   max-width: 472px;
   width: 50%;
   margin: auto;
+  font-size: 14px;
+  line-height: 25px;
 }
 
 /* line-wrapper------------------------------------------- */
@@ -235,12 +267,14 @@ main {
 .line-title h1 {
   font-size: 36px;
   margin: 0;
+  margin-left: 10px;
 }
 
 .line-content p {
   margin: 24px 0;
   font-size: 14px;
-  letter-spacing: 1px;
+  line-height: 22.4px;
+  letter-spacing: 1.5px;
 }
 
 .line-button {
@@ -283,14 +317,20 @@ main {
 }
 
 .footer-top {
-  padding: 50px 0;
+  padding: 56px 0 48px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   text-align: center;
 }
 
+.footer-img {
+  height: 39px;
+  margin-bottom: 24px;
+}
+
 .footer-img img {
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .official-link a {
@@ -302,13 +342,12 @@ main {
 .official-link img {
   width: 12.5px;
   height: 12.5px;
-  /* vertical-align: bottom; */
   margin-left: 5px;
 }
 
 .footer-top .sns-items {
   width: 110px;
-  margin: 30px auto 0 auto;
+  margin: 32px auto 0 auto;
   padding: 0%;
   display: flex;
   justify-content: space-between;
@@ -317,10 +356,55 @@ main {
 }
 
 .footer-bottom {
-  margin: 35px 0 30px 0;
+  margin: 30px 0 30px 0;
 }
 
 .footer-bottom small {
   font-size: 10px;
   color: #666;
+  letter-spacing: 1px;
+}
+
+/* line-banner--------------------------------------------------- */
+
+.line-banner {
+  width: 240px;
+  height: 80px;
+  position: fixed;
+  padding: 0 24px;
+  background-color: #5fdf5b;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.line-banner-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.line-banner .line-icon {
+  height: 36px;
+  width: 36px;
+  margin: 0;
+}
+
+.line-banner-message {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18.2px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.line-banner .link-icon img{
+  vertical-align: bottom;
 }

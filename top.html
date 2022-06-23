@@ -4,67 +4,64 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POSSE</title>
+    <title>POSSE 初めてのWeb制作</title>
 
     <link rel="stylesheet" href="assets/styles/font.css" />
     <link rel="stylesheet" href="style.css" />
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Plus+Jakarta+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header class="header">
-      <div class="header-logo">
-        <img src="assets/img/logo.svg" alt="ヘッダーロゴ" />
+      <div class="header-inner">
+        <div class="header-logo">
+          <img src="assets/img/logo.svg" alt="ヘッダーロゴ" />
+        </div>
+        <nav class="navbar">
+          <ul class="nav-items">
+            <li class="nav-item"><a href="#">POSSEとは</a></li>
+            <li class="nav-item"><a href="#">クイズ</a></li>
+            <li class="nav-item sns">
+              <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
+                <img src="assets/img/icon/icon-twitter.svg" alt="Twitter" />
+              </a>
+            </li>
+            <li class="nav-item sns">
+              <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
+                <img src="assets/img/icon/icon-instagram.svg" alt="Instagram" />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="navbar">
-        <ul class="nav-items">
-          <li class="nav-item"><a href="#">POSSEとは</a></li>
-          <li class="nav-item"><a href="#">クイズ</a></li>
-          <li class="nav-item sns">
-            <a href="#">
-              <img src="assets/img/icon/icon-twitter.svg" alt="Twitter" />
-            </a>
-          </li>
-          <li class="nav-item sns">
-            <a href="#">
-              <img src="assets/img/icon/icon-instagram.svg" alt="Instagram" />
-            </a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <main>
+    <main class="main">
       <section class="hero-wrapper">
         <div class="hero-left">
           <p>学生プログラミングコミュニティ POSSE（ポッセ）</p>
           <h1>自分史上最高<br/>を仲間と。</h1>
         </div>
         <p class="hero-right">
-          <img src="assets/img/img-hero.jpg" alt="hero-img" />
+          <img src="assets/img/img-hero.jpg" alt="hero-img"　/>
         </p>
-        <small>Scroll Down</small>
+        <small class="scroll-down">Scroll Down</small>
       </section>
 
       <article class="about-wrapper">
         <div class="about-title">
           <h2>POSSEとは</h2>
-          <p>About POSSE</p>
+          <small>About POSSE</small>
         </div>
         <div class="about-content">
           <p class="about-img">
             <img src="assets/img/img-about.jpg" alt="about-img" />
           </p>
           <p class="about-text">
-            学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。
-            プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています！
-            それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。
+            学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。<br>プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています！<br>それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。
           </p>
         </div>
       </article>
@@ -74,23 +71,18 @@
       <div class="line-inner">
         <div class="line-content">
           <div class="line-title">
-            <img
-              src="assets/img/icon/icon-line.svg"
-              class="line-icon"
-              alt="LINE"
-            />
+            <div class="line-icon">
+              <img src="assets/img/icon/icon-line.svg" alt="LINE"/>
+            </div>
             <h1>POSSE 公式LINE</h1>
           </div>
           <p>
             公式LINEにてご質問を随時受け付けております。<br />詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br />下記ボタンより友達追加をお願いします！
           </p>
           <div class="line-button">
-            <a href="#">
+            <a href="https://line.me/R/ti/p/@651htnqp?from=page">
               <p>LINE追加</p>
-              <img
-                src="assets/img/icon/icon-link-gray-dark.svg"
-                alt="LINEリンク"
-              />
+              <img src="assets/img/icon/icon-link-gray-dark.svg"　alt="LINEリンク"/>
             </a>
           </div>
         </div>
@@ -98,26 +90,34 @@
     </section>
 
     <footer class="footer">
+      <div class="line-banner">
+        <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="line-banner-inner">
+          <p class="line-icon">
+            <img src="assets/img/icon/icon-line.svg" alt="LINE">
+          </p>
+          <p class="line-banner-message">POSSE公式LINEで<br>最新情報をGET！</p>
+          <p class="link-icon">
+            <img src="assets/img/icon/icon-link-light.svg" alt="LINEリンク">
+          </p>
+        </a>
+      </div>
       <div class="footer-top">
         <div class="footer-img">
           <img src="assets/img/logo.svg" alt="フッターロゴ" />
         </div>
         <div class="official-link">
-          <a href="#" alt="公式サイト">
-            POSSE公式サイト<img
-              src="assets/img/icon/icon-link-gray-dark.svg"
-              alt="公式サイトリンク"
-            />
+          <a href="https://posse-ap.com/" alt="公式サイト">
+            POSSE公式サイト<img src="assets/img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク"/>
           </a>
         </div>
         <ul class="sns-items">
           <li class="sns">
-            <a href="#">
+            <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
               <img src="assets/img/icon/icon-twitter.svg" alt="twitter" />
             </a>
           </li>
           <li class="sns">
-            <a href="#">
+            <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
               <img src="assets/img/icon/icon-instagram.svg" alt="instagram" />
             </a>
           </li>
