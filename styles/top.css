@@ -227,7 +227,7 @@ small {
   position: relative;
   max-width: 984px;
   border-radius: 48px;
-  background-image: url("assets/img/bg-line.jpg");
+  background-image: url("../img/bg-line.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
