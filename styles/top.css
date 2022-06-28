@@ -365,7 +365,7 @@ small {
 
 /* line-banner--------------------------------------------------- */
 
-/* .line-banner {
+.line-banner {
   width: 240px;
   height: 80px;
   position: fixed;
@@ -405,4 +405,4 @@ small {
 
 .line-banner .link-icon img{
   vertical-align: bottom;
-} */
+}
