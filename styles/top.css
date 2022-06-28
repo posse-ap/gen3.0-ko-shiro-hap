@@ -23,8 +23,6 @@ small {
 }
 
 .header-inner {
-  height: auto;
-  width: auto;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
@@ -367,7 +365,7 @@ small {
 
 /* line-banner--------------------------------------------------- */
 
-.line-banner {
+/* .line-banner {
   width: 240px;
   height: 80px;
   position: fixed;
@@ -407,4 +405,4 @@ small {
 
 .line-banner .link-icon img{
   vertical-align: bottom;
-}
+} */
