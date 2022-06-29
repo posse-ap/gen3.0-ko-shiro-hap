@@ -1,13 +1,5 @@
-
-
 body {
   font-family: "Noto Sans JP", sans-serif;
-  margin: 0 auto;
-  height: 100%;
-}
-
-p h1 h2 h3 h4 h5 h6 {
-  margin: 0;
 }
 
 small {
@@ -23,6 +15,7 @@ small {
 }
 
 .header-inner {
+  height: 100%;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
@@ -31,7 +24,6 @@ small {
 
 .navbar {
   width: 308px;
-  margin: 0;
 }
 
 .navbar a {
@@ -43,7 +35,6 @@ small {
 
 .nav-items {
   width: 100%;
-  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -215,11 +206,14 @@ small {
 }
 
 /* line-wrapper------------------------------------------- */
+
 .line-wrapper {
   padding: 0 24px;
+  height: 357px;
 }
 
 .line-inner {
+  height: 100%;
   text-align: center;
   margin: 0 auto;
   position: relative;
@@ -245,7 +239,7 @@ small {
 .line-content {
   position: relative;
   color: #fff;
-  padding: 70px 0;
+  padding: 78px 0;
 }
 
 .line-title {
@@ -263,13 +257,14 @@ small {
 }
 
 .line-title h1 {
-  font-size: 36px;
-  margin: 0;
-  margin-left: 10px;
+  font-size: 34px;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+  margin-left: 8px;
 }
 
 .line-content p {
-  margin: 24px 0;
+  margin: 34px 0 24px 0;
   font-size: 14px;
   line-height: 22.4px;
   letter-spacing: 1.5px;
@@ -346,7 +341,6 @@ small {
 .footer-top .sns-items {
   width: 110px;
   margin: 32px auto 0 auto;
-  padding: 0%;
   display: flex;
   justify-content: space-between;
   align-self: center;

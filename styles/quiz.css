@@ -1,12 +1,5 @@
 body {
   font-family: "Noto Sans JP", sans-serif;
-  margin: 0 auto;
-  height: 100%;
-}
-
-p h1 h2 h3 h4 h5 h6 ul li {
-  margin: 0;
-  padding: 0;
 }
 
 small {
@@ -22,6 +15,7 @@ small {
 }
 
 .header-inner {
+  height: 100%;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
@@ -30,7 +24,6 @@ small {
 
 .navbar {
   width: 308px;
-  margin: 0;
 }
 
 .navbar a {
@@ -42,7 +35,6 @@ small {
 
 .nav-items {
   width: 100%;
-  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,8 +231,104 @@ small {
   line-height: 32px;
 }
 
+/* line-wrapper------------------------------------------- */
 
-/* footer----------------------------------------- */
+.line-wrapper {
+  padding: 0 24px;
+  height: 357px;
+}
+
+.line-inner {
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  max-width: 984px;
+  border-radius: 48px;
+  background-image: url("../img/bg-line.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.line-inner::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  border-radius: 48px;
+  background-color: rgba(0, 113, 188, 0.9);
+}
+
+.line-content {
+  position: relative;
+  color: #fff;
+  padding: 78px 0;
+}
+
+.line-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(#fff 60%, rgba(255, 255, 255, 0) 40%);
+}
+
+.line-title h1 {
+  font-size: 34px;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
+.line-content p {
+  margin: 34px 0 24px 0;
+  font-size: 14px;
+  line-height: 22.4px;
+  letter-spacing: 1.5px;
+}
+
+.line-button {
+  margin: 0 auto;
+  padding: 12px 0;
+  max-width: 320px;
+  border-radius: 98px;
+  background-color: #fff;
+}
+
+.line-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  position: relative;
+}
+
+.line-button p {
+  margin: 0;
+  display: inline-block;
+}
+
+.line-button img {
+  position: absolute;
+  display: inline-block;
+  width: 12.5px;
+  height: 12.5px;
+  right: 20px;
+  top: 6px;
+}
+
+/* footer---------------------------------------------------------------- */
 
 .footer {
   margin-top: 80px;
@@ -279,7 +367,6 @@ small {
 .footer-top .sns-items {
   width: 110px;
   margin: 32px auto 0 auto;
-  padding: 0%;
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -295,97 +382,3 @@ small {
   color: #666;
   letter-spacing: 1px;
 }
-
-/* line-wrapper------------------------------------------- */
-.line-wrapper {
-  padding: 0 24px;
-}
-
-.line-inner {
-  text-align: center;
-  margin: 0 auto;
-  position: relative;
-  max-width: 984px;
-  border-radius: 48px;
-  background-image: url("../img/bg-line.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.line-inner::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: " ";
-  width: 100%;
-  height: 100%;
-  border-radius: 48px;
-  background-color: rgba(0, 113, 188, 0.9);
-}
-
-.line-content {
-  position: relative;
-  color: #fff;
-  padding: 70px 0;
-}
-
-.line-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.line-icon {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(#fff 60%, rgba(255, 255, 255, 0) 40%);
-}
-
-.line-title h1 {
-  font-size: 36px;
-  margin: 0;
-  margin-left: 10px;
-}
-
-.line-content p {
-  margin: 24px 0;
-  font-size: 14px;
-  line-height: 22.4px;
-  letter-spacing: 1.5px;
-}
-
-.line-button {
-  margin: 0 auto;
-  padding: 12px 0;
-  max-width: 320px;
-  border-radius: 98px;
-  background-color: #fff;
-}
-
-.line-button a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: #666;
-  font-weight: bold;
-  position: relative;
-}
-
-.line-button p {
-  margin: 0;
-  display: inline-block;
-}
-
-.line-button img {
-  position: absolute;
-  display: inline-block;
-  width: 12.5px;
-  height: 12.5px;
-  right: 20px;
-  top: 6px;
-}
-
