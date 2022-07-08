@@ -10,12 +10,13 @@
   ];
 
   // 変数・定数
-  const BTN_LIST= document.querySelectorAll(".answer-button");
   const BTN = document.querySelectorAll(".btn");
+  const ANSWER_BUTTONS = document.querySelectorAll(".answer-buttons");
   const Q1_ANSWER = Q[1];
   let btnClicked;
-  let listClicked;
-
+  let correctJudgment;
+  // 正誤判定後のメッセージ作成
+  const NEW_ANSWER_MESSAGE = document.createElement("div");
 
   // ボタンからHTMLを取得
   BTN.forEach((e) => {
@@ -23,25 +24,40 @@
       const ANSWER = e.innerHTML;
 
       if(btnClicked !== true) {
+        e.classList.add('test');
+
         if(ANSWER === Q1_ANSWER) {
           console.log('aaa');
+          correctJudgment = true;
         }
         else {
           console.log('eee');
+          correctJudgment = false;
         };
       };
       btnClicked = true;
+      // console.log(correctJudgment);
+      if(correctJudgment === true) {
+        console.log('ttt');
+        e.after(NEW_ANSWER_MESSAGE);
+        NEW_ANSWER_MESSAGE.textContent = '正解';
+      }
+      else {
+        e.after(NEW_ANSWER_MESSAGE);
+        NEW_ANSWER_MESSAGE.textContent = '不正解';
+      }
     });
   });
 
-  // ボタンの背景変更
-  BTN_LIST.forEach((e) => {
-    e.addEventListener('click', () => {
-      if(listClicked !== true) {
-        e.classList.add('test');
-      }
-      listClicked = true;
-    });
+
+
+  ANSWER_BUTTONS.forEach((e) => {
+    if(correctJudgment === true) {
+      console.log('ttt');
+      NEW_ANSWER_MESSAGE.textContent = '正解';
+      e.before(NEW_ANSWER_MESSAGE);
+    }
   });
 
 }
+
