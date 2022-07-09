@@ -200,12 +200,58 @@ small {
   background-color: #333333;
 }
 
-.test {
+.selected {
   border-color: #0071bc;
   background-color: #FFF2F5;
 }
 
+.answer-message-wrapper {
+  padding: 24px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+}
+
+.answer-message-wrapper h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+
+.answer-message-wrapper span {
+  margin-right: 16px;
+  font-size: 24px;
+  line-height: 43px;
+}
+
+.answer-message-wrapper p {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.correct-wrapper {
+  display: none;
+  margin-bottom: 16px;
+}
+
+.wrong-wrapper {
+  display: none;
+}
+
+.on {
+  display: block;
+}
+
+.correct-wrapper h3 {
+  color: #E34E70;
+}
+
+.wrong-wrapper h3 {
+  color: #0071BC;
+}
+
 .quote-wrapper {
+  margin-top: 16px;
   padding: 24px;
   background-color: #f6f6f6;
   border-radius: 8px;

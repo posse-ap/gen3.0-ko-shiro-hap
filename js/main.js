@@ -1,8 +1,7 @@
 'use strict';
 
 {
-
-  const Q = [
+  const questions = [
     '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？',
     '約28万人',
     '約79万人',
@@ -10,54 +9,34 @@
   ];
 
   // 変数・定数
-  const BTN = document.querySelectorAll(".btn");
-  const ANSWER_BUTTONS = document.querySelectorAll(".answer-buttons");
-  const Q1_ANSWER = Q[1];
+  const btn = document.querySelectorAll(".btn");
+  const correctMessage = document.querySelector('.correct-wrapper');
+  const wrongMessage = document.querySelector('.wrong-wrapper');
   let btnClicked;
-  let correctJudgment;
-  // 正誤判定後のメッセージ作成
-  const NEW_ANSWER_MESSAGE = document.createElement("div");
+  // 繰り返し処理必要
+  const q1Answer = questions[1];
+
 
   // ボタンからHTMLを取得
-  BTN.forEach((e) => {
+  btn.forEach((e) => {
     e.addEventListener('click', () => {
-      const ANSWER = e.innerHTML;
+      const answer = e.innerHTML;
 
       if(btnClicked !== true) {
-        e.classList.add('test');
-
-        if(ANSWER === Q1_ANSWER) {
+        e.classList.add('selected');
+        if(answer === q1Answer) {
           console.log('aaa');
-          correctJudgment = true;
+          correctMessage.classList.add('on');
         }
         else {
           console.log('eee');
-          correctJudgment = false;
+          wrongMessage.classList.add('on');
         };
       };
+
       btnClicked = true;
-      // console.log(correctJudgment);
-      if(correctJudgment === true) {
-        console.log('ttt');
-        e.after(NEW_ANSWER_MESSAGE);
-        NEW_ANSWER_MESSAGE.textContent = '正解';
-      }
-      else {
-        e.after(NEW_ANSWER_MESSAGE);
-        NEW_ANSWER_MESSAGE.textContent = '不正解';
-      }
     });
   });
-
-
-
-  ANSWER_BUTTONS.forEach((e) => {
-    if(correctJudgment === true) {
-      console.log('ttt');
-      NEW_ANSWER_MESSAGE.textContent = '正解';
-      e.before(NEW_ANSWER_MESSAGE);
-    }
-  });
-
 }
+
 
