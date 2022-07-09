@@ -1,8 +1,7 @@
 'use strict';
 
 {
-
-  const Q = [
+  const questions = [
     '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？',
     '約28万人',
     '約79万人',
@@ -10,38 +9,34 @@
   ];
 
   // 変数・定数
-  const BTN_LIST= document.querySelectorAll(".answer-button");
-  const BTN = document.querySelectorAll(".btn");
-  const Q1_ANSWER = Q[1];
+  const btn = document.querySelectorAll(".btn");
+  const correctMessage = document.querySelector('.correct-wrapper');
+  const wrongMessage = document.querySelector('.wrong-wrapper');
   let btnClicked;
-  let listClicked;
+  // 繰り返し処理必要
+  const q1Answer = questions[1];
 
 
   // ボタンからHTMLを取得
-  BTN.forEach((e) => {
+  btn.forEach((e) => {
     e.addEventListener('click', () => {
-      const ANSWER = e.innerHTML;
+      const answer = e.innerHTML;
 
       if(btnClicked !== true) {
-        if(ANSWER === Q1_ANSWER) {
+        e.classList.add('selected');
+        if(answer === q1Answer) {
           console.log('aaa');
+          correctMessage.classList.add('js-correct');
         }
         else {
           console.log('eee');
+          wrongMessage.classList.add('js-wrong');
         };
       };
+
       btnClicked = true;
     });
   });
-
-  // ボタンの背景変更
-  BTN_LIST.forEach((e) => {
-    e.addEventListener('click', () => {
-      if(listClicked !== true) {
-        e.classList.add('test');
-      }
-      listClicked = true;
-    });
-  });
-
 }
+
+
