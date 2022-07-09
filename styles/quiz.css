@@ -238,8 +238,14 @@ small {
   display: none;
 }
 
-.on {
+.js-correct {
   display: block;
+  background-color: #FFF2F5;
+}
+
+.js-wrong {
+  display: block;
+  background-color: #EFF2F5;
 }
 
 .correct-wrapper h3 {

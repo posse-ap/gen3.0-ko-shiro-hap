@@ -26,11 +26,11 @@
         e.classList.add('selected');
         if(answer === q1Answer) {
           console.log('aaa');
-          correctMessage.classList.add('on');
+          correctMessage.classList.add('js-correct');
         }
         else {
           console.log('eee');
-          wrongMessage.classList.add('on');
+          wrongMessage.classList.add('js-wrong');
         };
       };
 
