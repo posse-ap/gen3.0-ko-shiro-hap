@@ -1,0 +1,169 @@
+// quiz__hero----------------------------------------
+
+.quiz__hero {
+  height: 320px;
+
+  &__inner {
+    height: 100%;
+    background-image: url("../img/quiz/bg-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__heading {
+    padding-top: 110px;
+    padding-left: 14%;
+  }
+
+  &__lead {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 90px;
+  }
+}
+
+// quiz-----------------------------------------------
+
+.quiz {
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 984px;
+
+  &__inner {
+    padding-top: 120px;
+  }
+
+  &__number {
+    margin-bottom: 24px;
+    letter-spacing: 6px;
+    background-color: #0071bc;
+  }
+
+  &__text {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  &__caption {
+    margin: 64px auto 0 auto;
+    // max-width: 1080px;
+    height: 360px;
+
+    & img {
+      object-fit: contain;
+    }
+  }
+}
+
+// answer--------------------------------------------
+
+.answer {
+  margin-top: 62px;
+
+  &__icon {
+    margin-bottom: 16px;
+    background-color: #e34e70;
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 16px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    padding: 18px;
+    max-width: 312px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 32px;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 5px #eeeeee;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+
+    &::after {
+      content: " ";
+      display: inline-block;
+      width: 12px;
+      height: 13px;
+      clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      background-color: #333333;
+    }
+  }
+}
+
+// judgement---------------------------------------
+
+.judgement {
+  margin-bottom: 16px;
+  padding: 24px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+
+  & h3 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  & p {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: bold;
+  }
+
+  & span {
+    margin-right: 16px;
+    font-size: 24px;
+    line-height: 43px;
+  }
+
+  &__correct {
+    display: none;
+  background-color: #FFF2F5;
+
+    & h3 {
+      color: #E34E70;
+    }
+  }
+
+  &__wrong {
+    display: none;
+  background-color: #EFF2F5;
+
+    & h3 {
+      color: #0071BC;
+    }
+  }
+}
+
+// quote----------------------------------------
+
+.quote {
+  padding: 24px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+
+  &__icon {
+    display: inline-block;
+    margin-right: 16px;
+    width: 25px;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: bold;
+  }
+}

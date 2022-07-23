@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
 
-  <link rel="stylesheet" href="../styles/reset.css">
-  <link rel="stylesheet" href="../styles/quiz.css">
+  <link rel="stylesheet" href="../scss/style.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,20 +14,20 @@
 </head>
 <body>
   <header class="header">
-    <div class="header-inner">
-      <div class="header-logo">
-        <img src="../img/logo.svg" alt="ヘッダーロゴ" />
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="../img/logo.svg" alt="ヘッダーロゴ" class="logo__item" />
       </div>
-      <nav class="navbar">
-        <ul class="nav-items">
-          <li class="nav-item"><a href="../top/index.html">POSSEとは</a></li>
-          <li class="nav-item"><a href="#">クイズ</a></li>
-          <li class="nav-item sns">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#">POSSEとは</a></li>
+          <li class="nav__item"><a href="../quiz/index.html">クイズ</a></li>
+          <li class="nav__item nav__sns__item">
             <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
               <img src="../img/icon/icon-twitter.svg" alt="Twitter" />
             </a>
           </li>
-          <li class="nav-item sns">
+          <li class="nav__item nav__sns__item">
             <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
               <img src="../img/icon/icon-instagram.svg" alt="Instagram" />
             </a>
@@ -39,43 +38,43 @@
   </header>
 
   <main class="main">
-    <section class="hero-wrapper">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <h2>POSSE課題</h2>
-          <h1>ITクイズ</h1>
+    <section class="quiz__hero">
+      <div class="quiz__hero__inner">
+        <div class="quiz__hero__heading">
+          <h2 class="quiz__hero__lead">POSSE課題</h2>
+          <h1 class="quiz__hero__title">ITクイズ</h1>
         </div>
       </div>
     </section>
 
-    <section class="quiz-wrapper">
-      <div class="quiz">
-        <h2 class="question-number">Q1</h2>
-        <h3 class="question-text">日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？</h3>
-        <div class="question-img">
+    <section class="quiz">
+      <div class="quiz__inner" id="quiz1">
+        <h2 class="quiz__icon quiz__number" id="quizNumber">Q1</h2>
+        <h3 class="quiz__text">日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？</h3>
+        <div class="quiz__caption">
           <img src="../img/quiz/img-quiz01.png" alt="質問１">
         </div>
-        <div class="answer-wrapper">
-          <h2 class="answer-icon">A</h2>
-          <div class="answer-buttons">
-            <button class="btn">約28万人</button>
-            <button class="btn">約79万人</button>
-            <button class="btn">約183万人</button>
+        <div class="answer">
+          <h2 class="quiz__icon answer__icon">A</h2>
+          <div class="answer__list">
+            <button class="answer__item">約28万人</button>
+            <button class="answer__item">約79万人</button>
+            <button class="answer__item">>約183万人</button>
           </div>
         </div>
-        <div class="answer-message-wrapper correct-wrapper">
-          <h3 class="correct-message">正解!</h3>
+        <div class="judgement judgement__correct">
+          <h3>正解!</h3>
           <p><span>A</span>約28万人</p>
         </div>
-        <div class="answer-message-wrapper wrong-wrapper">
-          <h3 class="wrong-message">不正解...</h3>
+        <div class="judgement judgement__wrong">
+          <h3>不正解...</h3>
           <p><span>A</span>約28万人</p>
         </div>
-        <div class="quote-wrapper">
-          <div class="quote-icon">
+        <div class="quote">
+          <div class="quote__icon">
             <img src="../img/icon/icon-note.svg" alt="引用">
           </div>
-          <div class="quote-text">経済産業省 2019年3月 - IT 人材需給に関する調査</div>
+          <p class="quote__text">経済産業省 2019年3月 - IT 人材需給に関する調査</p>
         </div>
       </div>
 
@@ -214,22 +213,21 @@
     </section>
   </main>
 
-  <section class="line-wrapper">
-    <div class="line-inner">
-      <div class="line-content">
-        <div class="line-title">
-          <div class="line-icon">
+  <section class="contact">
+    <div class="contact__inner">
+      <div class="contact__content">
+        <div class="contact__heading">
+          <div class="contact__icon line__icon">
             <img src="../img/icon/icon-line.svg" alt="LINE"/>
           </div>
-          <h1>POSSE 公式LINE</h1>
+          <h2 class="contact__title">POSSE 公式LINE</h2>
         </div>
-        <p>
+        <p class="contact__text">
           公式LINEにてご質問を随時受け付けております。<br />詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br />下記ボタンより友達追加をお願いします！
         </p>
-        <div class="line-button">
-          <a href="https://line.me/R/ti/p/@651htnqp?from=page">
-            <p>LINE追加</p>
-            <img src="../img/icon/icon-link-gray-dark.svg" alt="LINEリンク"/>
+        <div class="contact__button">
+          <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="contact__link">
+            LINE追加<img src="../img/icon/icon-link-gray-dark.svg" alt="LINEリンク"/>
           </a>
         </div>
       </div>
@@ -237,30 +235,32 @@
   </section>
 
   <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-img">
+    <div class="footer__head">
+      <div class="footer__logo">
         <img src="../img/logo.svg" alt="フッターロゴ" />
       </div>
-      <div class="official-link">
+      <div class="footer__official__link">
         <a href="https://posse-ap.com/" alt="公式サイト">
           POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク"/>
         </a>
       </div>
-      <ul class="sns-items">
-        <li class="sns">
-          <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
-            <img src="../img/icon/icon-twitter.svg" alt="twitter" />
-          </a>
-        </li>
-        <li class="sns">
-          <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
-            <img src="../img/icon/icon-instagram.svg" alt="instagram" />
-          </a>
-        </li>
-      </ul>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__sns__item">
+            <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
+              <img src="../img/icon/icon-twitter.svg" alt="Twitter" />
+            </a>
+          </li>
+          <li class="nav__item nav__sns__item">
+            <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
+              <img src="../img/icon/icon-instagram.svg" alt="Instagram" />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <small>&copy;2022 POSSE</small>
+    <div class="footer__foot">
+      <small class="footer__copyright">&copy;2022 POSSE</small>
     </div>
   </footer>
 

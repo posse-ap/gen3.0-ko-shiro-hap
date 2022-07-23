@@ -1,0 +1,36 @@
+ // footer__banner----------------------
+
+ .banner {
+   display: flex;
+   position: fixed;
+   right: 16px;
+   bottom: 16px;
+  width: 280px;
+  background-color: #5fdf5b;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+
+  &__link {
+    display: flex;
+    padding: 22px 24px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+    text-decoration: none;
+  }
+
+  & .line__icon {
+    height: 36px;
+    width: 36px;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
