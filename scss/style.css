@@ -559,10 +559,6 @@ img {
   background-color: #FFF2F5;
 }
 
-.js__correct {
-  display: block;
-}
-
-.js__wrong {
+.js__on {
   display: block;
 }/*# sourceMappingURL=style.css.map */
