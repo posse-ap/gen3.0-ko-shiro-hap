@@ -58,22 +58,64 @@ const quiz = [
 ];
 
 
-// 複製するquiz__innerを取得
-const quizInner = document.getElementById('quiz1');
+const quizSection = document.getElementById('quiz__section');
+
+// クイズの中身作成
+const quizHtml = `<div class="quiz__inner">
+<h2 class="quiz__icon quiz__number" id="quizNumber">Q1</h2>
+<h3 class="quiz__text">${quiz[0].question}</h3>
+<div class="quiz__caption">
+  <img src="../img/quiz/img-quiz01.png" alt="質問１">
+</div>
+<div class="answer">
+  <h2 class="quiz__icon answer__icon">A</h2>
+  <div class="answer__list">
+    <button class="answer__item">${quiz[0].select1}</button>
+    <button class="answer__item">${quiz[0].select2}</button>
+    <button class="answer__item">${quiz[0].select3}</button>
+  </div>
+</div>
+<div class="judgement judgement__correct">
+  <h3>正解!</h3>
+  <p><span>A</span>${quiz[0].answer}</p>
+</div>
+<div class="judgement judgement__wrong">
+  <h3>不正解...</h3>
+  <p><span>A</span>${quiz[0].answer}</p>
+</div>
+<div class="quote">
+  <div class="quote__icon">
+    <img src="../img/icon/icon-note.svg" alt="引用">
+  </div>
+  <p class="quote__text">${quiz[0].quote}</p>
+</div>
+</div>`;
+
+quizSection.insertAdjacentHTML('afterbegin',quizHtml);
 
 
 
-// quizの繰り返し表示処理
-for (let i = quiz.length; i >= 2; i--) {
-  const cloneQuiz = quizInner.cloneNode(true);
-  const getQuizNumber = document.getElementById('quizNumber');
-  console.log(getQuizNumber);
+
+
+
+
+
+// // 複製するquiz__innerを取得
+// const quizInner = document.getElementById('quiz1');
+
+
+
+// // quizの繰り返し表示処理
+// for (let i = quiz.length; i >= 2; i--) {
+//   const cloneQuiz = quizInner.cloneNode(true);
+//   const getQuizNumber = document.getElementById('quizNumber');
+//   console.log(getQuizNumber);
 
   
-  cloneQuiz.id = `quiz${i}`;
-  quizInner.after(cloneQuiz);
-  getQuizNumber.innerHTML = `Q${i-1}`;
-};
+//   cloneQuiz.id = `quiz${i}`;
+//   quizInner.after(cloneQuiz);
+//   getQuizNumber.innerHTML = `Q${i-1}`;
+// };
 
 // // quizに中身を追加
 // for (let i = 1; i <= quiz.length; i++) {
@@ -104,7 +146,7 @@ for (let i = quiz.length; i >= 2; i--) {
   const wrong = document.querySelector('.judgement__wrong');
   let btnClicked;
   // 繰り返し処理必要
-  const q1Answer = questions[1];
+  const q1Answer = questions[2];
 
 
 
