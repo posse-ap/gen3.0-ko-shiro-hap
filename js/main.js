@@ -3,6 +3,7 @@
 {
   /**
    * @typedef quiz クイズの配列
+   * @property {number} index index番号
    * @property {string} question 質問
    * @property {string} image 画像URL
    * @property {string} select1 選択肢１
@@ -11,8 +12,9 @@
    * @property {string} answer 答え
    * @property {string | undefined} quote 引用文
    */
-  const quiz = [
+  let quiz = [
     {
+      quizNumber: 0,
       question: '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？',
       image: '../img/quiz/img-quiz01.png',
       select1: '約28万人',
@@ -22,6 +24,7 @@
       quote: '経済産業省 2019年3月 - IT 人材需給に関する調査',
     },
     {
+      quizNumber: 1,
       question: '既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？',
       image: '../img/quiz/img-quiz02.png',
       select1: 'INTECH',
@@ -30,6 +33,7 @@
       answer: 'X-TECH',
     },
     {
+      quizNumber: 2,
       question: 'IoTとは何の略でしょう？',
       image: '../img/quiz/img-quiz03.png',
       select1: 'Internet of Things',
@@ -38,6 +42,7 @@
       answer: 'Internet of Things',
     },
     {
+      quizNumber: 3,
       question: '日本が目指すサイバー空間とフィジカル空間を高度に融合させたシステムによって開かれる未来社会のことをなんと言うでしょうか？',
       image: '../img/quiz/img-quiz04.png',
       select1: 'Society 5.0',
@@ -47,6 +52,7 @@
       quote: 'Society5.0 - 科学技術政策 - 内閣府',
     },
     {
+      quizNumber: 4,
       question: 'イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？',
       image: '../img/quiz/img-quiz05.png',
       select1: 'Web3.0',
@@ -55,6 +61,7 @@
       answer: 'Web3.0',
     },
     {
+      quizNumber: 5,
       question: '先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？',
       image: '../img/quiz/img-quiz06.png',
       select1: '約2倍',
@@ -64,6 +71,19 @@
       quote: 'Accenture Technology Vision 2021 ',
     },
   ];
+
+  /**
+   * @description クイズの順番をランダムに入れ替える関数
+   * @param {array} [...array] 配列
+   * @returns {array} array シャッフル後の配列
+   */
+  const shuffleQuiz = ([...array]) => {
+    for (let i = array.length - 1; i >= 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
 
   /**
@@ -119,7 +139,7 @@
     <h2 class="quiz__icon quiz__number" id="quizNumber">Q${i+1}</h2>
     <h3 class="quiz__text">${quiz[i].question}</h3>
     <div class="quiz__caption">
-      <img src="../img/quiz/img-quiz0${i+1}.png" alt="クイズ画像">
+      <img src="${quiz[i].image}" alt="クイズ画像">
     </div>
     <div class="answer">
       <h2 class="quiz__icon answer__icon">A</h2>
@@ -179,7 +199,12 @@
 
 
   /**
-   * @description クイズ作成、クリックイベントの繰り返し処理
+   * 以降html内の処理
+   */
+  quiz = shuffleQuiz(quiz);
+
+  /**
+   * @description クイズhtml作成、クリックイベントの繰り返し処理
    * @param {number} i カウント
    */
   for(let i = 0; i < quiz.length; i++) {
