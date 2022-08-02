@@ -137,7 +137,7 @@ img {
   height: 50px;
   line-height: 60px;
   text-align: center;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   border-radius: 50%;
 }
 .nav__sns__item img {
@@ -391,17 +391,17 @@ img {
 }
 .judgement__correct {
   display: none;
-  background-color: #FFF2F5;
+  background-color: #fff2f5;
 }
 .judgement__correct h3 {
-  color: #E34E70;
+  color: #e34e70;
 }
 .judgement__wrong {
   display: none;
-  background-color: #EFF2F5;
+  background-color: #eff2f5;
 }
 .judgement__wrong h3 {
-  color: #0071BC;
+  color: #0071bc;
 }
 
 .quote {
@@ -476,7 +476,6 @@ img {
   position: relative;
   display: block;
   padding: 12px 0;
-  color: #666;
   font-weight: bold;
 }
 .contact__button img {
@@ -492,8 +491,8 @@ img {
 }
 .footer__head {
   padding: 56px 0 48px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 .footer__logo {
   margin-bottom: 24px;
@@ -556,7 +555,7 @@ img {
 
 .js__selected {
   border-color: #0071bc;
-  background-color: #FFF2F5;
+  background-color: #fff2f5;
 }
 
 .js__on {

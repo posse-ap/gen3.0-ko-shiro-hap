@@ -1,12 +1,12 @@
- // footer__banner----------------------
+@use "../variables/variables" as v;
 
- .banner {
-   display: flex;
-   position: fixed;
-   right: 16px;
-   bottom: 16px;
+.banner {
+  display: flex;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
   width: 280px;
-  background-color: #5fdf5b;
+  background-color: v.$banner-color;
   justify-content: space-between;
   align-items: center;
   border-radius: 16px;
@@ -27,7 +27,7 @@
   }
 
   &__text {
-    color: #fff;
+    color: v.$white;
     font-size: 14px;
     line-height: 18.2px;
     font-weight: bold;

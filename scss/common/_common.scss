@@ -1,3 +1,6 @@
+@use "../variables/variables" as v;
+
+
 body {
   font-family: "Noto Sans JP", sans-serif;
 }
@@ -9,7 +12,7 @@ small {
 a {
   font-size: 14px;
   text-decoration: none;
-  color: #666666;
+  color: v.$dark-gray;
 }
 
 img {
@@ -41,7 +44,7 @@ img {
     height: 50px;
     line-height: 60px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid v.$light-gray;
     border-radius: 50%;
 
     & img {
@@ -56,7 +59,7 @@ img {
 .line__icon {
   width: 40px;
   height: 40px;
-  background: radial-gradient(#fff 60%, rgba(255, 255, 255, 0) 40%);
+  background: v.$line-radial-gradient;
 }
 
 // quiz__icon-------------------------------
@@ -67,5 +70,5 @@ img {
   padding: 16px;
   font-size: 36px;
   border-radius: 8px;
-  color: #fff;
+  color: v.$white;
 }

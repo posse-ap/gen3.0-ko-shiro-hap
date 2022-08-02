@@ -1,4 +1,4 @@
-// top__hero-----------------------------------
+@use "../variables/variables" as v;
 
 .top__hero {
   position: relative;
@@ -19,7 +19,7 @@
 
   &__lead {
     margin-bottom: 18px;
-    color: #0071bc;
+    color: v.$blue;
   }
 
   &__title {
@@ -61,7 +61,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background-color: #adadad;
+      background-color: v.$gray;
     }
   }
 }
@@ -86,7 +86,7 @@
   &__subtitle {
     font-size: 14px;
     line-height: 25px;
-    color: #0071bc;
+    color: v.$blue;
   }
 
   &__content {

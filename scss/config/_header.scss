@@ -1,7 +1,9 @@
+@use "../variables/variables" as v;
+
 .header {
   position: fixed;
   width: 100vw;
-  background-color: #fff;
+  background-color: v.$white;
   height: 80px;
   z-index: 100;
 

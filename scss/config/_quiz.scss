@@ -1,4 +1,4 @@
-// quiz__hero----------------------------------------
+@use "../variables/variables" as v;
 
 .quiz__hero {
   height: 320px;
@@ -41,7 +41,7 @@
   &__number {
     margin-bottom: 24px;
     letter-spacing: 6px;
-    background-color: #0071bc;
+    background-color: v.$blue;
   }
 
   &__text {
@@ -66,7 +66,7 @@
 
   &__icon {
     margin-bottom: 16px;
-    background-color: #e34e70;
+    background-color: v.$red;
   }
 
   &__list {
@@ -86,9 +86,9 @@
     line-height: 32px;
     justify-content: space-between;
     align-items: center;
-    border: solid 5px #eeeeee;
+    border: solid 5px v.$light-gray;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: v.$white;
     cursor: pointer;
 
     &::after {
@@ -97,7 +97,7 @@
       width: 12px;
       height: 13px;
       clip-path: polygon(0 0, 0% 100%, 100% 50%);
-      background-color: #333333;
+      background-color: v.$triangle-color;
     }
   }
 }
@@ -107,7 +107,7 @@
 .judgement {
   margin-bottom: 16px;
   padding: 24px;
-  background-color: #f6f6f6;
+  background-color: v.$light-blue;
   border-radius: 8px;
 
   & h3 {
@@ -129,19 +129,19 @@
 
   &__correct {
     display: none;
-  background-color: #FFF2F5;
+  background-color: v.$correct-color;
 
     & h3 {
-      color: #E34E70;
+      color: v.$red;
     }
   }
 
   &__wrong {
     display: none;
-  background-color: #EFF2F5;
+  background-color: v.$wrong-color;
 
     & h3 {
-      color: #0071BC;
+      color: v.$blue;
     }
   }
 }
@@ -150,7 +150,7 @@
 
 .quote {
   padding: 24px;
-  background-color: #f6f6f6;
+  background-color: v.$light-blue;
   border-radius: 8px;
 
   &__icon {

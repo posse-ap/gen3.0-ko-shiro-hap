@@ -1,8 +1,8 @@
-// javascript---------------------------------
+@use "../variables/variables" as v;
 
 .js__selected {
-  border-color: #0071bc;
-  background-color: #FFF2F5;
+  border-color: v.$blue;
+  background-color: v.$correct-color;
 }
 
 .js__on{

@@ -1,3 +1,5 @@
+@use "../variables/variables" as v;
+
 .contact {
   padding: 140px 24px 80px;
 
@@ -20,13 +22,13 @@
       width: 100%;
       height: 100%;
       border-radius: 48px;
-      background-color: rgba(0, 113, 188, 0.9);
+      background-color: v.$contact-bg-color;
     }
   }
 
   &__content {
     position: relative;
-    color: #fff;
+    color: v.$white;
     padding: 78px 0;
   }
 
@@ -53,13 +55,12 @@
     margin: 0 auto;
     max-width: 320px;
     border-radius: 98px;
-    background-color: #fff;
+    background-color: v.$white;
 
     & a {
       position: relative;
       display: block;
       padding: 12px 0;
-      color: #666;
       font-weight: bold;
     }
 
