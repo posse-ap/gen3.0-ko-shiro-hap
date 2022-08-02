@@ -1,12 +1,21 @@
-@use "../variables/variables" as v;
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .footer {
   text-align: center;
+
+  @include m.mq(sp) {
+    padding-bottom: 48px;
+  }
 
   &__head {
     padding: 56px 0 48px 0;
     border-top: 1px solid v.$light-gray;
     border-bottom: 1px solid v.$light-gray;
+
+    @include m.mq(sp) {
+      padding-bottom: 32px;
+    }
   }
 
   &__logo {
@@ -27,7 +36,6 @@
     }
   }
 
-  // nav common++
   & .nav {
     margin-top: 32px;
 

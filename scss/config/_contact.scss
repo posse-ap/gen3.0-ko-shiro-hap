@@ -1,7 +1,12 @@
-@use "../variables/variables" as v;
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .contact {
   padding: 140px 24px 80px;
+
+  @include m.mq(sp) {
+    padding: 64px 16px 72px;
+  }
 
   &__inner {
     position: relative;
@@ -30,6 +35,10 @@
     position: relative;
     color: v.$white;
     padding: 78px 0;
+
+    @include m.mq(sp) {
+      padding: 40px 24px;
+    }
   }
 
   &__heading {
@@ -37,11 +46,20 @@
     gap: 8px;
     justify-content: center;
     align-items: center;
+
+    @include m.mq(sp) {
+      flex-direction: column;
+    }
   }
 
   &__title {
     font-size: 34px;
     letter-spacing: 1.5px;
+
+    @include m.mq(sp) {
+      font-size: 24px;
+      line-height: 43px;
+    }
   }
 
   &__text {
@@ -49,18 +67,24 @@
     font-size: 14px;
     line-height: 22px;
     letter-spacing: 1.5px;
+
+    @include m.mq(sp) {
+      text-align: start;
+      margin: 8px 0 34px 0;
+    }
   }
 
   &__button {
     margin: 0 auto;
     max-width: 320px;
+    height: 50px;
+    line-height: 50px;
     border-radius: 98px;
     background-color: v.$white;
 
     & a {
       position: relative;
       display: block;
-      padding: 12px 0;
       font-weight: bold;
     }
 
@@ -69,7 +93,7 @@
       width: 12.5px;
       height: 12.5px;
       right: 20px;
-      top: 14px;
+      top: 20px;
     }
   }
 }

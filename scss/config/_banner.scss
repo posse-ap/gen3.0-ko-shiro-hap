@@ -1,4 +1,5 @@
-@use "../variables/variables" as v;
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .banner {
   display: flex;
@@ -11,6 +12,13 @@
   align-items: center;
   border-radius: 16px;
 
+  @include m.mq(sp) {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
   &__link {
     display: flex;
     padding: 22px 24px;
@@ -19,11 +27,22 @@
     align-items: center;
     border-radius: 16px;
     text-decoration: none;
+
+    @include m.mq(sp) {
+      padding: 10px;
+      gap: 8px;
+      justify-content: center;
+    }
   }
 
   & .line__icon {
     height: 36px;
     width: 36px;
+
+    @include m.mq(sp) {
+      width: 28px;
+      height: 28px;
+    }
   }
 
   &__text {
@@ -32,5 +51,12 @@
     line-height: 18.2px;
     font-weight: bold;
     letter-spacing: 1px;
+
+
+    & .break {
+      @include m.mq(sp) {
+        display: none;
+      }
+    }
   }
 }

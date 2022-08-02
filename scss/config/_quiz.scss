@@ -1,4 +1,5 @@
-@use "../variables/variables" as v;
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .quiz__hero {
   height: 320px;
@@ -13,6 +14,7 @@
   &__heading {
     padding-top: 110px;
     padding-left: 14%;
+    color: v.$white;
   }
 
   &__lead {
@@ -73,7 +75,12 @@
     display: flex;
     margin-bottom: 16px;
     width: 100%;
+    gap: 8px;
     justify-content: space-between;
+
+    @include m.mq(sp) {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -90,6 +97,10 @@
     border-radius: 8px;
     background-color: v.$white;
     cursor: pointer;
+
+    @include m.mq(sp) {
+      max-width: 100%;
+    }
 
     &::after {
       content: " ";

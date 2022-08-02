@@ -2,6 +2,26 @@
 
 {
   /**
+  * ハンバーガーメニューの処理
+  */
+
+  const hamburger = document.getElementById('js-hamburger');
+  const hamburgerHead = document.getElementById('js-hamburger__head')
+  const hamburgerFoot = document.getElementById('js-hamburger__foot')
+  const hamburgerNav = document.getElementById('js-hamburger__nav')
+
+  console.log(hamburgerHead);
+
+  hamburger.addEventListener('click', () => {
+    hamburgerHead.classList.toggle('js-hamburger__head')
+    hamburgerFoot.classList.toggle('js-hamburger__foot')
+    hamburgerNav.classList.toggle('js-slide')
+  });
+
+
+
+
+  /**
    * @typedef quiz クイズの配列
    * @property {number} index index番号
    * @property {string} question 質問
@@ -183,12 +203,12 @@
         const clickedAnswer = e.innerHTML;
 
         if(btnClicked !== true) {
-          e.classList.add('js__selected');
+          e.classList.add('js-selected');
           if(clickedAnswer === quizAnswer) {
-            correct.classList.add('js__on');
+            correct.classList.add('js-on');
           }
           else {
-            wrong.classList.add('js__on');
+            wrong.classList.add('js-on');
           };
         };
 
@@ -211,6 +231,5 @@
     createQuiz(i);
     clickButton(i);
   };
+
 }
-
-

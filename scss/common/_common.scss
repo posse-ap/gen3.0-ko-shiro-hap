@@ -1,4 +1,5 @@
-@use "../variables/variables" as v;
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 
 body {
@@ -27,6 +28,10 @@ img {
   width: 100%;
   padding-top: 80px;
   margin: 0 auto;
+
+  @include m.mq(sp) {
+    padding-top: 56px;
+  }
 }
 
 // nav-------------------------------------
