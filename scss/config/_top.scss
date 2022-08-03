@@ -160,6 +160,8 @@
 
     @include m.mq(sp) {
       width: 100%;
+      max-width: none;
+      max-height: none;
     }
 
   }

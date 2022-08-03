@@ -164,6 +164,13 @@ img {
   border-radius: 8px;
   color: #fff;
 }
+@media screen and (max-width: 768px) {
+  .quiz__icon {
+    padding: 8px 16px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
 
 .header {
   position: fixed;
@@ -232,6 +239,7 @@ img {
 }
 
 .hamburger__nav {
+  display: none;
   position: absolute;
   top: 56px;
   right: -100%;
@@ -244,11 +252,13 @@ img {
 }
 @media screen and (max-width: 768px) {
   .hamburger__nav {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 .hamburger__nav__items {
-  padding: 76px 0 354px;
+  padding-top: 76px;
 }
 .hamburger__nav__items li {
   margin-bottom: 24px;
@@ -259,6 +269,52 @@ img {
   font-weight: bold;
   letter-spacing: 3px;
   color: #333333;
+}
+.hamburger__nav__foot {
+  padding-bottom: 96px;
+}
+.hamburger__nav__button {
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  height: 60px;
+  line-height: 60px;
+  border-radius: 98px;
+  background-color: #5fdf5b;
+}
+.hamburger__nav__button a {
+  position: relative;
+  display: block;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.hamburger__nav__button .line__icon {
+  margin-right: 8px;
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+.hamburger__nav__button .link__icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 20px;
+  top: 22px;
+  color: #fff;
+}
+.hamburger__nav__official__link {
+  margin-top: 24px;
+}
+.hamburger__nav__official__link img {
+  width: 12.5px;
+  height: 12.5px;
+  margin-left: 5px;
+}
+.hamburger__nav__list {
+  display: flex;
+  margin-top: 20px;
+  gap: 8px;
+  justify-content: center;
 }
 
 .top__hero {
@@ -416,6 +472,8 @@ img {
 @media screen and (max-width: 768px) {
   .about__thumbnail {
     width: 100%;
+    max-width: none;
+    max-height: none;
   }
 }
 .about__text {
@@ -433,25 +491,54 @@ img {
 .quiz__hero {
   height: 320px;
 }
+@media screen and (max-width: 768px) {
+  .quiz__hero {
+    height: 160px;
+  }
+}
 .quiz__hero__inner {
   height: 100%;
   background-image: url("../img/quiz/bg-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 768px) {
+  .quiz__hero__inner {
+    background-position: center;
+  }
+}
 .quiz__hero__heading {
   padding-top: 110px;
   padding-left: 14%;
   color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .quiz__hero__heading {
+    padding-top: 60px;
+    padding-left: 32px;
+  }
 }
 .quiz__hero__lead {
   margin-bottom: 12px;
   font-size: 18px;
   line-height: 32px;
 }
+@media screen and (max-width: 768px) {
+  .quiz__hero__lead {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
 .quiz__hero__title {
   font-size: 60px;
   line-height: 90px;
+}
+@media screen and (max-width: 768px) {
+  .quiz__hero__title {
+    font-size: 28px;
+    line-height: 42px;
+  }
 }
 
 .quiz {
@@ -462,18 +549,40 @@ img {
 .quiz__inner {
   padding-top: 120px;
 }
+@media screen and (max-width: 768px) {
+  .quiz__inner {
+    padding-top: 80px;
+  }
+}
 .quiz__number {
   margin-bottom: 24px;
   letter-spacing: 6px;
   background-color: #0071bc;
 }
+@media screen and (max-width: 768px) {
+  .quiz__number {
+    margin-bottom: 16px;
+  }
+}
 .quiz__text {
   font-size: 36px;
   line-height: 54px;
 }
+@media screen and (max-width: 768px) {
+  .quiz__text {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
 .quiz__caption {
   margin: 64px auto 0 auto;
   height: 360px;
+}
+@media screen and (max-width: 768px) {
+  .quiz__caption {
+    margin-top: 24px;
+    height: auto;
+  }
 }
 .quiz__caption img {
   -o-object-fit: contain;
@@ -482,6 +591,11 @@ img {
 
 .answer {
   margin-top: 62px;
+}
+@media screen and (max-width: 768px) {
+  .answer {
+    margin-top: 32px;
+  }
 }
 .answer__icon {
   margin-bottom: 16px;
@@ -517,6 +631,9 @@ img {
 @media screen and (max-width: 768px) {
   .answer__item {
     max-width: 100%;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 .answer__item::after {
@@ -534,6 +651,11 @@ img {
   padding: 24px;
   background-color: #f6f6f6;
   border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .judgement {
+    padding: 24px 40px;
+  }
 }
 .judgement h3 {
   font-size: 24px;
@@ -579,6 +701,12 @@ img {
   font-size: 18px;
   line-height: 32px;
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .quote__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 .contact {
