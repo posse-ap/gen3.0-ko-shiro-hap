@@ -1,0 +1,27 @@
+@use "../global/variables" as v;
+
+.header {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: v.$white;
+
+  &__logo {
+    height: 24px;
+
+    & img {
+      height: 100%;
+    }
+  }
+
+  &__button {
+    padding: 12px 48px;
+    line-height: 1rem;
+    border-radius: 20px;
+    border: none;
+    color: v.$white;
+    background: linear-gradient(to left, rgb(173, 216, 230), rgb(120, 120, 240));
+    box-shadow: 0px 4px 4px 4px rgba(173, 216, 230, 0.3);
+  }
+}
