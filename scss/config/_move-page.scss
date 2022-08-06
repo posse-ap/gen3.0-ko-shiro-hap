@@ -1,0 +1,42 @@
+@use "../global/variables" as v;
+
+.move-page {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+
+  &__previous {
+    position: relative;
+    border: none;
+    top: -4px;
+
+    &::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-top: solid 2px v.$blue;
+      border-right: solid 2px v.$blue;
+      position: absolute;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__next {
+    position: relative;
+    border: none;
+    top: -4px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0px;
+      width: 7px;
+      height: 7px;
+      border-top: solid 2px v.$blue;
+      border-right: solid 2px v.$blue;
+      transform: rotate(45deg);
+    }
+  }
+}

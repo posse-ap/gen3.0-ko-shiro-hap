@@ -1,0 +1,39 @@
+@use "../global/variables" as v;
+
+.about__learnings {
+  padding: 20px;
+  width: 50%;
+  border-radius: 16px;
+  background-color: v.$white;
+  box-shadow: v.$box-shadow;
+
+  &__pie-chart {
+    margin: 20px 0;
+    // width: auto;
+    height: 150px;
+    background-color: #eeeeee;
+  }
+
+  &__items {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+
+    & span {
+      display: inline-block;
+      margin-right: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: v.$lightblue;
+    }
+  }
+}
+
+.contents__items {
+  flex-direction: column;
+  gap: 0;
+}

@@ -9,11 +9,195 @@
 </head>
 <body>
   <header class="header">
-    <div class="header__logo">
-      <img src="../assets/img/logo.svg" alt="POSSEロゴ">
+    <div class="header__inner">
+      <div class="header__left">
+        <div class="header__logo">
+          <img src="../assets/img/logo.svg" alt="POSSEロゴ">
+        </div>
+        <span>4th week</span>
+      </div>
+      <button class="button header__button">記録・投稿</button>
     </div>
-    <button class="header__button">記録・投稿</button>
   </header>
+
+  <main class="main">
+    <div class="main__left">
+
+      <section class="time-log">
+        <ul class="time-log__items">
+          <li class="time-log__item">
+            <h3>Today</h3>
+            <div class="time-log__result">3</div>
+            <div class="time-log__hour">hour</div>
+          </li>
+          <li class="time-log__item">
+            <h3>Month</h3>
+            <div class="time-log__result">3</div>
+            <div class="time-log__hour">hour</div>
+          </li>
+          <li class="time-log__item">
+            <h3>Total</h3>
+            <div class="time-log__result">3</div>
+            <div class="time-log__hour">hour</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="contents__left__bar-chart" id="time-chart"></section>
+
+    </div>
+
+    <div class="main__right">
+
+      <section class="about__learnings languages">
+        <h2 class="about__learnings__title">学習言語</h2>
+        <div class="about__learnings__pie-chart" id="languages-chart"></div>
+        <ul class="about__learnings__items">
+          <li class="about__learnings__item">
+            <span></span>Javascript
+          </li>
+          <li class="about__learnings__item">
+            <span></span>CSS
+          </li>
+          <li class="about__learnings__item">
+            <span></span>PHP
+          </li>
+          <li class="about__learnings__item">
+            <span></span>HTML
+          </li>
+          <li class="about__learnings__item">
+            <span></span>Laravel
+          </li>
+          <li class="about__learnings__item">
+            <span></span>SQL
+          </li>
+          <li class="about__learnings__item">
+            <span></span>SHELL
+          </li>
+          <li class="about__learnings__item">
+            <span></span>情報システム基礎知識（その他）
+          </li>
+        </ul>
+      </section>
+
+      <section class="about__learnings contents">
+        <h2 class="about__learnings__title">学習コンテンツ</h2>
+        <div class="about__learnings__pie-chart" id="contents-chart"></div>
+        <ul class="about__learnings__items contents__items">
+          <li class="about__learnings__item">
+            <span></span>ドットインストール
+          </li>
+          <li class="about__learnings__item">
+            <span></span>N予備校
+          </li>
+          <li class="about__learnings__item">
+            <span></span>POSSE課題
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="post">
+      <div class="post__left">
+        <div class="post__contents">
+          <h3 class="post__lead">学習日</h3>
+          <label for="studied-date">
+            <input class="post__text" type="text" name="date" id="studied-date" placeholder="2022年8月5日">
+          </label>
+        </div>
+        <div class="post__learnings">
+          <h3 class="post__lead">学習コンテンツ（複数選択可）</h3>
+          <ul class="post__learnings__items">
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="Nyobiko">
+              <input class="checkbox__input" type="checkbox" name="content" id="Nyobiko">
+              <span class="checkbox__text">N予備校</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="dotinstall">
+              <input class="checkbox__input" type="checkbox" name="content" id="dotinstall">
+              <span class="checkbox__text">ドットインストール</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="POSSEkadai">
+              <input class="checkbox__input" type="checkbox" name="content" id="POSSEkadai">
+              <span class="checkbox__text">POSSE課題</span>
+              </Label>
+            </li>
+          </ul>
+        </div>
+        <div class="post__learnings">
+          <h3 class="post__lead">学習言語(複数選択可)</h3>
+          <ul class="post__learnings__items">
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="html">
+              <input class="checkbox__input" type="checkbox" name="language" id="html">
+              <span class="checkbox__text">HTML</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="css">
+              <input class="checkbox__input" type="checkbox" name="language" id="css">
+              <span class="checkbox__text">CSS</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="php">
+              <input class="checkbox__input" type="checkbox" name="language" id="php">
+              <span class="checkbox__text">PHP</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="laravel">
+              <input class="checkbox__input" type="checkbox" name="language" id="laravel">
+              <span class="checkbox__text">Laravel</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="sql">
+              <input class="checkbox__input" type="checkbox" name="language" id="sql">
+              <span class="checkbox__text">SQL</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="shell">
+              <input class="checkbox__input" type="checkbox" name="language" id="shell">
+              <span class="checkbox__text">SHELL</span>
+              </Label>
+            </li>
+            <li class="post__learnings__item">
+              <Label class="checkbox" for="others">
+              <input class="checkbox__input" type="checkbox" name="language" id="others">
+              <span class="checkbox__text">情報システム基礎知識（その他）</span>
+              </Label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="post__right">
+        <div class="post__contents">
+          <h3 class="post__lead">学習時間</h3>
+          <label for="studied-time">
+            <input class="post__text" type="text" name="time" id="studied-time">
+          </label>
+        </div>
+        <div class="post__contents">
+          <h3 class="post__lead">Twitter用コメント</h3>
+          <textarea name="" id="" cols="30" rows="10" class="post__textarea"></textarea>
+        </div>
+        <div class="post__share"><span></span>Twitterにシェアする</div>
+        <button class="button post__button">記録・投稿</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="move-page">
+    <button class="move-page__previous"></button>
+    <div class="move-page__date">2022年8月5日</div>
+    <button class="move-page__next"></button>
+  </div>
 
 
   <script src="../js/main.js"></script>
