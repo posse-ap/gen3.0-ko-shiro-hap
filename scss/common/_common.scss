@@ -36,3 +36,50 @@ body {
     width: 50%;
   }
 }
+
+// checkbox----------------------------------------------
+.checkbox {
+  display: block;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: v.$lightgray;
+  border-radius: 30px;
+
+  &__input {
+    display: none;
+  }
+
+  &__text {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      margin-right: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: v.$gray;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 4px;
+      height: 8px;
+      border-right: 2px solid v.$white;
+      border-bottom: 2px solid v.$white;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__input:checked + &__text::before {
+    background-color: v.$blue;
+  }
+}

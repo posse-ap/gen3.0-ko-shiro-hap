@@ -98,6 +98,10 @@
     </div>
 
     <section class="post">
+      <div class="post__close">
+        <!-- <span class="post__close__bar-head"></span>
+        <span class="bar-foot"></span> -->
+      </div>
       <div class="post__left">
         <div class="post__contents">
           <h3 class="post__lead">学習日</h3>
@@ -185,11 +189,14 @@
         </div>
         <div class="post__contents">
           <h3 class="post__lead">Twitter用コメント</h3>
-          <textarea name="" id="" cols="30" rows="10" class="post__textarea"></textarea>
+          <textarea name="comment" id="comment" class="post__textarea"></textarea>
+          <Label class="checkbox checkbox__twitter" for="twitter">
+            <input class="checkbox__input checkbox__twitter__input" type="checkbox" name="twitter" id="twitter" checked>
+            <span class="checkbox__text checkbox__twitter__text">Twitterにシェアする</span>
+            </Label>
+          </div>
         </div>
-        <div class="post__share"><span></span>Twitterにシェアする</div>
         <button class="button post__button">記録・投稿</button>
-      </div>
     </section>
   </main>
 
