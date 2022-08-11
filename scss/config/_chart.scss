@@ -1,8 +1,7 @@
 @use "../global/variables" as v;
 
 .contents__left__bar-chart {
-  margin-top: 20px;
-  height: 300px;
+  flex-grow: 4;
   width: 100%;
   background-color: v.$white;
   border-radius: 16px;

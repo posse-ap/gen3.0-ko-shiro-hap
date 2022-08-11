@@ -11,11 +11,27 @@
   }
 
   &__item {
-    padding: 20px 40px;
+    padding: 20px;
     flex-grow: 1;
     border-radius: 16px;
     text-align: center;
     background-color: v.$white;
     box-shadow: v.$box-shadow;
+  }
+
+  &__heading {
+    color: v.$blue;
+    line-height: normal;
+  }
+
+  &__result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2;
+    letter-spacing: 0.1rem;
+  }
+
+  &__hour {
+    color: v.$lightblue;
   }
 }

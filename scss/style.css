@@ -105,13 +105,9 @@ body {
   height: 100vh;
 }
 
-.button {
-  line-height: 1rem;
-  border-radius: 20px;
-  border: none;
-  color: #fff;
-  background: linear-gradient(to left, rgb(173, 216, 230), rgb(120, 120, 240));
-  box-shadow: 0px 3px 3px 3px rgba(173, 216, 230, 0.3);
+h1, h2, h3, h4 {
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
 }
 
 .main {
@@ -120,17 +116,56 @@ body {
   padding: 20px 20px;
   gap: 20px;
   max-width: 1200px;
+  height: 60%;
   justify-content: center;
 }
+@media screen and (max-width: 1024px) {
+  .main {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    padding-top: 174px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .main__left {
+  display: flex;
+  gap: 16px;
   max-width: 600px;
   width: 50%;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .main__left {
+    width: 100%;
+  }
 }
 .main__right {
   display: flex;
   gap: 20px;
   max-width: 600px;
+  align-items: stretch;
   width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .main__right {
+    width: 100%;
+  }
+}
+
+.button {
+  line-height: 1rem;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(to left, rgb(173, 216, 230), rgb(120, 120, 240));
+  box-shadow: 0px 3px 3px 3px rgba(173, 216, 230, 0.3);
+  cursor: pointer;
 }
 
 .checkbox {
@@ -175,7 +210,13 @@ body {
 }
 
 .header {
+  width: 100%;
   background-color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    position: fixed;
+  }
 }
 .header__inner {
   display: flex;
@@ -215,17 +256,29 @@ body {
   justify-content: center;
 }
 .time-log__item {
-  padding: 20px 40px;
+  padding: 20px;
   flex-grow: 1;
   border-radius: 16px;
   text-align: center;
   background-color: #fff;
   box-shadow: 0px 3px 3px 3px rgba(173, 216, 230, 0.3);
 }
+.time-log__heading {
+  color: #7878f0;
+  line-height: normal;
+}
+.time-log__result {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2;
+  letter-spacing: 0.1rem;
+}
+.time-log__hour {
+  color: #add8e6;
+}
 
 .contents__left__bar-chart {
-  margin-top: 20px;
-  height: 300px;
+  flex-grow: 4;
   width: 100%;
   background-color: #fff;
   border-radius: 16px;
@@ -240,14 +293,18 @@ body {
   box-shadow: 0px 3px 3px 3px rgba(173, 216, 230, 0.3);
 }
 .about__learnings__pie-chart {
+  aspect-ratio: 1/1;
   margin: 20px 0;
-  height: 150px;
   background-color: #eeeeee;
 }
 .about__learnings__items {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+}
+.about__learnings__item {
+  font-size: 14px;
+  line-height: 2rem;
 }
 .about__learnings__item span {
   display: inline-block;
@@ -266,7 +323,6 @@ body {
 .move-page {
   display: flex;
   gap: 16px;
-  margin-top: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -301,19 +357,21 @@ body {
 }
 
 .post {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
   position: absolute;
-  top: 106px;
-  gap: 0px 40px;
-  padding: 54px;
+  top: 96px;
   max-width: 846px;
+  padding: 54px;
   width: 100%;
-  justify-content: center;
   border-radius: 54px;
   background-color: #fff;
   z-index: 999;
+}
+.post__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px 40px;
 }
 .post__close {
   position: absolute;
@@ -358,9 +416,6 @@ body {
 .post__contents {
   margin-bottom: 20px;
 }
-.post__lead {
-  line-height: 1.5rem;
-}
 .post__text {
   width: 100%;
   height: 40px;
@@ -398,4 +453,8 @@ body {
   left: 8px;
   width: 6px;
   height: 12px;
+}
+
+.js-on {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

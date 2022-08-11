@@ -1,7 +1,13 @@
 @use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .header {
+  width: 100%;
   background-color: v.$white;
+
+  @include m.mq(sp) {
+    position: fixed;
+  }
 
   &__inner {
     display: flex;
