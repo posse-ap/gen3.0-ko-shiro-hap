@@ -1,4 +1,5 @@
 @use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .contents__left__bar-chart {
   flex-grow: 4;
@@ -6,4 +7,8 @@
   background-color: v.$white;
   border-radius: 16px;
   box-shadow: v.$box-shadow;
+
+  @include m.mq(sp) {
+    height: 140px;
+  }
 }

@@ -1,4 +1,5 @@
 @use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .time-log {
   width: 100%;
@@ -8,6 +9,10 @@
     gap: 20px;
     width: 100%;
     justify-content: center;
+
+    @include m.mq(sp) {
+      gap: 16px;
+    }
   }
 
   &__item {
@@ -17,11 +22,20 @@
     text-align: center;
     background-color: v.$white;
     box-shadow: v.$box-shadow;
+
+    @include m.mq(sp) {
+      padding: 12px 8px;
+      width: calc(100%/3);
+    }
   }
 
   &__heading {
     color: v.$blue;
     line-height: normal;
+
+    @include m.mq(sp) {
+      font-size: 0.8rem;
+    }
   }
 
   &__result {
@@ -29,9 +43,16 @@
     font-weight: bold;
     line-height: 2;
     letter-spacing: 0.1rem;
+
+    @include m.mq(sp) {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      letter-spacing: normal;
+    }
   }
 
   &__hour {
     color: v.$lightblue;
+    letter-spacing: 0.1rem;
   }
 }

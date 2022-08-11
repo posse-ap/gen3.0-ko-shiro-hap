@@ -1,11 +1,17 @@
 @use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .move-page {
   display: flex;
   gap: 16px;
-  // margin-top: 20px;
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+
+  @include m.mq(sp) {
+    font-size: 14px;
+  }
 
   &__previous {
     position: relative;

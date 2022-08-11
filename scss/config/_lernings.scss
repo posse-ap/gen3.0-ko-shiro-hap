@@ -1,4 +1,5 @@
 @use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .about__learnings {
   padding: 20px;
@@ -8,11 +9,28 @@
   background-color: v.$white;
   box-shadow: v.$box-shadow;
 
+  @include m.mq(sp) {
+    padding: 16px;
+  }
+
+  &__title {
+
+    @include m.mq(sp) {
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+  }
+
   &__pie-chart {
     aspect-ratio: 1 /1;
     margin: 20px 0;
     // height: 40%;
     background-color: #eeeeee;
+
+    @include m.mq(sp) {
+      margin: 12px 0;
+    }
   }
 
   &__items {
@@ -25,6 +43,15 @@
     font-size: 14px;
     line-height: 2rem;
 
+    @include m.mq(tb) {
+      line-height: 1.5rem;
+    }
+
+        @include m.mq(sp) {
+          font-size: 10px;
+          line-height: 1.2rem;
+        }
+
     & span {
       display: inline-block;
       margin-right: 2px;
@@ -32,6 +59,11 @@
       height: 14px;
       border-radius: 50%;
       background-color: v.$lightblue;
+
+      @include m.mq(sp) {
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 }
