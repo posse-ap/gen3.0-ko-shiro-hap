@@ -1,8 +1,12 @@
-// .js-display-none {
-//   display: none;
-// }
-
-.js-on {
+.js-block {
   display: block;
+}
+
+.js-off {
+  display: none;
+}
+
+.js-flex {
+  display: flex;
 }
 

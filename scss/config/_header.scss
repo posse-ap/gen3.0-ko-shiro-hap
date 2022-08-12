@@ -26,10 +26,16 @@
   &__left {
     display: flex;
     gap: 16px;
+    align-items: center;
   }
 
   &__logo {
+    padding: 8px;
     height: 24px;
+
+    @include m.mq(sp) {
+      padding: 0;
+    }
 
     & img {
       height: 100%;

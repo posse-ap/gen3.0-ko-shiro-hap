@@ -147,6 +147,49 @@
 
   &__button {
     padding: 12px 15%;
+
+    @include m.mq(sp) {
+      width: calc(100% - 40px);
+    }
+  }
+}
+
+//post--completion----------------------------------------------
+.post--completion {
+  display: none;
+  // display: flex;
+  height: 416px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @include m.mq(sp) {
+    height: calc(100vh - 76px);
+  }
+
+  &__lead {
+    color: v.$green;
+  }
+
+  &__icon {
+    margin: 8px 0 16px;
+    font-size: 72px;
+    color: v.$green;
+
+    & i {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+
+    @include m.mq(sp) {
+      font-size: 12px;
+    }
   }
 }
 

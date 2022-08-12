@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>independent production</title>
   <link rel="stylesheet" href="../scss/style.css">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/6c20dffe37.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="header">
@@ -99,10 +101,9 @@
       </section>
     </div>
 
-    <section class="post" id="modal">
-      <div class="post__inner">
-        <div class="post__close" id="modal-close">
-        </div>
+    <section class="post" id="post-modal">
+      <div class="post__close" id="modal-close"></div>
+      <div class="post__inner" id="post-modal-inner">
         <div class="post__left">
           <div class="post__contents">
             <h3 class="post__lead">学習日</h3>
@@ -197,7 +198,13 @@
               </Label>
             </div>
           </div>
-          <button class="button post__button">記録・投稿</button>
+          <button class="button post__button" id="post-button">記録・投稿</button>
+        </div>
+
+        <div class="post--completion" id="post-completion">
+          <div class="post--completion__lead">AWESOME!</div>
+          <i class="fa-solid fa-circle-check post--completion__icon"></i>
+          <p class="post--completion__text">記録・投稿<br>完了しました</p>
         </div>
       </section>
   </main>

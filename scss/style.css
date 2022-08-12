@@ -262,9 +262,16 @@ h1, h2, h3, h4 {
 .header__left {
   display: flex;
   gap: 16px;
+  align-items: center;
 }
 .header__logo {
+  padding: 8px;
   height: 24px;
+}
+@media screen and (max-width: 768px) {
+  .header__logo {
+    padding: 0;
+  }
 }
 .header__logo img {
   height: 100%;
@@ -607,6 +614,46 @@ h1, h2, h3, h4 {
 .post__button {
   padding: 12px 15%;
 }
+@media screen and (max-width: 768px) {
+  .post__button {
+    width: calc(100% - 40px);
+  }
+}
+
+.post--completion {
+  display: none;
+  height: 416px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .post--completion {
+    height: calc(100vh - 76px);
+  }
+}
+.post--completion__lead {
+  color: #bde360;
+}
+.post--completion__icon {
+  margin: 8px 0 16px;
+  font-size: 72px;
+  color: #bde360;
+}
+.post--completion__icon i {
+  font-size: 72px;
+}
+.post--completion__text {
+  width: 100%;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+@media screen and (max-width: 768px) {
+  .post--completion__text {
+    font-size: 12px;
+  }
+}
 
 .checkbox__twitter {
   background-color: #fff;
@@ -622,6 +669,45 @@ h1, h2, h3, h4 {
   height: 12px;
 }
 
-.js-on {
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%) translateX(-50%);
+}
+.error__lead {
+  color: #f4bd67;
+}
+.error__icon {
+  margin: 8px 0 16px;
+  font-size: 72px;
+  color: #f4bd67;
+}
+.error__icon i {
+  font-size: 72px;
+}
+.error__text {
+  width: 100%;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+@media screen and (max-width: 768px) {
+  .error__text {
+    font-size: 12px;
+  }
+}
+
+.js-block {
   display: block;
+}
+
+.js-off {
+  display: none;
+}
+
+.js-flex {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
