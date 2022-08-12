@@ -10,14 +10,17 @@
   width: calc(100% - 40px);
   border-radius: 54px;
   background-color: v.$white;
-  z-index: 999;
+  z-index: 100;
 
   @include m.mq(tb) {
-    padding: 54px 0px;
+    padding: 54px 0;
   }
 
   @include m.mq(sp) {
-    border-radius: 40px;
+    padding-bottom: 86px;
+    margin-left: -20px;
+    width: 100%;
+    border-radius: 40px 40px 0 0;
   }
 
   &__inner {

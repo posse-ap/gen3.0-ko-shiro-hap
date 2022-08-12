@@ -110,6 +110,13 @@ h1, h2, h3, h4 {
   line-height: 2rem;
 }
 
+.full-page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+}
+
 .main {
   display: flex;
   margin: 0 auto;
@@ -238,11 +245,13 @@ h1, h2, h3, h4 {
 
 .header {
   width: 100%;
+  height: 64px;
   background-color: #fff;
 }
 @media screen and (max-width: 768px) {
   .header {
     position: fixed;
+    z-index: 10;
   }
 }
 .header__inner {
@@ -252,7 +261,6 @@ h1, h2, h3, h4 {
   max-width: 1200px;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
 }
 @media screen and (max-width: 768px) {
   .header__inner {
@@ -481,16 +489,19 @@ h1, h2, h3, h4 {
   width: calc(100% - 40px);
   border-radius: 54px;
   background-color: #fff;
-  z-index: 999;
+  z-index: 100;
 }
 @media screen and (max-width: 1024px) {
   .post {
-    padding: 54px 0px;
+    padding: 54px 0;
   }
 }
 @media screen and (max-width: 768px) {
   .post {
-    border-radius: 40px;
+    padding-bottom: 86px;
+    margin-left: -20px;
+    width: 100%;
+    border-radius: 40px 40px 0 0;
   }
 }
 .post__inner {
@@ -710,4 +721,18 @@ h1, h2, h3, h4 {
 
 .js-flex {
   display: flex;
+}
+
+.js-black {
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+.js-body::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.5);
+  z-index: 100;
 }/*# sourceMappingURL=style.css.map */

@@ -3,7 +3,6 @@
 
 .about__learnings {
   padding: 20px;
-  // height: 100%;
   width: 50%;
   border-radius: 16px;
   background-color: v.$white;
@@ -25,7 +24,6 @@
   &__pie-chart {
     aspect-ratio: 1 /1;
     margin: 20px 0;
-    // height: 40%;
     background-color: #eeeeee;
 
     @include m.mq(sp) {
