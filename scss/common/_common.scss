@@ -18,12 +18,12 @@ h1, h2, h3, h4{
   padding: 20px 20px;
   gap: 20px;
   max-width: 1200px;
-  height: 60%;
+  // height: 60%;
   // aspect-ratio: 2 / 1;
   justify-content: center;
 
   @include m.mq(tb) {
-    height: 50%;
+    // height: 50%;
   }
 
   @include m.mq(sp) {
@@ -64,9 +64,8 @@ h1, h2, h3, h4{
     display: flex;
     gap: 20px;
     max-width: 600px;
-    // height: 100%;
     width: 50%;
-  
+
     @include m.mq(sp) {
       gap: 16px;
       margin: 0 auto;
@@ -112,7 +111,7 @@ h1, h2, h3, h4{
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: v.$gray;
+      background-color: v.$checkbox-bg;
     }
 
     &::after {
@@ -129,6 +128,10 @@ h1, h2, h3, h4{
     }
   }
 
+  &__twitter__text {
+    margin-top: 2px;
+  }
+
   &__input:checked + &__text::before {
     background-color: v.$blue;
   }
@@ -140,8 +143,9 @@ h1, h2, h3, h4{
 
   @include m.mq(sp) {
     display: block;
-    margin: 20px auto;
+    margin: 22px auto;
     padding: 20px 0;
+    max-width: 600px;
     width: calc(100% - 40px);
     border-radius: 28px;
     font-size: 1.2rem;

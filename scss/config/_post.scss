@@ -1,21 +1,39 @@
 @use "../global/variables" as v;
+@use "../global/mixin" as m;
 
 .post {
   display: none;
   position: absolute;
-  top: 96px;
+  top: 76px;
   max-width: 846px;
   padding: 54px;
-  width: 100%;
+  width: calc(100% - 40px);
   border-radius: 54px;
   background-color: v.$white;
   z-index: 999;
-  
+
+  @include m.mq(tb) {
+    padding: 54px 0px;
+  }
+
+  @include m.mq(sp) {
+    border-radius: 40px;
+  }
+
   &__inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0px 40px;
+
+    @include m.mq(tb) {
+      gap: 0 20px;
+    }
+
+    @include m.mq(sp) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__close {
@@ -27,6 +45,11 @@
     border-radius: 50%;
     background-color: v.$lightgray;
     cursor: pointer;
+
+    @include m.mq(sp) {
+      top: 20px;
+      right: 20px;
+    }
 
     &::before {
       position: absolute;
@@ -55,16 +78,38 @@
 
   &__left {
     max-width: 376px;
-    width: 100%;
+    width: 50%;
+
+    @include m.mq(tb) {
+      max-width: 336px;
+    }
+
+    @include m.mq(sp) {
+      max-width: none;
+      width: calc(100% - 40px);
+    }
   }
 
   &__right {
     max-width: 376px;
-    width: 100%;
+    width: 50%;
+
+    @include m.mq(tb) {
+      max-width: 336px;
+    }
+
+    @include m.mq(sp) {
+      max-width: none;
+      width: calc(100% - 40px);
+    }
   }
 
   &__contents {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+  }
+
+  &__lead {
+    margin-bottom: 2px;
   }
 
   &__text {
@@ -73,10 +118,15 @@
     border: none;
     border-radius: 8px;
     background-color: v.$lightgray;
+    font-size: 16px;
 
   }
 
   &__learnings {
+
+    @include m.mq(sp) {
+      margin-bottom: 20px;
+    }
 
     &__items {
       display: flex;

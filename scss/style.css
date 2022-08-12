@@ -116,13 +116,7 @@ h1, h2, h3, h4 {
   padding: 20px 20px;
   gap: 20px;
   max-width: 1200px;
-  height: 60%;
   justify-content: center;
-}
-@media screen and (max-width: 1024px) {
-  .main {
-    height: 50%;
-  }
 }
 @media screen and (max-width: 768px) {
   .main {
@@ -206,7 +200,7 @@ h1, h2, h3, h4 {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: #f5f5f8;
+  background-color: #cccccc;
 }
 .checkbox__text::after {
   content: "";
@@ -220,6 +214,9 @@ h1, h2, h3, h4 {
   border-bottom: 2px solid #fff;
   transform: rotate(45deg);
 }
+.checkbox__twitter__text {
+  margin-top: 2px;
+}
 .checkbox__input:checked + .checkbox__text::before {
   background-color: #0f71bc;
 }
@@ -230,8 +227,9 @@ h1, h2, h3, h4 {
 @media screen and (max-width: 768px) {
   .sp-button {
     display: block;
-    margin: 20px auto;
+    margin: 22px auto;
     padding: 20px 0;
+    max-width: 600px;
     width: calc(100% - 40px);
     border-radius: 28px;
     font-size: 1.2rem;
@@ -439,6 +437,7 @@ h1, h2, h3, h4 {
   position: relative;
   border: none;
   top: -4px;
+  cursor: pointer;
 }
 .move-page__previous::before {
   content: "";
@@ -453,6 +452,7 @@ h1, h2, h3, h4 {
   position: relative;
   border: none;
   top: -4px;
+  cursor: pointer;
 }
 .move-page__next::before {
   content: "";
@@ -468,19 +468,40 @@ h1, h2, h3, h4 {
 .post {
   display: none;
   position: absolute;
-  top: 96px;
+  top: 76px;
   max-width: 846px;
   padding: 54px;
-  width: 100%;
+  width: calc(100% - 40px);
   border-radius: 54px;
   background-color: #fff;
   z-index: 999;
+}
+@media screen and (max-width: 1024px) {
+  .post {
+    padding: 54px 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post {
+    border-radius: 40px;
+  }
 }
 .post__inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0px 40px;
+}
+@media screen and (max-width: 1024px) {
+  .post__inner {
+    gap: 0 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post__inner {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .post__close {
   position: absolute;
@@ -491,6 +512,12 @@ h1, h2, h3, h4 {
   border-radius: 50%;
   background-color: #f1f1f1;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .post__close {
+    top: 20px;
+    right: 20px;
+  }
 }
 .post__close::before {
   position: absolute;
@@ -516,14 +543,39 @@ h1, h2, h3, h4 {
 }
 .post__left {
   max-width: 376px;
-  width: 100%;
+  width: 50%;
+}
+@media screen and (max-width: 1024px) {
+  .post__left {
+    max-width: 336px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post__left {
+    max-width: none;
+    width: calc(100% - 40px);
+  }
 }
 .post__right {
   max-width: 376px;
-  width: 100%;
+  width: 50%;
+}
+@media screen and (max-width: 1024px) {
+  .post__right {
+    max-width: 336px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post__right {
+    max-width: none;
+    width: calc(100% - 40px);
+  }
 }
 .post__contents {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+}
+.post__lead {
+  margin-bottom: 2px;
 }
 .post__text {
   width: 100%;
@@ -531,6 +583,12 @@ h1, h2, h3, h4 {
   border: none;
   border-radius: 8px;
   background-color: #f1f1f1;
+  font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+  .post__learnings {
+    margin-bottom: 20px;
+  }
 }
 .post__learnings__items {
   display: flex;
