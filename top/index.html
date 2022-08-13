@@ -47,7 +47,9 @@
 
       <div class="main__left__line"></div>
 
-      <section class="contents__left__bar-chart" id="time-chart"></section>
+      <section class="contents__left__bar-chart bar-chart">
+        <canvas id="time-log-chart"></canvas>
+      </section>
 
     </div>
 
@@ -55,7 +57,9 @@
 
       <section class="about__learnings languages">
         <h2 class="about__learnings__title">学習言語</h2>
-        <div class="about__learnings__pie-chart" id="languages-chart"></div>
+        <div class="about__learnings__doughnut-chart doughnut-chart">
+          <canvas id="languages-chart"></canvas>
+        </div>
         <ul class="about__learnings__items">
           <li class="about__learnings__item">
             <span></span>Javascript
@@ -86,7 +90,9 @@
 
       <section class="about__learnings contents">
         <h2 class="about__learnings__title">学習コンテンツ</h2>
-        <div class="about__learnings__pie-chart" id="contents-chart"></div>
+        <div class="about__learnings__doughnut-chart doughnut-chart">
+          <canvas id="contents-chart"></canvas>
+        </div>
         <ul class="about__learnings__items contents__items">
           <li class="about__learnings__item">
             <span></span>ドットインストール
@@ -217,7 +223,15 @@
 
   <button class="button sp-button" id="sp-modal-open">記録・投稿</button>
 
+  <!-- chart.js-------------------------------------------- -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!-- main.js--------------------------------------------- -->
   <script src="../js/main.js"></script>
+  <script src="../js/chart.js"></script>
 </body>
 </html>
+
+    <!-- chartjs-plugin-datalabels -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>

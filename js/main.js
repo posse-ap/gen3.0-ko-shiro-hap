@@ -37,4 +37,5 @@
     postCompletion.classList.add('js-flex');
     postInner.classList.add('js-off');
   })
+
 }
