@@ -1,5 +1,7 @@
 'use strict';
 
+// Register the plugin to all charts:
+Chart.register(ChartDataLabels);
 
  // bar-char------------------------------------
 
@@ -187,9 +189,9 @@
   const contentsPercent = Object.values(contentsData[0])
 
 
-  Chart.defaults.set('plugins.datalabels', {
-    color: '#FE777B'
-  });
+  // Chart.defaults.set('plugins.datalabels', {
+  //   color: '#FE777B'
+  // });
 
   // 円グラフ作成
   function createDoughnutChart(place, labels, data, color) {
@@ -198,20 +200,26 @@
       data: {
         labels: labels,
         datasets: [{
-          color: '#fff',
+          data: data,
           backgroundColor: color,
           borderWidth: 0,
-          data: data
         }]
       },
       options: {
         responsive: true,
         plugins: {
-          datalabels: {
-            color: '#fff'
-          },
           legend: {
             display: false
+          },
+          datalabels: {
+            labels: {
+              title: {
+                color: '#fff'
+              }
+            },
+            formatter: function(value, context) {
+              return  value + '%';
+            }
           }
         },
       }
