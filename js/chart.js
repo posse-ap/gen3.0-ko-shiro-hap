@@ -137,7 +137,12 @@ Chart.register(ChartDataLabels);
     return e.time;
   })
 
-  const timeLogChart = document.getElementById('time-log-chart')
+  const timeLogChart = document.getElementById('time-log-chart').getContext("2d");;
+  const gradient = timeLogChart.createLinearGradient(0,20,0,100);
+  gradient.addColorStop(0, "#3ccfff");
+  gradient.addColorStop(1.0, "#0f71bc");
+  timeLogChart.fillStyle = gradient;
+  timeLogChart.fillRect(0,0,0,0);
 
   // bar-chart作成
   new Chart(timeLogChart, {
@@ -146,10 +151,33 @@ Chart.register(ChartDataLabels);
       labels: dayData,
       datasets: [{
         data:timeData,
+        backgroundColor: gradient,
+        borderWidth: 2,
+        borderRadius: 10,
       }],
     },
     options: {
-      responsive: false,
+      responsive: true,
+      scales: {
+        x: {
+          grid: {
+              display: false,
+          }
+        },
+        y: {
+          grid: {
+            display: false,
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        datalabels: {
+          display: false
+        }
+      },
     }
   })
 
@@ -188,10 +216,6 @@ Chart.register(ChartDataLabels);
   const contentsLabels = Object.keys(contentsData[0])
   const contentsPercent = Object.values(contentsData[0])
 
-
-  // Chart.defaults.set('plugins.datalabels', {
-  //   color: '#FE777B'
-  // });
 
   // 円グラフ作成
   function createDoughnutChart(place, labels, data, color) {
