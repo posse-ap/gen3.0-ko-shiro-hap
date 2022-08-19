@@ -215,13 +215,18 @@
       </section>
   </main>
 
-  <div class="move-page">
-    <button class="move-page__previous"></button>
-    <div class="move-page__date">2022年8月5日</div>
-    <button class="move-page__next"></button>
+  <div class="calendar" id="calendar">
+    <div class="calendar__close" id="calendar-close"></div>
+  </div>
+
+  <div class="calendar__move-page">
+    <button class="calendar__previous" onclick="prev()"></button>
+    <div class="calendar__date" id="calendar-open">2022年8月5日</div>
+    <button class="calendar__next" onclick="next()"></button>
   </div>
 
   <button class="button sp-button" id="sp-modal-open">記録・投稿</button>
+
   <!-- chart.js-------------------------------------------- -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -231,6 +236,7 @@
   <!-- main.js--------------------------------------------- -->
   <script src="../js/main.js"></script>
   <script src="../js/chart.js"></script>
+  <script src="../js/calendar.js"></script>
 
 </body>
 </html>

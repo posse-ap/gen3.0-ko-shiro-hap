@@ -12,8 +12,6 @@
 
   // 記録・投稿ボタンクリック時にモーダルを開く
   modalOpen.addEventListener('click',()=> {
-    console.log('aaa');
-    // console.log(header);
     modal.classList.add('js-block');
     fullPage.classList.add('js-body');
   })

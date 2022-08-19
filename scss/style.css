@@ -435,7 +435,82 @@ h1, h2, h3, h4 {
   gap: 0;
 }
 
-.move-page {
+.calendar {
+  position: fixed;
+  top: 76px;
+  max-width: 846px;
+  padding: 54px;
+  width: calc(100% - 40px);
+  border-radius: 54px;
+  background-color: #fff;
+  z-index: 100;
+}
+@media screen and (max-width: 950px) {
+  .calendar {
+    padding: 54px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .calendar {
+    padding-bottom: 86px;
+    margin-left: -20px;
+    width: 100%;
+    border-radius: 40px 40px 0 0;
+  }
+}
+.calendar__close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .calendar__close {
+    top: 20px;
+    right: 20px;
+  }
+}
+.calendar__close::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: calc(50% - 1px);
+  right: calc(50% - 10px);
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  transform: rotate(45deg);
+}
+.calendar__close::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: calc(50% - 1px);
+  right: calc(50% - 10px);
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  transform: rotate(-45deg);
+}
+.calendar table {
+  outline: 2px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+}
+.calendar th {
+  color: #000;
+}
+.calendar th, .calendar td {
+  outline: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.calendar__move-page {
   display: flex;
   gap: 16px;
   margin-top: 20px;
@@ -444,17 +519,17 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
-  .move-page {
+  .calendar__move-page {
     font-size: 14px;
   }
 }
-.move-page__previous {
+.calendar__previous {
   position: relative;
   border: none;
   top: -4px;
   cursor: pointer;
 }
-.move-page__previous::before {
+.calendar__previous::before {
   content: "";
   width: 7px;
   height: 7px;
@@ -463,13 +538,13 @@ h1, h2, h3, h4 {
   position: absolute;
   transform: rotate(-135deg);
 }
-.move-page__next {
+.calendar__next {
   position: relative;
   border: none;
   top: -4px;
   cursor: pointer;
 }
-.move-page__next::before {
+.calendar__next::before {
   content: "";
   position: absolute;
   left: 0px;

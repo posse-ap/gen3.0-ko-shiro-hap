@@ -1,0 +1,148 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+
+.calendar {
+  // display: none;
+  position: fixed;
+  top: 76px;
+  max-width: 846px;
+  padding: 54px;
+  width: calc(100% - 40px);
+  // width: 100%;
+  // height: 1000px;
+  border-radius: 54px;
+  background-color: v.$white;
+  z-index: 100;
+
+  @include m.mq(tb) {
+    padding: 54px 0;
+  }
+
+  @include m.mq(sp) {
+    padding-bottom: 86px;
+    margin-left: -20px;
+    width: 100%;
+    border-radius: 40px 40px 0 0;
+  }
+
+  // &__inner {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: center;
+  //   gap: 0px 40px;
+
+  //   @include m.mq(tb) {
+  //     gap: 0 20px;
+  //   }
+
+  //   @include m.mq(sp) {
+  //     flex-direction: column;
+  //     align-items: center;
+  //   }
+  // }
+
+  &__close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: v.$lightgray;
+    cursor: pointer;
+
+    @include m.mq(sp) {
+      top: 20px;
+      right: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      top: calc(50% - 1px);
+      right: calc(50% - 10px);
+      width: 20px;
+      height: 2px;
+      background-color: v.$black;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: calc(50% - 1px);
+      right: calc(50% - 10px);
+      width: 20px;
+      height: 2px;
+      background-color: v.$black;
+      transform: rotate(-45deg);
+    }
+  }
+
+  & table {
+    outline: 2px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  & th {
+      color: #000;
+  }
+  & th, td {
+      outline: 1px solid #ddd;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+  }
+
+
+  &__move-page {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+    @include m.mq(sp) {
+      font-size: 14px;
+    }
+  }
+
+  &__previous {
+    position: relative;
+    border: none;
+    top: -4px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-top: solid 2px v.$blue;
+      border-right: solid 2px v.$blue;
+      position: absolute;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__next {
+    position: relative;
+    border: none;
+    top: -4px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0px;
+      width: 7px;
+      height: 7px;
+      border-top: solid 2px v.$blue;
+      border-right: solid 2px v.$blue;
+      transform: rotate(45deg);
+    }
+  }
+}

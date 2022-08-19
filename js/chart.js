@@ -126,7 +126,7 @@ Chart.register(ChartDataLabels);
     {
         "day": 30,
         "time": 8
-    }
+    },
   ]
 
   const dayData = barChartData.map(function(e){
@@ -161,13 +161,20 @@ Chart.register(ChartDataLabels);
       scales: {
         x: {
           grid: {
-              display: false,
-          }
+            display: false,
+          },
+          ticks: {
+            stepSize: 2,
+          },
         },
         y: {
+          beginAtZero: true,
           grid: {
             display: false,
-          }
+          },
+          ticks: {
+            stepSize: 2,
+          },
         }
       },
       plugins: {
