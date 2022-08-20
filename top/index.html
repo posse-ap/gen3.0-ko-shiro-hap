@@ -114,7 +114,7 @@
           <div class="post__contents">
             <h3 class="post__lead">学習日</h3>
             <label for="studied-date">
-              <input class="post__text" type="text" name="date" id="studied-date" placeholder="2022年8月5日">
+              <input class="post__text" type="input" name="date" id="studied-date">
             </label>
           </div>
           <div class="post__learnings">
@@ -215,14 +215,23 @@
       </section>
   </main>
 
-  <div class="calendar" id="calendar">
-    <div class="calendar__close" id="calendar-close"></div>
-  </div>
+  <section class="calendar" id="calendar-modal">
+    <div class="calendar__close" id="calendar-close">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+        <div class="calendar__move-page">
+          <button class="calendar__previous" id="prev"></button>
+          <div class="calendar__date" id="calendar-date"></div>
+          <button class="calendar__next" id="next"></button>
+        </div>
+    <div class="calendar__inner" id="calendar"></div>
+    <button class="button calendar__button" id="calendar-button">決定</button>
+  </section>
 
   <div class="calendar__move-page">
-    <button class="calendar__previous" onclick="prev()"></button>
-    <div class="calendar__date" id="calendar-open">2022年8月5日</div>
-    <button class="calendar__next" onclick="next()"></button>
+    <button class="calendar__previous" id="home-prev"></button>
+    <div class="calendar__date" id="home-calendar-date"></div>
+    <button class="calendar__next" id="home-next"></button>
   </div>
 
   <button class="button sp-button" id="sp-modal-open">記録・投稿</button>

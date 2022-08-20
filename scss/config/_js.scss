@@ -26,3 +26,10 @@
   background-color: rgba($color: v.$black, $alpha: 0.5);
   z-index: 100;
 }
+
+
+.js-selected-day {
+  background-color: v.$blue;
+  color: #fff;
+  border-radius: 50%;
+}

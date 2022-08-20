@@ -28,9 +28,10 @@
     postCompletion.classList.remove('js-flex')
     postInner.classList.remove('js-off');
     fullPage.classList.remove('js-body');
+    fullPage.classList.remove('js-post-opened');
   })
 
-  //
+  // 投稿完了時の画面遷移
   postButton.addEventListener('click',()=> {
     postCompletion.classList.add('js-flex');
     postInner.classList.add('js-off');
