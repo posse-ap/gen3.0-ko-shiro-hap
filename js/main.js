@@ -31,10 +31,23 @@
     fullPage.classList.remove('js-post-opened');
   })
 
-  // 投稿完了時の画面遷移
-  postButton.addEventListener('click',()=> {
-    postCompletion.classList.add('js-flex');
+  // 投稿ローディング、5秒後に投稿完了
+  const loader = document.getElementById('post-loader');
+  postButton.addEventListener('click', () => {
+    loader.classList.add('js-flex');
     postInner.classList.add('js-off');
+
+    setTimeout(() => {
+      console.log("Execution 5sec");
+      loader.classList.remove('js-flex');
+      postCompletion.classList.add('js-flex');
+    }, 5000);
   })
+
+  // 投稿完了時
+  // postButton.addEventListener('click',()=> {
+  //   postCompletion.classList.add('js-flex');
+  //   postInner.classList.add('js-off');
+  // })
 
 }

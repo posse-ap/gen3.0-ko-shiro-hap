@@ -3,32 +3,6 @@
 
 
 .calendar {
-  display: none;
-  // display: flex;
-  position: fixed;
-  gap: 20px;
-  top: 76px;
-  left: 50%;
-  max-width: 846px;
-  padding: 54px;
-  width: calc(100% - 40px);
-  flex-direction: column;
-  border-radius: 54px;
-  background-color: v.$white;
-  z-index: 100;
-  transform: translateX(-50%);
-
-  @include m.mq(tb) {
-    padding: 54px 20px;
-  }
-
-  @include m.mq(sp) {
-    padding-bottom: 86px;
-    width: calc(100% - 40px);
-    height: 100%;
-    border-radius: 40px 40px 0 0;
-  }
-
 
   &__close {
     position: absolute;
