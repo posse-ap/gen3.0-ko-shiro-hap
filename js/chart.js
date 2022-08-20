@@ -3,137 +3,22 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 
- // bar-char------------------------------------
-
 {
-  let barChartData = [
-    {
-        "day": 1,
-        "time": 3
-    },
-    {
-        "day": 2,
-        "time": 4
-    },
-    {
-        "day": 3,
-        "time": 5
-    },
-    {
-        "day": 4,
-        "time": 3
-    },
-    {
-        "day": 5,
-        "time": 0
-    },
-    {
-        "day": 6,
-        "time": 0
-    },
-    {
-        "day": 7,
-        "time": 4
-    },
-    {
-        "day": 8,
-        "time": 2
-    },
-    {
-        "day": 9,
-        "time": 2
-    },
-    {
-        "day": 10,
-        "time": 8
-    },
-    {
-        "day": 11,
-        "time": 8
-    },
-    {
-        "day": 12,
-        "time": 2
-    },
-    {
-        "day": 13,
-        "time": 2
-    },
-    {
-        "day": 14,
-        "time": 1
-    },
-    {
-        "day": 15,
-        "time": 7
-    },
-    {
-        "day": 16,
-        "time": 4
-    },
-    {
-        "day": 17,
-        "time": 4
-    },
-    {
-        "day": 18,
-        "time": 3
-    },
-    {
-        "day": 19,
-        "time": 3
-    },
-    {
-        "day": 20,
-        "time": 3
-    },
-    {
-        "day": 21,
-        "time": 2
-    },
-    {
-        "day": 22,
-        "time": 2
-    },
-    {
-        "day": 23,
-        "time": 6
-    },
-    {
-        "day": 24,
-        "time": 2
-    },
-    {
-        "day": 25,
-        "time": 2
-    },
-    {
-        "day": 26,
-        "time": 1
-    },
-    {
-        "day": 27,
-        "time": 1
-    },
-    {
-        "day": 28,
-        "time": 1
-    },
-    {
-        "day": 29,
-        "time": 7
-    },
-    {
-        "day": 30,
-        "time": 8
-    },
-  ]
 
-  const dayData = barChartData.map(function(e){
+  // bar-chart-----------------------------------
+
+  const TIME_LOG_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_time.json';
+  fetch(TIME_LOG_DATA_URL).then((response) => response.json()).then((jsonData) => {
+    // JSONデータを扱った処理
+    createTimeLogChart(jsonData);
+  })
+
+  function createTimeLogChart(data) {
+  const dayData = data.map(function(e){
     return e.day;
   })
 
-  const timeData = barChartData.map(function(e){
+  const timeData = data.map(function(e){
     return e.time;
   })
 
@@ -144,7 +29,7 @@ Chart.register(ChartDataLabels);
   timeLogChart.fillStyle = gradient;
   timeLogChart.fillRect(0,0,0,0);
 
-  // bar-chart作成
+  // 棒グラフ作成
   new Chart(timeLogChart, {
     type: 'bar',
     data: {
@@ -195,41 +80,47 @@ Chart.register(ChartDataLabels);
       },
     }
   })
+}
 
   // pie-chart-----------------------------------
 
-  let languagesData = [
-    {
-        "HTML": 30,
-        "CSS": 20,
-        "JavaScript": 10,
-        "PHP": 5,
-        "Laravel": 5,
-        "SQL": 20,
-        "SHELL": 20,
-        "その他": 10
-    }
-]
+  // 学習言語のデータ取得
+  const LANGUAGE_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json';
+  fetch(LANGUAGE_DATA_URL).then((response) => response.json()).then((jsonData) => {
+    // JSONデータを扱った処理
+    createLanguagesChart(jsonData);
+  })
 
-  let contentsData = [
-    {
-        "N予備校": 40,
-        "ドットインストール": 20,
-        "課題": 40
-    }
-  ]
+  // 学習コンテンツのデータ取得
+  const CONTENTS_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_language.json';
+  fetch(CONTENTS_DATA_URL).then((response) => response.json()).then((jsonData) => {
+    // JSONデータを扱った処理
+    createContentsChart(jsonData);
+  })
+
+
 
   const bgColor = [
     "#0000ff", "#4682b4", "#40e0d0", "#87ceeb", "#dda0dd", "#9400d3", "#0000cd", "#00008b"
   ]
 
-  const languagesChart = document.getElementById('languages-chart')
-  const languagesLabels = Object.keys(languagesData[0])
-  const languagesPercent = Object.values(languagesData[0])
+  // 学習言語のドーナツチャート作成
+  function createLanguagesChart(data) {
+    const languagesChart = document.getElementById('languages-chart');
+    const languagesLabels = Object.keys(data[0]);
+    const languagesPercent = Object.values(data[0]);
 
-  const contentsChart = document.getElementById('contents-chart')
-  const contentsLabels = Object.keys(contentsData[0])
-  const contentsPercent = Object.values(contentsData[0])
+    createDoughnutChart(languagesChart, languagesLabels, languagesPercent, bgColor)
+  }
+
+  // 学習コンテンツのドーナツチャート作成
+  function createContentsChart(data) {
+    const contentsChart = document.getElementById('contents-chart')
+    const contentsLabels = Object.keys(data[0])
+    const contentsPercent = Object.values(data[0])
+
+    createDoughnutChart(contentsChart, contentsLabels, contentsPercent, bgColor)
+  }
 
 
   // 円グラフ作成
@@ -265,6 +156,4 @@ Chart.register(ChartDataLabels);
     })
   }
 
-  createDoughnutChart(languagesChart, languagesLabels, languagesPercent, bgColor)
-  createDoughnutChart(contentsChart, contentsLabels, contentsPercent, bgColor)
 }
