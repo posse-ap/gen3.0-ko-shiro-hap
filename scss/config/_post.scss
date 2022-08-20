@@ -2,26 +2,6 @@
 @use "../global/mixin" as m;
 
 .post {
-  display: none;
-  position: fixed;
-  top: 76px;
-  max-width: 846px;
-  padding: 54px;
-  width: calc(100% - 40px);
-  border-radius: 54px;
-  background-color: v.$white;
-  z-index: 100;
-
-  @include m.mq(tb) {
-    padding: 54px 0;
-  }
-
-  @include m.mq(sp) {
-    padding-bottom: 86px;
-    margin-left: -20px;
-    width: 100%;
-    border-radius: 40px 40px 0 0;
-  }
 
   &__inner {
     display: flex;
@@ -155,48 +135,82 @@
       width: calc(100% - 40px);
     }
   }
-}
 
-//post--completion----------------------------------------------
-.post--completion {
-  display: none;
-  height: 416px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  @include m.mq(sp) {
-    height: calc(100vh - 76px);
-  }
-
-  &__lead {
-    color: v.$green;
-  }
-
-  &__icon {
-    margin: 8px 0 16px;
-    font-size: 72px;
-    color: v.$green;
-
-    & i {
-      font-size: 72px;
-    }
-  }
-
-  &__text {
-    width: 100%;
-    line-height: 1.5rem;
-    letter-spacing: 0.1rem;
+  // post--loading----------------------------------------
+  &--loader {
+    display: none;
+    height: 416px;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    z-index: 150;
 
     @include m.mq(sp) {
-      font-size: 12px;
+      height: calc(100vh - 76px);
+    }
+
+    &::after {
+      animation: loader 0.7s linear infinite;
+      border: 10px solid v.$blue;
+      border-radius: 50%;
+      // border-right: 10px solid rgba(v.$blue, 0.2);
+      border-top: 10px solid rgba(v.$white, 0.2);
+      content: "";
+      height: 70px;
+      width: 70px;
+    }
+  }
+
+  @keyframes loader {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  //post--completion--------------------------------------
+  &--completion {
+    display: none;
+    height: 416px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include m.mq(sp) {
+      height: calc(100vh - 76px);
+    }
+
+    &__lead {
+      color: v.$green;
+    }
+
+    &__icon {
+      margin: 8px 0 16px;
+      font-size: 72px;
+      color: v.$green;
+
+      & i {
+        font-size: 72px;
+      }
+    }
+
+    &__text {
+      width: 100%;
+      line-height: 1.5rem;
+      letter-spacing: 0.1rem;
+
+      @include m.mq(sp) {
+        font-size: 12px;
+      }
     }
   }
 }
 
-// checkbox__twitter-------------------------------------------
-.checkbox__twitter {
+  // checkbox__twitter--------------------------------------
+  .checkbox__twitter {
   background-color: v.$white;
 
   &__text {
