@@ -118,6 +118,7 @@ h1, h2, h3, h4{
 .checkbox {
   display: block;
   padding: 8px 12px;
+  padding-left: 0;
   cursor: pointer;
   background-color: v.$lightgray;
   border-radius: 30px;

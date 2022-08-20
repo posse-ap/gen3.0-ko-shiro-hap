@@ -216,6 +216,7 @@ h1, h2, h3, h4 {
 .checkbox {
   display: block;
   padding: 8px 12px;
+  padding-left: 0;
   cursor: pointer;
   background-color: #f1f1f1;
   border-radius: 30px;
@@ -419,7 +420,7 @@ h1, h2, h3, h4 {
 }
 @media screen and (max-width: 768px) {
   .about__learnings__title {
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: normal;
     letter-spacing: normal;
   }
@@ -526,7 +527,7 @@ h1, h2, h3, h4 {
 }
 @media screen and (max-width: 768px) {
   .calendar__move-page {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
 .calendar__date {
@@ -567,7 +568,7 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   padding: 15px 60px;
   font-size: 1.2rem;
-  border-radius: 2rem;
+  border-radius: 50px;
 }
 
 .post__inner {
@@ -667,7 +668,7 @@ h1, h2, h3, h4 {
   border: none;
   border-radius: 8px;
   background-color: #f1f1f1;
-  font-size: 16px;
+  font-size: 1rem;
 }
 @media screen and (max-width: 768px) {
   .post__learnings {
@@ -811,7 +812,7 @@ h1, h2, h3, h4 {
 }
 @media screen and (max-width: 768px) {
   .error__text {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
 }
 
