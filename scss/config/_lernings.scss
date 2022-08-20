@@ -15,7 +15,7 @@
   &__title {
 
     @include m.mq(sp) {
-      font-size: 14px;
+      font-size: 0.9rem;
       line-height: normal;
       letter-spacing: normal;
     }

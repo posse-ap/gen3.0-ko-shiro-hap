@@ -68,7 +68,7 @@
     font-weight: bold;
 
     @include m.mq(sp) {
-      font-size: 14px;
+      font-size: 0.9rem;
     }
   }
 
@@ -115,6 +115,6 @@
     margin: 0 auto;
     padding:15px 60px;
     font-size: 1.2rem;
-    border-radius: 2rem;
+    border-radius: 50px;
   }
 }
