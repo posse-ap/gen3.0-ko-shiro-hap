@@ -3,6 +3,9 @@
 
 
 .calendar {
+  @include m.mq(sp) {
+    height: calc(100% + 76px);
+  }
 
   &__close {
     position: absolute;

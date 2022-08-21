@@ -23,3 +23,16 @@
     margin: 12px 0;
   }
 }
+
+
+.contents-chart {
+  height: 270px;
+
+  @include m.mq(sp) {
+    height: auto;
+  }
+  @include m.mq(xs) {
+    margin-top: 8px;
+    height: 270px;
+  }
+}

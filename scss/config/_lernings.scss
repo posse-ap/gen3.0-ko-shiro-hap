@@ -8,8 +8,12 @@
   background-color: v.$white;
   box-shadow: v.$box-shadow;
 
+  @include m.mq(tb) {
+    padding: 10px;
+  }
+
   @include m.mq(sp) {
-    padding: 16px;
+    padding: 10px;
   }
 
   &__title {
@@ -29,7 +33,7 @@
 
   &__item {
     font-size: 14px;
-    line-height: 2rem;
+    line-height: 1.8rem;
 
     @include m.mq(tb) {
       line-height: 1.5rem;
@@ -43,8 +47,8 @@
     & span {
       display: inline-block;
       margin-right: 2px;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background-color: v.$lightblue;
 

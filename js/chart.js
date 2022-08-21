@@ -82,17 +82,18 @@ Chart.register(ChartDataLabels);
   })
 }
 
+
   // pie-chart-----------------------------------
 
   // 学習言語のデータ取得
-  const LANGUAGE_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json';
+  const LANGUAGE_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_language.json';
   fetch(LANGUAGE_DATA_URL).then((response) => response.json()).then((jsonData) => {
     // JSONデータを扱った処理
     createLanguagesChart(jsonData);
   })
 
   // 学習コンテンツのデータ取得
-  const CONTENTS_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_language.json';
+  const CONTENTS_DATA_URL = 'http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json';
   fetch(CONTENTS_DATA_URL).then((response) => response.json()).then((jsonData) => {
     // JSONデータを扱った処理
     createContentsChart(jsonData);
@@ -115,7 +116,7 @@ Chart.register(ChartDataLabels);
 
   // 学習コンテンツのドーナツチャート作成
   function createContentsChart(data) {
-    const contentsChart = document.getElementById('contents-chart')
+    const contentsChart = document.getElementById('contents-chart');
     const contentsLabels = Object.keys(data[0])
     const contentsPercent = Object.values(data[0])
 
@@ -125,6 +126,8 @@ Chart.register(ChartDataLabels);
 
   // 円グラフ作成
   function createDoughnutChart(place, labels, data, color) {
+
+
     new Chart(place, {
       type: 'doughnut',
       data: {
@@ -137,9 +140,17 @@ Chart.register(ChartDataLabels);
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
+        aspectRatio: 1/1,
         plugins: {
           legend: {
-            display: false
+            position: 'bottom',
+            align: 'start',
+            labels: {
+              padding: 10,
+              usePointStyle: true,
+              pointStyle: 'circle',
+            }
           },
           datalabels: {
             labels: {
@@ -153,7 +164,7 @@ Chart.register(ChartDataLabels);
           }
         },
       }
-    })
+    });
   }
 
 }

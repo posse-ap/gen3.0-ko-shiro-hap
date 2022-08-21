@@ -176,7 +176,7 @@ h1, h2, h3, h4 {
 
 .modal {
   display: none;
-  position: fixed;
+  position: absolute;
   gap: 20px;
   top: 76px;
   left: 50%;
@@ -406,6 +406,21 @@ h1, h2, h3, h4 {
   }
 }
 
+.contents-chart {
+  height: 270px;
+}
+@media screen and (max-width: 768px) {
+  .contents-chart {
+    height: auto;
+  }
+}
+@media screen and (max-width: 392px) {
+  .contents-chart {
+    margin-top: 8px;
+    height: 270px;
+  }
+}
+
 .about__learnings {
   padding: 20px;
   width: 50%;
@@ -413,9 +428,14 @@ h1, h2, h3, h4 {
   background-color: #fff;
   box-shadow: 0px 3px 3px 3px rgba(173, 216, 230, 0.3);
 }
+@media screen and (max-width: 950px) {
+  .about__learnings {
+    padding: 10px;
+  }
+}
 @media screen and (max-width: 768px) {
   .about__learnings {
-    padding: 16px;
+    padding: 10px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -432,7 +452,7 @@ h1, h2, h3, h4 {
 }
 .about__learnings__item {
   font-size: 14px;
-  line-height: 2rem;
+  line-height: 1.8rem;
 }
 @media screen and (max-width: 950px) {
   .about__learnings__item {
@@ -448,8 +468,8 @@ h1, h2, h3, h4 {
 .about__learnings__item span {
   display: inline-block;
   margin-right: 2px;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #97b9d1;
 }
@@ -465,6 +485,11 @@ h1, h2, h3, h4 {
   gap: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .calendar {
+    height: calc(100% + 76px);
+  }
+}
 .calendar__close {
   position: absolute;
   left: 32px;
@@ -571,6 +596,11 @@ h1, h2, h3, h4 {
   border-radius: 50px;
 }
 
+@media screen and (max-width: 768px) {
+  .post {
+    height: calc(100% + 76px);
+  }
+}
 .post__inner {
   display: flex;
   flex-wrap: wrap;
@@ -584,6 +614,10 @@ h1, h2, h3, h4 {
 }
 @media screen and (max-width: 768px) {
   .post__inner {
+    padding-bottom: 20px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    background-color: #fff;
     flex-direction: column;
     align-items: center;
   }

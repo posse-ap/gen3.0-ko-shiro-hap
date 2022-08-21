@@ -16,3 +16,4 @@
 14:14th fetchAPIでJSONデータ取得
 15:15th ローダー実装
 16:16th twitter連携実装
+17:17th chart.jsのlegend実装

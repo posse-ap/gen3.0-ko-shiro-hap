@@ -2,6 +2,9 @@
 @use "../global/mixin" as m;
 
 .post {
+  @include m.mq(sp) {
+    height: calc(100% + 76px);
+  }
 
   &__inner {
     display: flex;
@@ -14,6 +17,10 @@
     }
 
     @include m.mq(sp) {
+      padding-bottom: 20px;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      background-color: v.$white;
       flex-direction: column;
       align-items: center;
     }

@@ -78,13 +78,14 @@ h1, h2, h3, h4{
 // modal-----------------------------------------
 .modal {
   display: none;
-  position: fixed;
+  position: absolute;
   gap: 20px;
   top: 76px;
   left: 50%;
   max-width: 846px;
   padding: 54px;
   width: calc(100% - 40px);
+  // height: calc(100% + 76px);
   flex-direction: column;
   border-radius: 54px;
   background-color: v.$white;
