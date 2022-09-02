@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,14 @@
   <title>Quiz</title>
 
   <link rel="stylesheet" href="../scss/style.css">
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <header class="header">
     <div class="header__inner">
@@ -46,12 +50,13 @@
         <div class="hamburger__nav__foot">
           <div class="hamburger__nav__button">
             <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="contact__link">
-              <img src="../img/icon/icon-line.svg" alt="LINEアイコン" class="line__icon">POSSE公式LINE追加<img src="../img/icon/icon-link-light.svg" alt="LINEリンク" class="link__icon">/>
+              <img src="../img/icon/icon-line.svg" alt="LINEアイコン" class="line__icon">POSSE公式LINE追加<img
+                src="../img/icon/icon-link-light.svg" alt="LINEリンク" class="link__icon">/>
             </a>
           </div>
           <div class="hamburger__nav__official__link">
             <a href="https://posse-ap.com/" alt="公式サイト">
-              POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク"/>
+              POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク" />
             </a>
           </div>
           <ul class="hamburger__nav__list">
@@ -91,7 +96,7 @@
       <div class="contact__content">
         <div class="contact__heading">
           <div class="contact__icon line__icon">
-            <img src="../img/icon/icon-line.svg" alt="LINE"/>
+            <img src="../img/icon/icon-line.svg" alt="LINE" />
           </div>
           <h2 class="contact__title">POSSE 公式LINE</h2>
         </div>
@@ -100,7 +105,7 @@
         </p>
         <div class="contact__button">
           <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="contact__link">
-            LINE追加<img src="../img/icon/icon-link-gray-dark.svg" alt="LINEリンク"/>
+            LINE追加<img src="../img/icon/icon-link-gray-dark.svg" alt="LINEリンク" />
           </a>
         </div>
       </div>
@@ -114,7 +119,7 @@
       </div>
       <div class="footer__official__link">
         <a href="https://posse-ap.com/" alt="公式サイト">
-          POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク"/>
+          POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク" />
         </a>
       </div>
       <nav class="nav">
@@ -141,4 +146,5 @@
   <script src="../js/common.js"></script>
   <script src="../js/quiz.js"></script>
 </body>
+
 </html>
