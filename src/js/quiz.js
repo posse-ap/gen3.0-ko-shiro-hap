@@ -6,14 +6,13 @@ function clickFunction(selected_id, questionId, valid) {
   const correct = document.getElementById(`js__quiz${questionId}__correct`);
   const wrong = document.getElementById(`js__quiz${questionId}__wrong`);
 
+  buttons.forEach((element) => {
+    element.style.pointerEvents = "none";
+  });
   selectedButton.classList.add("js-selected");
-  if (valid === 1) {
+  if (valid == 1) {
     correct.classList.add("js-on");
   } else {
     wrong.classList.add("js-on");
   }
-
-  buttons.forEach((element) => {
-    element.style.pointerEvents = "none";
-  });
 }

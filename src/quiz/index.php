@@ -158,7 +158,7 @@ shuffle($questions);
 
           </div>
         </div>
-        <div class="judgement judgement__correct" id="js__quiz<?= $question_number; ?>__correct">
+        <div class="judgement judgement__correct" id="js__quiz<?= $question_id; ?>__correct">
           <h3>正解!</h3>
           <p><span>A</span><?= $correct_text; ?></p>
         </div>
