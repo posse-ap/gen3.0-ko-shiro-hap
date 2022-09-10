@@ -1,3 +1,16 @@
+<?php
+
+// PDOの設定を呼び出す
+require('../pdo.php');
+
+$questions_stmt = $pdo->prepare('SELECT * FROM questions');
+$questions_stmt->execute();
+$questions = $questions_stmt->fetchAll();
+print_r($questions);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 

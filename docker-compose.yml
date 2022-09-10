@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   web:
@@ -27,7 +27,14 @@ services:
     volumes:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/sql:/docker-entrypoint-initdb.d
-      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/my.conf:/etc/mysql/conf.d
     environment:
       - MYSQL_DATABASE=quiz
       - MYSQL_ROOT_PASSWORD=0724
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 8888:80
+    depends_on:
+      - db
