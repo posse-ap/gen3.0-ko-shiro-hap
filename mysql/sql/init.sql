@@ -85,4 +85,4 @@ VALUES (1, '約28万人', false), (1, '約79万人', true), (1, '約183万人', 
         3,
         'Information  on Tool',
         false
-    ), (4, 'Society 5.0', false), (4, 'CyPhy', false), (4, 'SDGs', true), (5, 'Web3.false', true), (5, 'NFT', false), (5, 'メタバース', false), (6, '約2倍', false), (6, '約5倍', true), (6, '約11倍', false);
+    ), (4, 'Society 5.0', true), (4, 'CyPhy', false), (4, 'SDGs', false), (5, 'Web3.0', true), (5, 'NFT', false), (5, 'メタバース', false), (6, '約2倍', false), (6, '約5倍', true), (6, '約11倍', false);

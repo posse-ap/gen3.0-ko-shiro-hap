@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 // PDOの設定を呼び出す
 require('../pdo.php');
@@ -144,10 +145,13 @@ $questions = $questions_stmt->fetchAll();
 
             <!-- 問題ごとの選択肢を繰り返す -->
             <?php foreach ($choices as $choice) : {
+            $choice_id = $choice['id'];
             $choice_text = $choice['choice'];
+            $choice_valid = $choice['valid'];
           }
           ?>
-            <button class="answer__item quiz1__btn"><?= $choice_text; ?></button>
+            <button class="answer__item quiz<?= $question_id ?>__btn" id="<?= $choice_id ?>"
+              onclick="clickFunction(<?= $choice_id ?>, <?= $question_id; ?>, <?= $choice_valid; ?>)"><?= $choice_text; ?></button>
             <?php endforeach; ?>
 
           </div>
