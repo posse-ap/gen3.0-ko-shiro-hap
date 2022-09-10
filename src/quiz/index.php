@@ -8,8 +8,10 @@ require('../pdo.php');
 $questions_stmt = $pdo->prepare('SELECT * FROM questions');
 $questions_stmt->execute();
 $questions = $questions_stmt->fetchAll();
-// print_r($questions);
 
+// 問題をシャッフルする
+$count = range(1, count($questions));
+shuffle($questions);
 ?>
 
 
@@ -106,7 +108,7 @@ $questions = $questions_stmt->fetchAll();
 
       <!-- 問題ごとに繰り返す -->
       <?php
-      foreach ($questions as $question) : {
+      foreach ($questions as $index => $question) : {
 
         // 問題の番号、タイトル、写真URLを格納
         $question_id = $question['question_id'];
@@ -134,7 +136,7 @@ $questions = $questions_stmt->fetchAll();
       ?>
 
       <div class="quiz__inner">
-        <h2 class="quiz__icon quiz__number" id="quizNumber"><?= $question_id; ?></h2>
+        <h2 class="quiz__icon quiz__number" id="quizNumber">Q<?= $index + 1; ?></h2>
         <h3 class="quiz__text"><?= $question_title; ?></h3>
         <div class="quiz__caption">
           <img src="../img/quiz/<?= $question_image; ?>" alt="クイズ画像">
@@ -156,7 +158,7 @@ $questions = $questions_stmt->fetchAll();
 
           </div>
         </div>
-        <div class="judgement judgement__correct" id="js__quiz<?= $question_id; ?>__correct">
+        <div class="judgement judgement__correct" id="js__quiz<?= $question_number; ?>__correct">
           <h3>正解!</h3>
           <p><span>A</span><?= $correct_text; ?></p>
         </div>
