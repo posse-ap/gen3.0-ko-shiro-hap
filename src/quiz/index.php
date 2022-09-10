@@ -3,10 +3,11 @@
 // PDOの設定を呼び出す
 require('../pdo.php');
 
+// 問題を取得
 $questions_stmt = $pdo->prepare('SELECT * FROM questions');
 $questions_stmt->execute();
 $questions = $questions_stmt->fetchAll();
-print_r($questions);
+// print_r($questions);
 
 ?>
 
@@ -101,6 +102,81 @@ print_r($questions);
 
     <section class="quiz" id="quiz__section">
       <!-- javascript -->
+
+      <!-- 問題ごとに繰り返す -->
+      <?php
+      foreach ($questions as $question) : {
+
+        // 問題の番号、タイトル、写真URLを格納
+        $question_id = $question['question_id'];
+        $question_title = $question['question'];
+        $question_image = $question['image'];
+
+        // 問題番号と一致した選択肢を取得
+        $choices_stmt = $pdo->prepare('SELECT * FROM choices WHERE question_id = ?');
+        $choices_stmt->execute([$question_id]);
+        $choices = $choices_stmt->fetchAll();
+
+        // 正解の選択肢のみ獲得
+        $choices_correct__stmt = $pdo->prepare('SELECT choice FROM choices WHERE question_id = ? AND valid = 1');
+        $choices_correct__stmt->execute([$question_id]);
+        $choice_correct = $choices_correct__stmt->fetch();
+        $correct_text = $choice_correct['choice'];
+
+        // 引用文を取得
+
+        $notes_stmt = $pdo->prepare('SELECT note FROM notes WHERE question_id = ?');
+        $notes_stmt->execute([$question_id]);
+        $note = $notes_stmt->fetch();
+        $note_text = $note['note'];
+      }
+      ?>
+
+      <div class="quiz__inner">
+        <h2 class="quiz__icon quiz__number" id="quizNumber"><?= $question_id; ?></h2>
+        <h3 class="quiz__text"><?= $question_title; ?></h3>
+        <div class="quiz__caption">
+          <img src="../img/quiz/<?= $question_image; ?>" alt="クイズ画像">
+        </div>
+        <div class="answer">
+          <h2 class="quiz__icon answer__icon">A</h2>
+          <div class="answer__list">
+
+            <!-- 問題ごとの選択肢を繰り返す -->
+            <?php foreach ($choices as $choice) : {
+            $choice_text = $choice['choice'];
+          }
+          ?>
+            <button class="answer__item quiz1__btn"><?= $choice_text; ?></button>
+            <?php endforeach; ?>
+
+          </div>
+        </div>
+        <div class="judgement judgement__correct" id="js__quiz<?= $question_id; ?>__correct">
+          <h3>正解!</h3>
+          <p><span>A</span><?= $correct_text; ?></p>
+        </div>
+        <div class="judgement judgement__wrong" id="js__quiz<?= $question_id; ?>__wrong">
+          <h3>不正解...</h3>
+          <p><span>A</span><?= $correct_text; ?></p>
+        </div>
+
+        <!-- 引用テキストがある場合のみ表示させる -->
+        <?php if ($note_text) : ?>
+        <div class="quote">
+          <div class="quote__icon">
+            <img src="../img/icon/icon-note.svg" alt="引用">
+          </div>
+          <p class="quote__text"><?= $note_text ?><?= $note_text ?></p>
+        </div>
+        <?php endif; ?>
+
+      </div>
+
+
+      <?php endforeach; ?>
+
+
     </section>
   </main>
 

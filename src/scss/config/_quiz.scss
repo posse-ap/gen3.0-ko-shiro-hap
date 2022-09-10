@@ -193,7 +193,7 @@
 
   &__correct {
     display: none;
-  background-color: v.$correct-color;
+    background-color: v.$correct-color;
 
     & h3 {
       color: v.$red;
@@ -202,7 +202,7 @@
 
   &__wrong {
     display: none;
-  background-color: v.$wrong-color;
+    background-color: v.$wrong-color;
 
     & h3 {
       color: v.$blue;

@@ -208,8 +208,8 @@
    * @description クイズhtml作成、クリックイベントの繰り返し処理
    * @param {number} i カウント
    */
-  for (let i = 0; i < quiz.length; i++) {
-    createQuiz(i);
-    clickButton(i);
-  }
+  // for (let i = 0; i < quiz.length; i++) {
+  //   createQuiz(i);
+  //   clickButton(i);
+  // }
 }
