@@ -1,0 +1,183 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+body {
+  margin: 0 auto;
+  background-color: v.$lightgray;
+}
+
+h1, h2, h3, h4{
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+}
+
+.full-page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+}
+
+// main------------------------------------------------------
+.main {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px 20px;
+  gap: 20px;
+  max-width: 1200px;
+  justify-content: center;
+
+  @include m.mq(sp) {
+    display: block;
+    padding-top: 84px;
+  }
+
+  &__left {
+    display: flex;
+    gap: 20px;
+    max-width: 600px;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include m.mq(sp) {
+      margin: 0 auto;
+      margin-bottom: 16px;
+      gap: 16px;
+      width: 100%;
+    }
+
+    &__line {
+      display: none;
+
+      @include m.mq(sp) {
+        display: block;
+        margin: 0 2px;
+        height: 2px;
+        background-color: v.$lightblue;
+        opacity: 0.5;
+        border-radius: 1px;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    gap: 20px;
+    max-width: 600px;
+    width: 50%;
+
+    @include m.mq(sp) {
+      gap: 16px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
+
+// modal-----------------------------------------
+.modal {
+  display: none;
+  position: absolute;
+  gap: 20px;
+  top: 76px;
+  left: 50%;
+  max-width: 846px;
+  padding: 54px;
+  width: calc(100% - 40px);
+  // height: calc(100% + 76px);
+  flex-direction: column;
+  border-radius: 54px;
+  background-color: v.$white;
+  z-index: 100;
+  transform: translateX(-50%);
+
+  @include m.mq(tb) {
+    padding: 54px 20px;
+  }
+
+  @include m.mq(sp) {
+    padding-bottom: 86px;
+    width: calc(100% - 40px);
+    height: 100%;
+    border-radius: 40px 40px 0 0;
+  }
+}
+
+// button-----------------------------------------
+.button {
+  line-height: 1rem;
+  border-radius: 20px;
+  border: none;
+  color: v.$white;
+  background: v.$btn-color;
+  box-shadow: v.$box-shadow;
+  cursor: pointer;
+}
+
+// checkbox----------------------------------------------
+.checkbox {
+  display: block;
+  padding: 8px 12px;
+  padding-left: 0;
+  cursor: pointer;
+  background-color: v.$lightgray;
+  border-radius: 30px;
+
+  &__input {
+    display: none;
+  }
+
+  &__text {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      margin-right: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: v.$checkbox-bg;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 4px;
+      height: 8px;
+      border-right: 2px solid v.$white;
+      border-bottom: 2px solid v.$white;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__twitter__text {
+    margin-top: 2px;
+  }
+
+  &__input:checked + &__text::before {
+    background-color: v.$blue;
+  }
+}
+
+// sp-button---------------------------------
+.sp-button {
+  display: none;
+
+  @include m.mq(sp) {
+    display: block;
+    margin: 22px auto;
+    padding: 20px 0;
+    max-width: 600px;
+    width: calc(100% - 40px);
+    border-radius: 28px;
+    font-size: 1.2rem;
+  }
+}

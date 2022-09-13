@@ -1,0 +1,36 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%) translateX(-50%);
+
+  &__lead {
+    color: v.$yellow;
+  }
+
+  &__icon {
+    margin: 8px 0 16px;
+    font-size: 72px;
+    color: v.$yellow;
+
+    & i {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+
+    @include m.mq(sp) {
+      font-size: 0.8rem;
+    }
+  }
+}

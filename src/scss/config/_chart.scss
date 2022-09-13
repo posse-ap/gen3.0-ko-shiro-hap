@@ -1,0 +1,38 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.bar-chart {
+  display: flex;
+  flex-grow: 4;
+  justify-content: center;
+  align-items: center;
+  background-color: v.$white;
+  border-radius: 16px;
+  box-shadow: v.$box-shadow;
+
+
+  & canvas {
+    padding: 20px;
+  }
+}
+
+.doughnut-chart {
+  margin: 20px 0;
+  width: calc(100% - 1px);
+  @include m.mq(sp) {
+    margin: 12px 0;
+  }
+}
+
+
+.contents-chart {
+  height: 270px;
+
+  @include m.mq(sp) {
+    height: auto;
+  }
+  @include m.mq(xs) {
+    margin-top: 8px;
+    height: 270px;
+  }
+}

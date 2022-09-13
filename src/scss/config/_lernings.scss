@@ -1,0 +1,66 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.about__learnings {
+  padding: 20px;
+  width: 50%;
+  border-radius: 16px;
+  background-color: v.$white;
+  box-shadow: v.$box-shadow;
+
+  @include m.mq(tb) {
+    padding: 10px;
+  }
+
+  @include m.mq(sp) {
+    padding: 10px;
+  }
+
+  &__title {
+
+    @include m.mq(sp) {
+      font-size: 0.9rem;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.8rem;
+
+    @include m.mq(tb) {
+      line-height: 1.5rem;
+    }
+
+        @include m.mq(sp) {
+          font-size: 12px;
+          line-height: 1.2rem;
+        }
+
+    & span {
+      display: inline-block;
+      margin-right: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: v.$lightblue;
+
+      @include m.mq(sp) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.contents__items {
+  flex-direction: column;
+  gap: 0;
+}

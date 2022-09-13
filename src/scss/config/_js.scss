@@ -1,0 +1,38 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.js-block {
+  display: block;
+  animation: display-in 0.3s ease-in;
+}
+
+.js-off {
+  display: none;
+}
+
+.js-flex {
+  display: flex;
+  animation: display-in 0.3s ease-in;
+}
+
+.js-body::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: v.$black, $alpha: 0.5);
+  z-index: 100;
+  animation: display-in 0.3s ease-in;
+}
+
+@keyframes display-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.js-selected-day {
+  background-color: v.$blue;
+  color: #fff;
+  border-radius: 50%;
+}
