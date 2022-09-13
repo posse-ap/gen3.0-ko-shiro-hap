@@ -4,6 +4,21 @@ declare(strict_types = 1);
 // PDOの設定を呼び出す
 require('./pdo.php');
 
+// 今日の学習時間
+$today_stmt = $pdo->query('SELECT study_time FROM records WHERE study_date = CURDATE()');
+$today = $today_stmt->fetch();
+// print_r($today);
+
+// 今月の学習時間
+$month_stmt = $pdo->query("SELECT SUM(study_time) FROM records WHERE DATE_FORMAT(study_date, '%M/%Y') = DATE_FORMAT(now(), '%M/%Y')");
+$month = $month_stmt->fetch();
+// echo($month['study_time']);
+
+// 今までの合計時間
+$total_stmt = $pdo->query('SELECT SUM(study_time) FROM records');
+$total = $total_stmt->fetch();
+// print_r($total);
+
 ?>
 
 <!DOCTYPE html>
@@ -39,17 +54,17 @@ require('./pdo.php');
         <ul class="time-log__items">
           <li class="time-log__item">
             <h3 class="time-log__heading">Today</h3>
-            <div class="time-log__result">3</div>
+            <div class="time-log__result"><?= $today['study_time']; ?></div>
             <div class="time-log__hour">hour</div>
           </li>
           <li class="time-log__item">
             <h3 class="time-log__heading">Month</h3>
-            <div class="time-log__result">120</div>
+            <div class="time-log__result"><?= $month['SUM(study_time)']; ?></div>
             <div class="time-log__hour">hour</div>
           </li>
           <li class="time-log__item">
             <h3 class="time-log__heading">Total</h3>
-            <div class="time-log__result">1348</div>
+            <div class="time-log__result"><?= $total['SUM(study_time)']; ?></div>
             <div class="time-log__hour">hour</div>
           </li>
         </ul>
@@ -257,6 +272,9 @@ require('./pdo.php');
 
   <!-- chartjs-plugin-datalabels------------------------------ -->
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.1.0"></script>
+
+  <!-- チャートを別ファイルで処理 -->
+  <?php require('./charts.php'); ?>
 
   <!-- main.js--------------------------------------------- -->
   <script src="./js/main.js"></script>
