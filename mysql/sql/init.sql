@@ -15,6 +15,18 @@ CREATE TABLE records (
 
 INSERT INTO records(study_date, study_time, language_id, content_id)
 VALUES
+  ('2022-9-1', 2, 1, 1),
+  ('2022-9-2', 2, 1, 1),
+  ('2022-9-3', 2, 1, 1),
+  ('2022-9-4', 2, 1, 1),
+  ('2022-9-5', 2, 1, 1),
+  ('2022-9-6', 2, 1, 1),
+  ('2022-9-7', 2, 1, 1),
+  ('2022-9-8', 2, 1, 1),
+  ('2022-9-9', 2, 1, 1),
+  ('2022-9-10', 2, 1, 1),
+  ('2022-9-11', 2, 1, 1),
+  ('2022-9-12', 2, 1, 1),
   ('2022-9-13', 2, 1, 1),
   ('2022-9-14', 2, 1, 1),
   ('2022-9-15', 2, 1, 1),
@@ -29,13 +41,12 @@ VALUES
   ('2022-9-24', 3, 2, 3),
   ('2022-9-25', 2, 3, 3),
   ('2022-9-26', 3, 4, 3),
-  ('2022-4-27', 4, 1, 1),
-  ('2022-4-27', 3, 2, 1),
-  ('2022-4-27', 2, 3, 2),
-  ('2022-4-27', 3, 4, 2),
-  ('2022-5-27', 4, 1, 3),
-  ('2022-5-27', 3, 2, 3),
-  ('2022-5-27', 2, 3, 3);
+  ('2022-9-27', 4, 1, 1),
+  ('2022-9-27', 3, 2, 1),
+  ('2022-9-28', 3, 2, 3),
+  ('2022-9-29', 3, 2, 3),
+  ('2022-9-30', 3, 2, 3),
+  ('2022-9-31', 2, 3, 3);
 
 
 
@@ -44,32 +55,30 @@ VALUES
 DROP TABLE IF EXISTS languages;
 CREATE TABLE languages (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  language VARCHAR(255) NOT NULL,
-  colour VARCHAR(255) NOT NULL
+  language VARCHAR(255) NOT NULL
 );
 
-INSERT INTO languages(language, colour)
+INSERT INTO languages(language)
 VALUES
-  ('HTML', '#0445ec'),
-  ('CSS', '#0f70bd'),
-  ('Javascript', '#20bdde'),
-  ('PHP', '#3ccefe'),
-  ('Laravel', '#b29ef3'),
-  ('SQL', '#4a17ef'),
-  ('SHELL', '#3005c0'),
-  ('その他', '#6c46eb');
+  ('HTML'),
+  ('CSS'),
+  ('Javascript'),
+  ('PHP'),
+  ('Laravel'),
+  ('SQL'),
+  ('SHELL'),
+  ('その他');
 
 -- 学習コンテンツのテーブル
 
 DROP TABLE IF EXISTS contents;
 CREATE TABLE contents (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  content VARCHAR(255) NOT NULL,
-  colour VARCHAR(255) NOT NULL
+  content VARCHAR(255) NOT NULL
 );
 
-INSERT INTO contents(content, colour)
+INSERT INTO contents(content)
 VALUES
-  ('N予備校', '#0445ec'),
-  ('課題', '#0f70bd'),
-  ('ドットインストール', '#20bdde');
+  ('N予備校'),
+  ('課題'),
+  ('ドットインストール');
