@@ -1,2 +1,6 @@
-@use "./common/index" as common;
-@use "./config/index" as config;
+// @use "./common/index" as common;
+// @use "./config/index" as config;
+// laravel6では@use,@forwardは使えない
+
+@import "./common/index";
+@import "./config/index";

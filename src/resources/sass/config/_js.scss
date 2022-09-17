@@ -1,8 +1,10 @@
-@use "../global/variables" as v;
+// @use "../global/variables" as v;
+
+@import "../global/variables";
 
 .js-selected {
-    border-color: v.$blue;
-    background-color: v.$correct-color;
+    border-color: $blue;
+    background-color: $correct-color;
 }
 
 .js-on {

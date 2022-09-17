@@ -1,19 +1,22 @@
-@use "../global/variables" as v;
-@use "../global/mixin" as m;
+// @use "../global/variables" as v;
+// @use "../global/mixin" as m;
+
+@import "../global/variables";
+@import "../global/mixin";
 
 .footer {
     text-align: center;
 
-    @include m.mq(sp) {
+    @include mq(sp) {
         padding-bottom: 48px;
     }
 
     &__head {
         padding: 56px 0 48px 0;
-        border-top: 1px solid v.$light-gray;
-        border-bottom: 1px solid v.$light-gray;
+        border-top: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
 
-        @include m.mq(sp) {
+        @include mq(sp) {
             padding-bottom: 32px;
         }
     }
@@ -48,7 +51,7 @@
     }
     &__copyright {
         font-size: 10px;
-        color: v.$dark-gray;
+        color: $dark-gray;
         letter-spacing: 1px;
     }
 }

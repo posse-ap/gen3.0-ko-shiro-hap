@@ -1,14 +1,17 @@
-@use "../global/variables" as v;
-@use "../global/mixin" as m;
+// @use "../global/variables" as v;
+// @use "../global/mixin" as m;
+
+@import "../global/variables";
+@import "../global/mixin";
 
 .header {
     position: fixed;
     width: 100vw;
-    background-color: v.$white;
+    background-color: $white;
     height: 80px;
     z-index: 100;
 
-    @include m.mq(sp) {
+    @include mq(sp) {
         height: 56px;
     }
 
@@ -19,21 +22,21 @@
         justify-content: space-between;
         align-items: center;
 
-        @include m.mq(sp) {
+        @include mq(sp) {
             padding: 16px;
             height: auto;
         }
     }
 
     &__logo {
-        @include m.mq(sp) {
+        @include mq(sp) {
             height: 24px;
         }
     }
 }
 
 .nav {
-    @include m.mq(sp) {
+    @include mq(sp) {
         display: none;
     }
 
