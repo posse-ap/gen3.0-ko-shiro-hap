@@ -24,16 +24,16 @@
             </div>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../top">POSSEとは</a></li>
+                    <li class="nav__item"><a href="../">POSSEとは</a></li>
                     <li class="nav__item"><a href="../quiz">クイズ</a></li>
                     <li class="nav__item nav__sns__item">
                         <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
-                            <img src="../img/icon/icon-twitter.svg" alt="Twitter" />
+                            <img src="{{ 'img/icon/icon-twitter.svg' }}" alt="Twitter" />
                         </a>
                     </li>
                     <li class="nav__item nav__sns__item">
                         <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
-                            <img src="../img/icon/icon-instagram.svg" alt="Instagram" />
+                            <img src="{{ 'img/icon/icon-instagram.svg' }}" alt="Instagram" />
                         </a>
                     </li>
                 </ul>
@@ -49,24 +49,24 @@
                 </ul>
                 <div class="hamburger__nav__button">
                     <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="contact__link">
-                        <img src="../img/icon/icon-line.svg" alt="LINEアイコン" class="line__icon">POSSE公式LINE追加<img
-                            src="../img/icon/icon-link-light.svg" alt="LINEリンク" class="link__icon">/>
+                        <img src="{{ 'img/icon/icon-line.svg' }}" alt="LINEアイコン" class="line__icon">POSSE公式LINE追加<img
+                            src="{{ 'img/icon/icon-link-light.svg' }}" alt="LINEリンク" class="link__icon">/>
                     </a>
                 </div>
                 <div class="hamburger__nav__official__link">
                     <a href="https://posse-ap.com/" alt="公式サイト">
-                        POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク" />
+                        POSSE公式サイト<img src="{{ 'img/icon/icon-link-gray-dark.svg' }}" alt="公式サイトリンク" />
                     </a>
                 </div>
                 <ul class="hamburger__nav__list">
                     <li class="nav__item nav__sns__item">
                         <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
-                            <img src="../img/icon/icon-twitter.svg" alt="Twitter" />
+                            <img src="{{ 'img/icon/icon-twitter.svg' }}" alt="Twitter" />
                         </a>
                     </li>
                     <li class="nav__item nav__sns__item">
                         <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
-                            <img src="../img/icon/icon-instagram.svg" alt="Instagram" />
+                            <img src="{{ 'img/icon/icon-instagram.svg' }}" alt="Instagram" />
                         </a>
                     </li>
                 </ul>
@@ -82,7 +82,7 @@
                 <h1 class="top__hero__title">自分史上最高<br class="break">を仲間と。</h1>
             </div>
             <div class="top__hero__thumbnail">
-                <img src="../img/img-hero.jpg" alt="top__hero-img" />
+                <img src="{{ 'img/img-hero.jpg' }}" alt="top__hero-img" />
             </div>
             <small class="top__hero__inducing">Scroll Down</small>
         </section>
@@ -94,7 +94,7 @@
             </div>
             <div class="about__content">
                 <div class="about__thumbnail">
-                    <img src="../img/img-about.jpg" alt="about-img" />
+                    <img src="{{ 'img/img-about.jpg' }}" alt="about-img" />
                 </div>
                 <p class="about__text">
                     学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。<br>プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています！<br>それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。
@@ -108,7 +108,7 @@
             <div class="contact__content">
                 <div class="contact__heading">
                     <div class="contact__icon line__icon">
-                        <img src="../img/icon/icon-line.svg" alt="LINE" />
+                        <img src="{{ 'img/icon/icon-line.svg' }}" alt="LINE" />
                     </div>
                     <h2 class="contact__title">POSSE 公式LINE</h2>
                 </div>
@@ -117,7 +117,7 @@
                 </p>
                 <div class="contact__button">
                     <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="contact__link">
-                        LINE追加<img src="../img/icon/icon-link-gray-dark.svg" alt="LINEリンク" />
+                        LINE追加<img src="{{ 'img/icon/icon-link-gray-dark.svg' }}" alt="LINEリンク" />
                     </a>
                 </div>
             </div>
@@ -128,33 +128,33 @@
         <div class="banner">
             <a href="https://line.me/R/ti/p/@651htnqp?from=page" class="banner__link">
                 <div class="banner__icon line__icon">
-                    <img src="../img/icon/icon-line.svg" alt="LINE">
+                    <img src="{{ 'img/icon/icon-line.svg' }}" alt="LINE">
                 </div>
                 <p class="banner__text">POSSE公式LINEで<br class="break">最新情報をGET！</p>
                 <div class="banner__icon">
-                    <img src="../img/icon/icon-link-light.svg" alt="LINEリンク">
+                    <img src="{{ 'img/icon/icon-link-light.svg' }}" alt="LINEリンク">
                 </div>
             </a>
         </div>
         <div class="footer__head">
             <div class="footer__logo">
-                <img src="../img/logo.svg" alt="フッターロゴ" />
+                <img src="{{ 'img/logo.svg' }}" alt="フッターロゴ" />
             </div>
             <div class="footer__official__link">
                 <a href="https://posse-ap.com/" alt="公式サイト">
-                    POSSE公式サイト<img src="../img/icon/icon-link-gray-dark.svg" alt="公式サイトリンク" />
+                    POSSE公式サイト<img src="{{ 'img/icon/icon-link-gray-dark.svg' }}" alt="公式サイトリンク" />
                 </a>
             </div>
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item nav__sns__item">
                         <a href="https://twitter.com/posse_program?s=21&t=17ohMH_KX9S6thPqV4Pqpw">
-                            <img src="../img/icon/icon-twitter.svg" alt="Twitter" />
+                            <img src="{{ 'img/icon/icon-twitter.svg' }}" alt="Twitter" />
                         </a>
                     </li>
                     <li class="nav__item nav__sns__item">
                         <a href="https://instagram.com/posse_programming?igshid=YmMyMTA2M2Y=">
-                            <img src="../img/icon/icon-instagram.svg" alt="Instagram" />
+                            <img src="{{ 'img/icon/icon-instagram.svg' }}" alt="Instagram" />
                         </a>
                     </li>
                 </ul>

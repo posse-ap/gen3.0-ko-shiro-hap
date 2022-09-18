@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('top.index');
 });
 
+Route::get('/quiz', function () {
+    return view('quiz.index');
+});
+
 Route::get('scss', function () {
     return view('for-scss');
 });
