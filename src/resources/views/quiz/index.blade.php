@@ -32,7 +32,9 @@
 
         <!-- 問題ごとに繰り返す -->
 
-
+        @foreach ($questions as $question)
+            <div>{{ $question->question }}</div>
+        @endforeach
 
     </section>
 @endsection

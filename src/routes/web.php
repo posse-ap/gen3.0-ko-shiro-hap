@@ -11,14 +11,17 @@
 |
 */
 
+//トップページ
 Route::get('/', function () {
     return view('top.index');
 });
 
-Route::get('/quiz', function () {
-    return view('quiz.index');
-});
+//クイズページ
+Route::get('/quiz', 'QuestionsController@show_questions');
+// Route::get('/quiz', 'ChoicesController@show_choices');
 
+
+//scss
 Route::get('scss', function () {
     return view('for-scss');
 });
