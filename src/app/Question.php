@@ -14,6 +14,11 @@ class Question extends Model
         'image'
     ];
 
+//リレーション名
+    public function choices(){
+        return $this->hasMany('App\Choice');
+    }
+
 
     public $timestamps = false;
 }
