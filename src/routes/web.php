@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 //クイズページ
 Route::get('/quiz', 'QuestionsController@show_questions');
-// Route::get('/quiz', 'ChoicesController@show_choices');
 
 
 //scss

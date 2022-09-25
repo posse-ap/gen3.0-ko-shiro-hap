@@ -15,8 +15,12 @@ class Question extends Model
     ];
 
 //リレーション名
-    public function choices(){
+    public function choices() {
         return $this->hasMany('App\Choice');
+    }
+
+    public function notes() {
+        return $this->hasMany('App\Note');
     }
 
 

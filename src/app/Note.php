@@ -4,20 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Choice extends Model
+class Note extends Model
 {
-    protected $table = 'choices';
+    protected $table = 'notes';
 
     protected $fillable =
     [
-        'choice'
+        'note'
     ];
 
-
-    public function questions() {
+    public function questions (){
         return $this->belongsTo('App\Question');
     }
-
-
-    public $timestamps = false;
 }
