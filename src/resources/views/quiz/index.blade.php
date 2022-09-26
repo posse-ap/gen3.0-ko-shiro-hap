@@ -1,23 +1,11 @@
 @extends('layouts.index')
 
-<?php
-// declare(strict_types=1);
-
-// // PDOの設定を呼び出す
-// require '../pdo.php';
-
-// // 問題を取得
-// $questions_stmt = $pdo->prepare('SELECT * FROM questions');
-// $questions_stmt->execute();
-// $questions = $questions_stmt->fetchAll();
-
-// // 問題をシャッフルする
-// $count = range(1, count($questions));
-// shuffle($questions);
-?>
-
-
 @section('content')
+    @php
+        // 問題番号のためのカウントを定義
+        $count = 0;
+    @endphp
+
     <section class="quiz__hero">
         <div class="quiz__hero__inner" style=" background-image: url('{{ asset('img/quiz/bg-hero.jpg') }}');">
             <div class="quiz__hero__heading">
@@ -31,8 +19,13 @@
 
         <!-- 問題ごとに繰り返す -->
         @foreach ($questions as $question)
+            @php
+                // 問題番号を1ずつ増やす
+                $count++;
+            @endphp
+
             <div class="quiz__inner">
-                <h2 class="quiz__icon quiz__number" id="quizNumber">Q{{ $question->id }}</h2>
+                <h2 class="quiz__icon quiz__number" id="quizNumber">Q{{ $count }}</h2>
                 <h3 class="quiz__text">{{ $question->question }}</h3>
                 <div class="quiz__caption">
                     <img src="{{ asset('img/quiz/' . $question->image) }}" alt="クイズ画像">
@@ -75,6 +68,8 @@
             </div>
         @endforeach
 
+
+        <div>{{ $questions }}</div>
         </div>
 
     </section>
