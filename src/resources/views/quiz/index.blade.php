@@ -68,8 +68,6 @@
             </div>
         @endforeach
 
-
-        <div>{{ $questions }}</div>
         </div>
 
     </section>
