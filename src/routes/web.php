@@ -24,3 +24,8 @@ Route::get('/quiz', 'QuestionsController@show_questions');
 Route::get('scss', function () {
     return view('for-scss');
 });
+
+// ユーザー認証  ユーザー登録を削除
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');

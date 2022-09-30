@@ -1,6 +1,8 @@
-// @use "./common/index" as common;
-// @use "./config/index" as config;
-// laravel6では@use,@forwardは使えない
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-@import "./common/index";
-@import "./config/index";
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
