@@ -15,4 +15,10 @@ class QuestionsController extends Controller
 
         return view('quiz.index', ['questions' => $questions]);
     }
+
+
+    // 管理画面でのコントローラー
+    public function show_admin(Request $request){
+        return view('admin.questions');
+    }
 }
