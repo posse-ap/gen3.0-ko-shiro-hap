@@ -4,7 +4,7 @@
     max-width: 1000px;
 
     &__inner {
-        padding: 40px;
+        padding: 40px 20px;
         width: 100%;
         height: 100%;
         border-radius: 8px;
@@ -17,6 +17,7 @@
         text-align: center;
         border-collapse: collapse;
         border-spacing: 0;
+        border: solid 1px #778ca3;
     }
     & tr:nth-child(2n + 1) {
         background: #e9faf9;
@@ -34,7 +35,9 @@
         padding: 10px;
         border-right: solid 1px #778ca3;
     }
-    & td:last-child {
-        border-right: none;
+
+    & td img {
+        width: 100%;
+        height: 100%;
     }
 }
