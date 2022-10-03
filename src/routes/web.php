@@ -36,3 +36,7 @@ Auth::routes(['register' => false]);
 // 管理画面（クイズ）
 Route::get('/admin', 'QuestionsController@show_admin')
 ->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

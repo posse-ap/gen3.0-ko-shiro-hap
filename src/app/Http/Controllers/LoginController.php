@@ -16,7 +16,7 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
         if(Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect('/admin/questions');
+            return redirect('/admin');
         } else {
             $message = 'ログインに失敗しました';
 

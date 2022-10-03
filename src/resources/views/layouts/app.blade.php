@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -79,7 +79,13 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+
+            <div class="admin">
+                <div class="admin__inner">
+                    @yield('content')
+                </div>
+            </div>
+
         </main>
     </div>
 </body>
