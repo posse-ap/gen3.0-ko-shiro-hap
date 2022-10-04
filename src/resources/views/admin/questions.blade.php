@@ -13,7 +13,8 @@
         @foreach ($questions as $question)
             <tr>
                 <td>{{ $question->id }}</td>
-                <td>{{ $question->question }}</td>
+                <td><a href="{{ route('admin.edit', $question->id) }}">{{ $question->question }}</a></td>
+                {{-- <td>{{ $question->question }}</td> --}}
                 <td><img src="{{ asset('img/quiz/' . $question->image) }}" alt="クイズ画像"></td>
 
                 {{-- @foreach ($question->choices as $choice)

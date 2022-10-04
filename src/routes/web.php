@@ -34,9 +34,13 @@ Auth::routes(['register' => false]);
 // Route::post('/admin/login', 'LoginController@postAuth');
 
 // 管理画面（クイズ）
-Route::get('/admin', 'QuestionsController@show_admin')
+// Route::get('/admin', 'QuestionsController@show_admin')
+// ->middleware('auth');
+
+Route::resource('/admin', AdminController::class)
 ->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -17,10 +17,10 @@ class QuestionsController extends Controller
     }
 
 
-    // 管理画面でのコントローラー
-    public function show_admin(Request $request){
-        $questions = Question::with(['choices', 'notes'])->get();
+    // 管理画面でのコントローラー  Controllerに移設
+    // public function show_admin(Request $request){
+    //     $questions = Question::with(['choices', 'notes'])->get();
 
-        return view('admin.questions', ['questions' => $questions]);
-    }
+    //     return view('admin.questions', ['questions' => $questions]);
+    // }
 }
