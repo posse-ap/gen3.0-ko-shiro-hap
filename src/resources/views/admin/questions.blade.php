@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <a href="/admin/create" class="d-block text-right mb-3"><button class="btn btn-primary">問題を追加する</button></a>
     <table class="admin__table">
         <tr>
             <th>ID</th>
@@ -14,12 +15,7 @@
             <tr>
                 <td>{{ $question->id }}</td>
                 <td><a href="{{ route('admin.edit', $question->id) }}">{{ $question->question }}</a></td>
-                {{-- <td>{{ $question->question }}</td> --}}
                 <td><img src="{{ asset('img/quiz/' . $question->image) }}" alt="クイズ画像"></td>
-
-                {{-- @foreach ($question->choices as $choice)
-                    <td>{{ $choice->choice }}</td>
-                @endforeach --}}
                 <td><a href="#">選択肢を編集する</a></td>
 
                 @foreach ($question->notes as $note)

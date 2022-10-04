@@ -16,4 +16,6 @@ class Note extends Model
     public function questions (){
         return $this->belongsTo('App\Question');
     }
+
+    public $timestamps = false;
 }
