@@ -219,6 +219,21 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $question = Question::find($id);
+        $choices = Choice::where('question_id', '=', $id)->get();
+        $note = Note::where('question_id', '=', $id)->first();
+
+
+        $question->delete();
+
+        foreach ($choices as $choice) {
+            $choice->delete();
+        }
+
+        if (isset($note)) {
+            $note->delete();
+        }
+
+        return redirect(route('admin.index'))->with('success', '問題を削除しました');
     }
 }

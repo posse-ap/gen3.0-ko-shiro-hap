@@ -5,11 +5,6 @@
         @csrf
         @method('patch')
 
-        {{-- <div>{{ $question->id }}</div>
-        <div>{{ $choices[0]->choice }}</div>
-        <div>{{ $note->note }}</div> --}}
-
-
         <table class="admin__table">
 
             <tr>
@@ -73,6 +68,11 @@
             <input type="reset" value="キャンセル" class="btn btn-primary mt-3" onclick='window.history.back(-1);'>
             <input type="submit" value="追加する" class="btn btn-primary mt-3">
         </div>
+    </form>
+    <form action="{{ route('admin.destroy', $question->id) }}" method="post" class="text-right">
+        @csrf
+        @method('delete')
+        <input type="submit" value="削除する" class="btn btn-danger mt-3" onclick='return confirm("削除しますか？");'>
     </form>
 
     {{-- エラーメッセージ --}}
