@@ -10,17 +10,9 @@ class QuestionsController extends Controller
     public function show_questions(Request $request){
         $questions = Question::with(['choices', 'notes'])->get();
 
-        // 問題をシャッフルする
-        $questions = $questions->shuffle();
+        // // 問題をシャッフルする
+        // $questions = $questions->shuffle();
 
         return view('quiz.index', ['questions' => $questions]);
     }
-
-
-    // 管理画面でのコントローラー  Controllerに移設
-    // public function show_admin(Request $request){
-    //     $questions = Question::with(['choices', 'notes'])->get();
-
-    //     return view('admin.questions', ['questions' => $questions]);
-    // }
 }

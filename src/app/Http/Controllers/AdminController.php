@@ -95,7 +95,7 @@ class AdminController extends Controller
                 $note->note = $request->input('note');
                 $note->save();
             }
-            return redirect(route('admin.index'));
+            return redirect(route('admin.index'))->with('success', '問題を追加しました');
 
         } else {
 
@@ -125,7 +125,15 @@ class AdminController extends Controller
     {
         // タイトルをクリックするとそのIDの詳細ページに遷移
         $question = Question::find($id);
-        return view('admin.edit')->with('question', $question);
+        $choices = Choice::where('question_id', '=', $question->id)->get();
+        $note = Note::where('question_id', '=', $question->id)->first();
+
+        // 引用文があったらデータベースから取得する
+        if (isset($note)) {
+            return view('admin.edit')->with('question', $question)->with('choices', $choices )->with('note', $note);
+        } else {
+            return view('admin.edit')->with('question', $question)->with('choices', $choices );
+        }
     }
 
     /**
@@ -137,7 +145,70 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // データベースの最後のquestion_idを取得
+        $last_question_id = Question::orderBy('id', 'desc')->first()->id;
+
+        $request->validate([
+            'question' => 'required|max:64',
+            'image' => 'required|image',
+            'choice1' => 'required|max:32',
+            'choice2' => 'required|max:32',
+            'choice3' => 'required|max:32',
+            'note' => 'max:64'
+        ]);
+
+        // チェックボックスが全て空だった場合はリダイレクトしてメッセージを表示
+        if ($request->has('valid1') || $request->has('valid2') || $request->has('valid3')) {
+
+            // 画像ファイルを保存できる状態にする
+            $filename = $request->image->getClientOriginalName();
+            $image = $request->image;
+            $path = isset($image) ? $image->storeAs('img/quiz', $filename, 'public') : '';
+
+            // タイトルと画像
+            $question = Question::find($id);
+            $question->question = $request->input('question');
+            // 画像パスの'img/quiz/'の部分を切り抜いて保存
+            $question->image = mb_substr($path, 9);
+            $question->save();
+
+            // 選択肢を一つずつ取り出して更新
+            $choices = Choice::where('question_id', '=', $question->id)->get();
+            foreach ($choices as $index => $choice) {
+                $choice->question_id = $id;
+                $choice->choice = $request->input("choice" . $index+1);
+                $choice->valid = $request->has("valid" . $index+1) ? true : false;
+                $choice->save();
+            }
+
+            // 引用文
+            $note = Note::where('question_id', '=', $question->id)->first();
+
+            if (isset($note)) {
+
+                if ($request->input('note')) {
+                    $note->question_id = $id;
+                    $note->note = $request->input('note');
+                    $note->save();
+                } else {
+                    $note->delete();
+                }
+            } else {
+                $note = new Note;
+                $note->question_id = $id;
+                $note->note = $request->input('note');
+                $note->save();
+            }
+
+            return redirect(route('admin.index'))->with('success', '問題を更新しました');
+
+
+        } else {
+
+            $checkbox_error_message = 'どれか一つを選択してください';
+            return back()->withInput()->with('error', '選択肢のどれか一つを選択してください');
+        }
+
     }
 
     /**

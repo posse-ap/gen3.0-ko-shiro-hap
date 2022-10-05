@@ -16,7 +16,7 @@
             <tr>
                 <th>画像</th>
                 <td>
-                    <input type="file" name="image" class="input-group">
+                    <input type="file" name="image" class="input-group" value="{{ old('image') }}">
                 </td>
             </tr>
             <tr>
