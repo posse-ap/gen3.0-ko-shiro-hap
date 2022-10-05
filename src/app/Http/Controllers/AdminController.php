@@ -43,54 +43,63 @@ class AdminController extends Controller
         // データベースの最後のquestion_idを取得
         $last_question_id = Question::orderBy('id', 'desc')->first()->id;
 
-        // $request->validate([
-        //     'title' => 'required|max:64',
-        //     'choice1' => 'required|max:32',
-        //     'choice2' => 'required|max:32',
-        //     'choice3' => 'required|max:32',
-        //     'quote' => 'required|max:64'
-        // ]);
+        $request->validate([
+            'question' => 'required|max:64',
+            'image' => 'required|image',
+            'choice1' => 'required|max:32',
+            'choice2' => 'required|max:32',
+            'choice3' => 'required|max:32',
+            'note' => 'max:64'
+        ]);
 
-        // 画像ファイルを保存できる状態にする
-        $image = $request->file('image');
-        $path = isset($image) ? $image->store('items', 'public') : '';
+        // チェックボックスが全て空だった場合はリダイレクトしてメッセージを表示
+        if ($request->has('valid1') || $request->has('valid2') || $request->has('valid3')) {
 
-        // タイトルと写真
-        $question = new Question;
-        $question->question = $request->input('question');
-        $question->image = $path;
-        $question->save();
+            // 画像ファイルを保存できる状態にする
+            $image = $request->file('image');
+            $path = isset($image) ? $image->store('items', 'public') : '';
 
-        // 選択肢１
-        $choice1 = new Choice;
-        $choice1->question_id = $last_question_id + 1;
-        $choice1->choice = $request->input('choice1');
-        $choice1->valid = $request->has('valid1') ? true : false;
-        $choice1->save();
+            // タイトルと写真
+            $question = new Question;
+            $question->question = $request->input('question');
+            $question->image = $path;
+            $question->save();
 
-        // 選択肢2
-        $choice2 = new Choice;
-        $choice2->question_id = $last_question_id + 1;
-        $choice2->choice = $request->input('choice2');
-        $choice2->valid = $request->has('valid2') ? true : false;
-        $choice2->save();
+            // 選択肢１
+            $choice1 = new Choice;
+            $choice1->question_id = $last_question_id + 1;
+            $choice1->choice = $request->input('choice1');
+            $choice1->valid = $request->has('valid1') ? true : false;
+            $choice1->save();
 
-        // 選択肢3
-        $choice3 = new Choice;
-        $choice3->question_id = $last_question_id + 1;
-        $choice3->choice = $request->input('choice3');
-        $choice3->valid = $request->has('valid3') ? true : false;;
-        $choice3->save();
+            // 選択肢2
+            $choice2 = new Choice;
+            $choice2->question_id = $last_question_id + 1;
+            $choice2->choice = $request->input('choice2');
+            $choice2->valid = $request->has('valid2') ? true : false;
+            $choice2->save();
 
-        // 引用文
-        if ($request->input('note')) {
-            $note = new Note;
-            $note->question_id = $last_question_id + 1;
-            $note->note = $request->input('note');
-            $note->save();
+            // 選択肢3
+            $choice3 = new Choice;
+            $choice3->question_id = $last_question_id + 1;
+            $choice3->choice = $request->input('choice3');
+            $choice3->valid = $request->has('valid3') ? true : false;;
+            $choice3->save();
+
+            // 引用文
+            if ($request->input('note')) {
+                $note = new Note;
+                $note->question_id = $last_question_id + 1;
+                $note->note = $request->input('note');
+                $note->save();
+            }
+            return redirect(route('admin.index'));
+
+        } else {
+
+            $checkbox_error_message = 'どれか一つを選択してください';
+            return back()->withInput()->with('error', '選択肢のどれか一つを選択してください');
         }
-
-        return redirect(route('admin.index'));
     }
 
     /**
