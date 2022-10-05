@@ -56,13 +56,15 @@ class AdminController extends Controller
         if ($request->has('valid1') || $request->has('valid2') || $request->has('valid3')) {
 
             // 画像ファイルを保存できる状態にする
-            $image = $request->file('image');
-            $path = isset($image) ? $image->store('items', 'public') : '';
+            $filename = $request->image->getClientOriginalName();
+            $image = $request->image;
+            $path = isset($image) ? $image->storeAs('img/quiz', $filename, 'public') : '';
 
-            // タイトルと写真
+            // タイトルと画像
             $question = new Question;
             $question->question = $request->input('question');
-            $question->image = $path;
+            // 画像パスの'img/quiz/'の部分を切り抜いて保存
+            $question->image = mb_substr($path, 9);
             $question->save();
 
             // 選択肢１

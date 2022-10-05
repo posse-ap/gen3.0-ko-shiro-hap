@@ -28,7 +28,7 @@
                 <h2 class="quiz__icon quiz__number" id="quizNumber">Q{{ $count }}</h2>
                 <h3 class="quiz__text">{{ $question->question }}</h3>
                 <div class="quiz__caption">
-                    <img src="{{ asset('img/quiz/' . $question->image) }}" alt="クイズ画像">
+                    <img src="{{ asset('storage/img/quiz/' . $question->image) }}" alt="クイズ画像">
                 </div>
                 <div class="answer">
                     <h2 class="quiz__icon answer__icon">A</h2>
