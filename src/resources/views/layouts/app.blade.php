@@ -89,8 +89,13 @@
         </main>
     </div>
 
+
+    {{-- sortable --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+
     <!-- javascript -->
-    <script src="{{ '/js/admin.js' }}"></script>
+    <script src="{{ '/js/admin.js' }}" defer></script>
+
 </body>
 
 </html>
