@@ -66,7 +66,7 @@
         </table>
         <div class="text-right">
             <input type="reset" value="キャンセル" class="btn btn-primary mt-3" onclick='window.history.back(-1);'>
-            <input type="submit" value="追加する" class="btn btn-primary mt-3">
+            <input type="submit" value="更新する" class="btn btn-primary mt-3">
         </div>
     </form>
     <form action="{{ route('admin.destroy', $question->id) }}" method="post" class="text-right">
