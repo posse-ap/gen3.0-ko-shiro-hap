@@ -105,7 +105,10 @@ body {
   background-color: #f1f1f1;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   letter-spacing: 0.1rem;
   line-height: 2rem;
 }
@@ -216,7 +219,7 @@ h1, h2, h3, h4 {
 .checkbox {
   display: block;
   padding: 8px 12px;
-  padding-left: 0;
+  padding-left: 8px;
   cursor: pointer;
   background-color: #f1f1f1;
   border-radius: 30px;
