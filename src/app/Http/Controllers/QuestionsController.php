@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class QuestionsController extends Controller
 {
     public function show_questions(Request $request){
-        $questions = Question::with(['choices', 'notes'])->get();
+        $questions = Question::with(['choices', 'notes'])->orderBy('sort', 'asc')->get();
 
         // // 問題をシャッフルする
         // $questions = $questions->shuffle();

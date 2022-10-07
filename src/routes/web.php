@@ -28,15 +28,8 @@ Route::get('scss', function () {
 // ユーザー認証  ユーザー登録を削除
 Auth::routes(['register' => false]);
 
-// 管理画面（ログイン）
-// Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/admin/login', 'LoginController@getAuth');
-// Route::post('/admin/login', 'LoginController@postAuth');
 
-// 管理画面（クイズ）
-// Route::get('/admin', 'QuestionsController@show_admin')
-// ->middleware('auth');
-
+// 管理画面
 Route::resource('/admin', AdminController::class)
 ->middleware('auth');
 

@@ -15,9 +15,29 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // Request ＄requestを追記
+    public function index(Request $request)
     {
-        $questions = Question::with(['choices', 'notes'])->get();
+
+        $sort_ids = $request->input('sort');
+        $sort_ids = explode(',', $sort_ids);
+        // dd($sort_ids);
+        // dd($sort_ids);
+
+        if (!empty($sort_ids[0])) {
+            # code...
+            foreach ($sort_ids as $index => $sort_id) {
+                $question = Question::where('id', $sort_id)->first();
+                $question->sort = $index + 1;
+                $question->save();
+            }
+        }
+
+
+
+
+        // $questions = Question::with(['choices', 'notes'])->get();
+        $questions = Question::with(['choices', 'notes'])->orderBy('sort', 'asc')->get();
 
         return view('admin.questions', ['questions' => $questions]);
     }
@@ -65,6 +85,7 @@ class AdminController extends Controller
             $question->question = $request->input('question');
             // 画像パスの'img/quiz/'の部分を切り抜いて保存
             $question->image = mb_substr($path, 9);
+            $question->sort = $last_question_id + 1;
             $question->save();
 
             // 選択肢１

@@ -11,7 +11,8 @@ class Question extends Model
     protected $fillable =
     [
         'question',
-        'image'
+        'image',
+        'sort'
     ];
 
 //リレーション名

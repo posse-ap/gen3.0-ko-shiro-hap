@@ -17,6 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('question');
             $table->string('image');
+            // 追記
+            $table->integer('sort');
         });
     }
 
