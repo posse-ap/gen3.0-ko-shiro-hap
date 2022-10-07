@@ -1,0 +1,123 @@
+@import "../global/variables";
+@import "../global/mixin";
+
+.calendar {
+    @include mq(sp) {
+        height: calc(100% + 76px);
+    }
+
+    &__close {
+        position: absolute;
+        left: 32px;
+        top: 32px;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background-color: $lightgray;
+        cursor: pointer;
+        z-index: 150;
+
+        @include mq(sp) {
+            top: 20px;
+            left: 20px;
+        }
+
+        & i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: $darkgray;
+            font-size: 1.2rem;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    & table {
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    & th {
+        font-size: 0.8rem;
+        color: $lightblue;
+    }
+    & th,
+    td {
+        height: 52px;
+        width: 52px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 52px;
+        text-align: center;
+
+        @include mq(sp) {
+            height: 44px;
+            width: 44px;
+            line-height: 44px;
+            font-size: 1rem;
+        }
+    }
+
+    & td.disabled {
+        color: #ccc;
+    }
+
+    &__move-page {
+        display: flex;
+        gap: 16px;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+
+        @include mq(sp) {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__date {
+        cursor: pointer;
+    }
+
+    &__previous {
+        position: relative;
+        border: none;
+        top: -4px;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-top: solid 2px $blue;
+            border-right: solid 2px $blue;
+            position: absolute;
+            transform: rotate(-135deg);
+        }
+    }
+
+    &__next {
+        position: relative;
+        border: none;
+        top: -4px;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            width: 7px;
+            height: 7px;
+            border-top: solid 2px $blue;
+            border-right: solid 2px $blue;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__button {
+        margin: 0 auto;
+        padding: 15px 60px;
+        font-size: 1.2rem;
+        border-radius: 50px;
+    }
+}

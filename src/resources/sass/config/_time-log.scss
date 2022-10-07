@@ -1,0 +1,58 @@
+@import "../global/variables";
+@import "../global/mixin";
+
+.time-log {
+    width: 100%;
+
+    &__items {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+
+        @include mq(sp) {
+            gap: 16px;
+        }
+    }
+
+    &__item {
+        padding: 20px;
+        flex-grow: 1;
+        border-radius: 16px;
+        text-align: center;
+        background-color: $white;
+        box-shadow: $box-shadow;
+
+        @include mq(sp) {
+            padding: 12px 8px;
+            width: calc(100% / 3);
+        }
+    }
+
+    &__heading {
+        color: $blue;
+        line-height: normal;
+
+        @include mq(sp) {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__result {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 2;
+        letter-spacing: 0.1rem;
+
+        @include mq(sp) {
+            font-size: 1.8rem;
+            line-height: 1.5;
+            letter-spacing: normal;
+        }
+    }
+
+    &__hour {
+        color: $lightblue;
+        letter-spacing: 0.1rem;
+    }
+}

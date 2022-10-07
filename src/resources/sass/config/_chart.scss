@@ -1,0 +1,36 @@
+@import "../global/variables";
+@import "../global/mixin";
+
+.bar-chart {
+    display: flex;
+    flex-grow: 4;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: $box-shadow;
+
+    & canvas {
+        padding: 20px;
+    }
+}
+
+.doughnut-chart {
+    margin: 20px 0;
+    width: calc(100% - 1px);
+    @include mq(sp) {
+        margin: 12px 0;
+    }
+}
+
+.contents-chart {
+    height: 270px;
+
+    @include mq(sp) {
+        height: auto;
+    }
+    @include mq(xs) {
+        margin-top: 8px;
+        height: 270px;
+    }
+}
