@@ -31,17 +31,17 @@
                 <ul class="time-log__items">
                     <li class="time-log__item">
                         <h3 class="time-log__heading">Today</h3>
-                        <div class="time-log__result"></div>
+                        <div class="time-log__result">{{ $time_records['today_study_time'] }}</div>
                         <div class="time-log__hour">hour</div>
                     </li>
                     <li class="time-log__item">
                         <h3 class="time-log__heading">Month</h3>
-                        <div class="time-log__result"></div>
+                        <div class="time-log__result">{{ $time_records['month_study_time'] }}</div>
                         <div class="time-log__hour">hour</div>
                     </li>
                     <li class="time-log__item">
                         <h3 class="time-log__heading">Total</h3>
-                        <div class="time-log__result"></div>
+                        <div class="time-log__result">{{ $time_records['total_study_time'] }}</div>
                         <div class="time-log__hour">hour</div>
                     </li>
                 </ul>

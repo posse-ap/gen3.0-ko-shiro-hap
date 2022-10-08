@@ -15,6 +15,16 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('top.index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', function () {
+//     return view('top.index');
+// });
+
+Route::resource('/', RecordsController::class);
+
+Route::get('/error', function () {
+    return view('error.index');
 });
