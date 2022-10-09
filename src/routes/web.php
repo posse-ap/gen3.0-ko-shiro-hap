@@ -12,13 +12,14 @@
 */
 
 Route::resource('/', RecordsController::class)
-->middleware('auth');
+->middleware('auth')
+->middleware('verified');
 
 Route::get('/error', function () {
     return view('error.index');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // ログアウト
 Route::get('/logout', 'Auth\LoginController@logout');
