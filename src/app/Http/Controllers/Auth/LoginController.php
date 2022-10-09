@@ -21,12 +21,19 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+        // 追記
+    //  * ログイン試行回数（回）
+    protected $maxAttempts = 5;
+
+    // ログインロックタイム（分）
+    protected $decayMinutes = 3;
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.

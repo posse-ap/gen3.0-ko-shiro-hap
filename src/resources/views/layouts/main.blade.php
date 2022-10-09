@@ -22,7 +22,10 @@
                 </div>
                 <span>4th week</span>
             </div>
-            @yield('header-button')
+            <div class="header__right">
+                <a href="/logout" class="header__logout">ログアウト</a>
+                @yield('header-button')
+            </div>
         </div>
     </header>
 

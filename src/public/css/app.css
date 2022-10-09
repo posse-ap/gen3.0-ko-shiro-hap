@@ -433,6 +433,13 @@ h4 {
   }
 }
 
+.header__logout {
+  padding-right: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #97b9d1;
+}
+
 .time-log {
   width: 100%;
 }

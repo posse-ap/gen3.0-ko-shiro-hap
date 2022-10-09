@@ -11,23 +11,16 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', function () {
-//     return view('top.index');
-// });
-
-Route::resource('/', RecordsController::class);
+Route::resource('/', RecordsController::class)
+->middleware('auth');
 
 Route::get('/error', function () {
     return view('error.index');
 });
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// ログアウト
+Route::get('/logout', 'Auth\LoginController@logout');
+
+// Route::get('/home', 'HomeController@index')->name('home');
