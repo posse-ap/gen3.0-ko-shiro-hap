@@ -185,6 +185,21 @@
     </div>
 
     <button class="button sp-button" id="sp-modal-open">記録・投稿</button>
+
+    @foreach ($chart_data['language_names'] as $name)
+        {{ $name->language . ',' }}
+    @endforeach
+
+    @php
+        $sumLanguagesRecords = 0;
+        foreach ($chart_data['language_data'] as $data) {
+            $sumLanguagesRecords += $data;
+        }
+    @endphp
+
+    @foreach ($chart_data['language_data'] as $data)
+        {{ intval(($data / $sumLanguagesRecords) * 100 . ',') }}
+    @endforeach
 @endsection
 
 
@@ -213,7 +228,7 @@
                     datasets: [{
                         data: [
                             @foreach ($chart_data['bar_data'] as $data)
-                                {{ $data . ',' }}
+                                {{ $data }},
                             @endforeach
                         ],
                         backgroundColor: gradient,
@@ -267,114 +282,83 @@
 
             // 円グラフ-----------------------------------
 
-            // const bgColor = [
-            //     "#0445ec", "#0f70bd", "#20bdde", "#3ccefe", "#b29ef3", "#4a17ef", "#3005c0", "#6c46eb"
-            // ]
+            const bgColor = [
+                "#0445ec", "#0f70bd", "#20bdde", "#3ccefe", "#b29ef3", "#4a17ef", "#3005c0", "#6c46eb"
+            ];
 
-            // // 学習言語のドーナツチャート作成
+            // 学習言語のドーナツチャート作成
 
-            // const languagesChart = document.getElementById('languages-chart');
-            // // ラベルの配列を作成
-            // const languagesLabels = [<?php
-            // foreach ($languages as $language) {
-            //     echo "'" . $language['language'] . "'" . ',';
-            // }
-            //
-            ?>];
+            const languagesChart = document.getElementById('languages-chart');
+            // ラベルの配列を作成
+            const languagesLabels = [
+                @foreach ($chart_data['language_names'] as $name)
+                    '{{ $name->language }}',
+                @endforeach
+            ];
+            console.log(languagesLabels);
 
-            // // 100分率で表示するための、言語学習の合計時間を格納する
-            // <?php
-            // $sumLanguagesRecords = 0;
-            // foreach ($languages as $language) {
-            //     $sumLanguagesRecords += $language['SUM(records.study_time)'];
-            // }
-            //
-            ?>
+            // 100分率で表示するための、言語学習の合計時間を格納する
+            @php
+                $sumLanguagesRecords = 0;
+                foreach ($chart_data['language_data'] as $data) {
+                    $sumLanguagesRecords += $data;
+                }
+            @endphp
 
-            // // 言語の学習時間の配列を作成、学習時間を百分率に変換
-            // const languagesRecords = [<?php
-            // foreach ($languages as $language) {
-            //     echo intval(($language['SUM(records.study_time)'] / $sumLanguagesRecords) * 100) . ',';
-            // }
-            //
-            ?>];
-
-            // createDoughnutChart(languagesChart, languagesLabels, languagesRecords, bgColor)
+            // 100分率に変換したものを配列に格納
+            const languagesRecords = [
+                @foreach ($chart_data['language_data'] as $data)
+                    {{ intval(($data / $sumLanguagesRecords) * 100) }},
+                @endforeach
+            ];
 
 
-            // // 学習コンテンツのドーナツチャート作成
 
-            // const contentsChart = document.getElementById('contents-chart');
-            // // ラベルの配列を作成
-            // const contentsLabels = [<?php
-            // foreach ($contents as $content) {
-            //     echo "'" . $content['content'] . "'" . ',';
-            // }
-            //
-            ?>];
-
-            // // 100分率で表示するための、コンテンツ学習の合計時間を格納する
-            // <?php
-            // $sumContentsRecords = 0;
-            // foreach ($contents as $content) {
-            //     $sumContentsRecords += $content['SUM(records.study_time)'];
-            // }
-            //
-            ?>
-
-            // // コンテンツの学習時間の配列を作成、学習時間を百分率に変換
-            // const contentsRecords = [<?php
-            // foreach ($contents as $content) {
-            //     echo intval(($content['SUM(records.study_time)'] / $sumContentsRecords) * 100) . ',';
-            // }
-            //
-            ?>];
-
-            // createDoughnutChart(contentsChart, contentsLabels, contentsRecords, bgColor)
+            createDoughnutChart(languagesChart, languagesLabels, languagesRecords, bgColor)
 
 
-            // // 円グラフ作成
-            // function createDoughnutChart(place, labels, data, color) {
+            // 円グラフ作成
+            function createDoughnutChart(place, labels, data, color) {
 
 
-            //     new Chart(place, {
-            //         type: 'doughnut',
-            //         data: {
-            //             labels: labels,
-            //             datasets: [{
-            //                 data: data,
-            //                 backgroundColor: color,
-            //                 borderWidth: 0,
-            //             }]
-            //         },
-            //         options: {
-            //             responsive: true,
-            //             maintainAspectRatio: false,
-            //             aspectRatio: 1 / 1,
-            //             plugins: {
-            //                 legend: {
-            //                     position: 'bottom',
-            //                     align: 'start',
-            //                     labels: {
-            //                         padding: 10,
-            //                         usePointStyle: true,
-            //                         pointStyle: 'circle',
-            //                     }
-            //                 },
-            //                 datalabels: {
-            //                     labels: {
-            //                         title: {
-            //                             color: '#fff'
-            //                         }
-            //                     },
-            //                     formatter: function(value, context) {
-            //                         return value + '%';
-            //                     }
-            //                 }
-            //             },
-            //         }
-            //     });
-            // }
+                new Chart(place, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: color,
+                            borderWidth: 0,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        aspectRatio: 1 / 1,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                align: 'start',
+                                labels: {
+                                    padding: 10,
+                                    usePointStyle: true,
+                                    pointStyle: 'circle',
+                                }
+                            },
+                            datalabels: {
+                                labels: {
+                                    title: {
+                                        color: '#fff'
+                                    }
+                                },
+                                formatter: function(value, context) {
+                                    return value + '%';
+                                }
+                            }
+                        },
+                    }
+                });
+            }
         }
     </script>
 @endsection

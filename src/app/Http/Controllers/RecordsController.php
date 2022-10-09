@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 // 追記
 use App\Record;
+use App\Language;
+use App\Content;
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -36,11 +38,20 @@ class RecordsController extends Controller
         $bar_data = Record::selectRaw("SUM(study_time) as sum")
         ->whereYear('study_date', date('Y'))->whereMonth('study_date', date('m'))
         ->groupBy('study_date')
-        ->pluck("sum");
-        // dd($bar_data);
+        ->pluck('sum');
+
+        // 学習言語のデータを取得
+        $language_data =  Record::selectRaw("SUM(study_time) as sum")
+        ->groupBy('language_id')
+        ->pluck('sum');
+
+        // 学習言語の名前を取得
+        $language_names = Language::get('language');
 
         $chart_data = [
             'bar_data' => $bar_data,
+            'language_data' => $language_data,
+            'language_names' => $language_names,
         ];
 
         return view('top.index', ['time_records' => $time_records, 'chart_data' => $chart_data]);
