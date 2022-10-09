@@ -32,7 +32,18 @@ class RecordsController extends Controller
             'total_study_time' => $total_study_time,
         ];
 
-        return view('top.index', ['time_records' => $time_records]);
+        // 棒グラフのデータを取得 全ての合計を選択->今月に絞る->日毎にgroupBy->配列で返す
+        $bar_data = Record::selectRaw("SUM(study_time) as sum")
+        ->whereYear('study_date', date('Y'))->whereMonth('study_date', date('m'))
+        ->groupBy('study_date')
+        ->pluck("sum");
+        // dd($bar_data);
+
+        $chart_data = [
+            'bar_data' => $bar_data,
+        ];
+
+        return view('top.index', ['time_records' => $time_records, 'chart_data' => $chart_data]);
     }
 
     /**

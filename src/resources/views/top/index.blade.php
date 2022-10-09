@@ -1,189 +1,170 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>independent production</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/6c20dffe37.js" crossorigin="anonymous"></script>
-</head>
+@section('header-button')
+    <button class="button header__button" id="modal-open">記録・投稿</button>
+@endsection
 
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__left">
-                <div class="header__logo">
-                    <img src="{{ asset('images/logo.svg') }}" alt="POSSEロゴ">
-                </div>
-                <span>4th week</span>
-            </div>
-            <button class="button header__button" id="modal-open">記録・投稿</button>
-        </div>
-    </header>
+@section('content')
+    <div class="main__left">
 
-    <main class="main">
-        <div class="main__left">
+        <section class="time-log">
+            <ul class="time-log__items">
+                <li class="time-log__item">
+                    <h3 class="time-log__heading">Today</h3>
+                    <div class="time-log__result">{{ $time_records['today_study_time'] }}</div>
+                    <div class="time-log__hour">hour</div>
+                </li>
+                <li class="time-log__item">
+                    <h3 class="time-log__heading">Month</h3>
+                    <div class="time-log__result">{{ $time_records['month_study_time'] }}</div>
+                    <div class="time-log__hour">hour</div>
+                </li>
+                <li class="time-log__item">
+                    <h3 class="time-log__heading">Total</h3>
+                    <div class="time-log__result">{{ $time_records['total_study_time'] }}</div>
+                    <div class="time-log__hour">hour</div>
+                </li>
+            </ul>
+        </section>
 
-            <section class="time-log">
-                <ul class="time-log__items">
-                    <li class="time-log__item">
-                        <h3 class="time-log__heading">Today</h3>
-                        <div class="time-log__result">{{ $time_records['today_study_time'] }}</div>
-                        <div class="time-log__hour">hour</div>
-                    </li>
-                    <li class="time-log__item">
-                        <h3 class="time-log__heading">Month</h3>
-                        <div class="time-log__result">{{ $time_records['month_study_time'] }}</div>
-                        <div class="time-log__hour">hour</div>
-                    </li>
-                    <li class="time-log__item">
-                        <h3 class="time-log__heading">Total</h3>
-                        <div class="time-log__result">{{ $time_records['total_study_time'] }}</div>
-                        <div class="time-log__hour">hour</div>
-                    </li>
-                </ul>
-            </section>
+        <div class="main__left__line"></div>
 
-            <div class="main__left__line"></div>
+        <section class="contents__left__bar-chart bar-chart">
+            <canvas id="time-log-chart"></canvas>
+        </section>
 
-            <section class="contents__left__bar-chart bar-chart">
-                <canvas id="time-log-chart"></canvas>
-            </section>
+    </div>
 
-        </div>
+    <div class="main__right">
 
-        <div class="main__right">
-
-            <section class="about__learnings languages">
-                <h2 class="about__learnings__title">学習言語</h2>
-                <div class="doughnut-chart languages-chart">
-                    <canvas id="languages-chart"></canvas>
-                </div>
-            </section>
-
-            <section class="about__learnings contents">
-                <h2 class="about__learnings__title">学習コンテンツ</h2>
-                <div class="doughnut-chart contents-chart">
-                    <canvas id="contents-chart""></canvas>
-                </div>
-            </section>
-        </div>
-
-        <section class="post modal" id="post-modal">
-            <div class="post__close" id="modal-close"></div>
-            <div class="post__inner" id="post-modal-inner">
-                <div class="post__left">
-                    <div class="post__contents">
-                        <h3 class="post__lead">学習日</h3>
-                        <label for="studied-date">
-                            <input class="post__text" type="input" name="date" id="studied-date">
-                        </label>
-                    </div>
-                    <div class="post__learnings">
-                        <h3 class="post__lead">学習コンテンツ（複数選択可）</h3>
-                        <ul class="post__learnings__items">
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="Nyobiko">
-                                    <input class="checkbox__input" type="checkbox" name="content" id="Nyobiko">
-                                    <span class="checkbox__text">N予備校</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="dotinstall">
-                                    <input class="checkbox__input" type="checkbox" name="content" id="dotinstall">
-                                    <span class="checkbox__text">ドットインストール</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="POSSEkadai">
-                                    <input class="checkbox__input" type="checkbox" name="content" id="POSSEkadai">
-                                    <span class="checkbox__text">POSSE課題</span>
-                                </Label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="post__learnings">
-                        <h3 class="post__lead">学習言語(複数選択可)</h3>
-                        <ul class="post__learnings__items">
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="html">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="html">
-                                    <span class="checkbox__text">HTML</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="css">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="css">
-                                    <span class="checkbox__text">CSS</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="php">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="php">
-                                    <span class="checkbox__text">PHP</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="laravel">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="laravel">
-                                    <span class="checkbox__text">Laravel</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="sql">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="sql">
-                                    <span class="checkbox__text">SQL</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="shell">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="shell">
-                                    <span class="checkbox__text">SHELL</span>
-                                </Label>
-                            </li>
-                            <li class="post__learnings__item">
-                                <Label class="checkbox" for="others">
-                                    <input class="checkbox__input" type="checkbox" name="language" id="others">
-                                    <span class="checkbox__text">情報システム基礎知識（その他）</span>
-                                </Label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="post__right">
-                    <div class="post__contents">
-                        <h3 class="post__lead">学習時間</h3>
-                        <label for="studied-time">
-                            <input class="post__text" type="text" name="time" id="studied-time">
-                        </label>
-                    </div>
-                    <div class="post__contents">
-                        <h3 class="post__lead">Twitter用コメント</h3>
-                        <textarea name="comment" id="twitter-comment" class="post__textarea"></textarea>
-                        <Label class="checkbox checkbox__twitter" for="twitter">
-                            <input class="checkbox__input checkbox__twitter__input" type="checkbox" name="twitter"
-                                id="twitter" checked>
-                            <span class="checkbox__text checkbox__twitter__text">Twitterにシェアする</span>
-                        </Label>
-                    </div>
-                </div>
-                <button class="button post__button" id="post-button">記録・投稿</button>
-            </div>
-
-            <div class="post--loader" id="post-loader">
-            </div>
-
-            <div class="post--completion" id="post-completion">
-                <div class="post--completion__lead">AWESOME!</div>
-                <i class="fa-solid fa-circle-check post--completion__icon"></i>
-                <p class="post--completion__text">記録・投稿<br>完了しました</p>
+        <section class="about__learnings languages">
+            <h2 class="about__learnings__title">学習言語</h2>
+            <div class="doughnut-chart languages-chart">
+                <canvas id="languages-chart"></canvas>
             </div>
         </section>
-    </main>
 
+        <section class="about__learnings contents">
+            <h2 class="about__learnings__title">学習コンテンツ</h2>
+            <div class="doughnut-chart contents-chart">
+                <canvas id="contents-chart""></canvas>
+            </div>
+        </section>
+    </div>
+
+    <section class="post modal" id="post-modal">
+        <div class="post__close" id="modal-close"></div>
+        <div class="post__inner" id="post-modal-inner">
+            <div class="post__left">
+                <div class="post__contents">
+                    <h3 class="post__lead">学習日</h3>
+                    <label for="studied-date">
+                        <input class="post__text" type="input" name="date" id="studied-date">
+                    </label>
+                </div>
+                <div class="post__learnings">
+                    <h3 class="post__lead">学習コンテンツ（複数選択可）</h3>
+                    <ul class="post__learnings__items">
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="Nyobiko">
+                                <input class="checkbox__input" type="checkbox" name="content" id="Nyobiko">
+                                <span class="checkbox__text">N予備校</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="dotinstall">
+                                <input class="checkbox__input" type="checkbox" name="content" id="dotinstall">
+                                <span class="checkbox__text">ドットインストール</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="POSSEkadai">
+                                <input class="checkbox__input" type="checkbox" name="content" id="POSSEkadai">
+                                <span class="checkbox__text">POSSE課題</span>
+                            </Label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="post__learnings">
+                    <h3 class="post__lead">学習言語(複数選択可)</h3>
+                    <ul class="post__learnings__items">
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="html">
+                                <input class="checkbox__input" type="checkbox" name="language" id="html">
+                                <span class="checkbox__text">HTML</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="css">
+                                <input class="checkbox__input" type="checkbox" name="language" id="css">
+                                <span class="checkbox__text">CSS</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="php">
+                                <input class="checkbox__input" type="checkbox" name="language" id="php">
+                                <span class="checkbox__text">PHP</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="laravel">
+                                <input class="checkbox__input" type="checkbox" name="language" id="laravel">
+                                <span class="checkbox__text">Laravel</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="sql">
+                                <input class="checkbox__input" type="checkbox" name="language" id="sql">
+                                <span class="checkbox__text">SQL</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="shell">
+                                <input class="checkbox__input" type="checkbox" name="language" id="shell">
+                                <span class="checkbox__text">SHELL</span>
+                            </Label>
+                        </li>
+                        <li class="post__learnings__item">
+                            <Label class="checkbox" for="others">
+                                <input class="checkbox__input" type="checkbox" name="language" id="others">
+                                <span class="checkbox__text">情報システム基礎知識（その他）</span>
+                            </Label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="post__right">
+                <div class="post__contents">
+                    <h3 class="post__lead">学習時間</h3>
+                    <label for="studied-time">
+                        <input class="post__text" type="text" name="time" id="studied-time">
+                    </label>
+                </div>
+                <div class="post__contents">
+                    <h3 class="post__lead">Twitter用コメント</h3>
+                    <textarea name="comment" id="twitter-comment" class="post__textarea"></textarea>
+                    <Label class="checkbox checkbox__twitter" for="twitter">
+                        <input class="checkbox__input checkbox__twitter__input" type="checkbox" name="twitter"
+                            id="twitter" checked>
+                        <span class="checkbox__text checkbox__twitter__text">Twitterにシェアする</span>
+                    </Label>
+                </div>
+            </div>
+            <button class="button post__button" id="post-button">記録・投稿</button>
+        </div>
+
+        <div class="post--loader" id="post-loader">
+        </div>
+
+        <div class="post--completion" id="post-completion">
+            <div class="post--completion__lead">AWESOME!</div>
+            <i class="fa-solid fa-circle-check post--completion__icon"></i>
+            <p class="post--completion__text">記録・投稿<br>完了しました</p>
+        </div>
+    </section>
+@endsection
+
+@section('calendar')
     <section class="calendar modal" id="calendar-modal">
         <div class="calendar__close" id="calendar-close">
             <i class="fa-solid fa-arrow-left"></i>
@@ -204,23 +185,196 @@
     </div>
 
     <button class="button sp-button" id="sp-modal-open">記録・投稿</button>
-
-    <!-- chart.js-------------------------------------------- -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
-        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- chartjs-plugin-datalabels------------------------------ -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.1.0"></script>
-
-    <!-- チャートを別ファイルで処理 -->
+@endsection
 
 
-    <!-- js--------------------------------------------- -->
-    {{-- <script src="./js/chart.js"></script> --}}
-    <script src="{{ mix('js/main.js') }}"></script>
-    <script src="{{ mix('js/calendar.js') }}"></script>
+@section('chart')
+    <script>
+        Chart.register(ChartDataLabels);
 
-</body>
+        {
+            // 棒グラフ-----------------------------------
 
-</html>
+            const timeLogChart = document.getElementById('time-log-chart').getContext("2d");;
+            const gradient = timeLogChart.createLinearGradient(0, 20, 0, 100);
+            gradient.addColorStop(0, "#3ccfff");
+            gradient.addColorStop(1.0, "#0f71bc");
+            timeLogChart.fillStyle = gradient;
+            timeLogChart.fillRect(0, 0, 0, 0);
+
+            // 棒グラフ作成
+            new Chart(timeLogChart, {
+                type: 'bar',
+                data: {
+                    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+                        25, 26, 27,
+                        28, 29, 30
+                    ],
+                    datasets: [{
+                        data: [
+                            @foreach ($chart_data['bar_data'] as $data)
+                                {{ $data . ',' }}
+                            @endforeach
+                        ],
+                        backgroundColor: gradient,
+                        borderWidth: 2,
+                        borderRadius: 10,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+
+                        x: {
+                            grid: {
+                                display: false,
+                            },
+                            ticks: {
+                                min: 1,
+                                max: 31,
+                                stepSize: 2,
+                                callback: function(value) {
+                                    if (value % 2 != 0 && value != 0) {
+                                        return value + 1;
+                                    };
+                                }
+                            },
+                        },
+                        y: {
+                            grid: {
+                                display: false,
+                            },
+                            ticks: {
+                                stepSize: 2,
+                                callback: function(value) {
+                                    return value + 'h';
+                                }
+                            },
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        datalabels: {
+                            display: false
+                        }
+                    },
+                }
+            })
+            // }
+
+
+            // 円グラフ-----------------------------------
+
+            // const bgColor = [
+            //     "#0445ec", "#0f70bd", "#20bdde", "#3ccefe", "#b29ef3", "#4a17ef", "#3005c0", "#6c46eb"
+            // ]
+
+            // // 学習言語のドーナツチャート作成
+
+            // const languagesChart = document.getElementById('languages-chart');
+            // // ラベルの配列を作成
+            // const languagesLabels = [<?php
+            // foreach ($languages as $language) {
+            //     echo "'" . $language['language'] . "'" . ',';
+            // }
+            //
+            ?>];
+
+            // // 100分率で表示するための、言語学習の合計時間を格納する
+            // <?php
+            // $sumLanguagesRecords = 0;
+            // foreach ($languages as $language) {
+            //     $sumLanguagesRecords += $language['SUM(records.study_time)'];
+            // }
+            //
+            ?>
+
+            // // 言語の学習時間の配列を作成、学習時間を百分率に変換
+            // const languagesRecords = [<?php
+            // foreach ($languages as $language) {
+            //     echo intval(($language['SUM(records.study_time)'] / $sumLanguagesRecords) * 100) . ',';
+            // }
+            //
+            ?>];
+
+            // createDoughnutChart(languagesChart, languagesLabels, languagesRecords, bgColor)
+
+
+            // // 学習コンテンツのドーナツチャート作成
+
+            // const contentsChart = document.getElementById('contents-chart');
+            // // ラベルの配列を作成
+            // const contentsLabels = [<?php
+            // foreach ($contents as $content) {
+            //     echo "'" . $content['content'] . "'" . ',';
+            // }
+            //
+            ?>];
+
+            // // 100分率で表示するための、コンテンツ学習の合計時間を格納する
+            // <?php
+            // $sumContentsRecords = 0;
+            // foreach ($contents as $content) {
+            //     $sumContentsRecords += $content['SUM(records.study_time)'];
+            // }
+            //
+            ?>
+
+            // // コンテンツの学習時間の配列を作成、学習時間を百分率に変換
+            // const contentsRecords = [<?php
+            // foreach ($contents as $content) {
+            //     echo intval(($content['SUM(records.study_time)'] / $sumContentsRecords) * 100) . ',';
+            // }
+            //
+            ?>];
+
+            // createDoughnutChart(contentsChart, contentsLabels, contentsRecords, bgColor)
+
+
+            // // 円グラフ作成
+            // function createDoughnutChart(place, labels, data, color) {
+
+
+            //     new Chart(place, {
+            //         type: 'doughnut',
+            //         data: {
+            //             labels: labels,
+            //             datasets: [{
+            //                 data: data,
+            //                 backgroundColor: color,
+            //                 borderWidth: 0,
+            //             }]
+            //         },
+            //         options: {
+            //             responsive: true,
+            //             maintainAspectRatio: false,
+            //             aspectRatio: 1 / 1,
+            //             plugins: {
+            //                 legend: {
+            //                     position: 'bottom',
+            //                     align: 'start',
+            //                     labels: {
+            //                         padding: 10,
+            //                         usePointStyle: true,
+            //                         pointStyle: 'circle',
+            //                     }
+            //                 },
+            //                 datalabels: {
+            //                     labels: {
+            //                         title: {
+            //                             color: '#fff'
+            //                         }
+            //                     },
+            //                     formatter: function(value, context) {
+            //                         return value + '%';
+            //                     }
+            //                 }
+            //             },
+            //         }
+            //     });
+            // }
+        }
+    </script>
+@endsection
