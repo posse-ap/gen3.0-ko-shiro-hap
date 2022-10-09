@@ -312,12 +312,41 @@
                 @endforeach
             ];
 
-
-
+            // 学習言語でチャートを作成
             createDoughnutChart(languagesChart, languagesLabels, languagesRecords, bgColor)
 
 
-            // 円グラフ作成
+            // 学習コンテンツのドーナツチャート作成
+
+            const contentsChart = document.getElementById('contents-chart');
+            // ラベルの配列を作成
+            const contentsLabels = [
+                @foreach ($chart_data['content_names'] as $name)
+                    '{{ $name->content }}',
+                @endforeach
+            ];
+            console.log(contentsLabels);
+
+            // 100分率で表示するための、コンテンツ学習の合計時間を格納する
+            @php
+                $sumContentsRecords = 0;
+                foreach ($chart_data['content_data'] as $data) {
+                    $sumContentsRecords += $data;
+                }
+            @endphp
+
+            // 100分率に変換したものを配列に格納
+            const contentsRecords = [
+                @foreach ($chart_data['content_data'] as $data)
+                    {{ intval(($data / $sumContentsRecords) * 100) }},
+                @endforeach
+            ];
+
+            // 学習コンテンツでチャートを作成
+            createDoughnutChart(contentsChart, contentsLabels, contentsRecords, bgColor)
+
+
+            // 円グラフを作成するための関数
             function createDoughnutChart(place, labels, data, color) {
 
 
