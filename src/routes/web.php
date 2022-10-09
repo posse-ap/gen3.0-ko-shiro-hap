@@ -28,3 +28,6 @@ Route::resource('/', RecordsController::class);
 Route::get('/error', function () {
     return view('error.index');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

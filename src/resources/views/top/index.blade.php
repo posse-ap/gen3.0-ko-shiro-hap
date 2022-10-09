@@ -185,21 +185,6 @@
     </div>
 
     <button class="button sp-button" id="sp-modal-open">記録・投稿</button>
-
-    @foreach ($chart_data['language_names'] as $name)
-        {{ $name->language . ',' }}
-    @endforeach
-
-    @php
-        $sumLanguagesRecords = 0;
-        foreach ($chart_data['language_data'] as $data) {
-            $sumLanguagesRecords += $data;
-        }
-    @endphp
-
-    @foreach ($chart_data['language_data'] as $data)
-        {{ intval(($data / $sumLanguagesRecords) * 100 . ',') }}
-    @endforeach
 @endsection
 
 
