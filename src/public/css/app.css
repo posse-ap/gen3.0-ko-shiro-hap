@@ -519,7 +519,6 @@ h4 {
 }
 
 .doughnut-chart {
-  margin: 20px 0;
   width: calc(100% - 1px);
 }
 
@@ -548,7 +547,7 @@ h4 {
 
 .about__learnings {
   padding: 20px;
-  width: 50%;
+  width: calc(50% - 50px);
   border-radius: 16px;
   background-color: #fff;
   box-shadow: 0px 3px 3px 3px rgba(173, 216, 230, 0.3);
@@ -563,6 +562,7 @@ h4 {
 @media screen and (max-width: 768px) {
   .about__learnings {
     padding: 10px;
+    width: calc(50% - 28px);
   }
 }
 
@@ -572,51 +572,6 @@ h4 {
     line-height: normal;
     letter-spacing: normal;
   }
-}
-
-.about__learnings__items {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-.about__learnings__item {
-  font-size: 14px;
-  line-height: 1.8rem;
-}
-
-@media screen and (max-width: 950px) {
-  .about__learnings__item {
-    line-height: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .about__learnings__item {
-    font-size: 12px;
-    line-height: 1.2rem;
-  }
-}
-
-.about__learnings__item span {
-  display: inline-block;
-  margin-right: 2px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #97b9d1;
-}
-
-@media screen and (max-width: 768px) {
-  .about__learnings__item span {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-.contents__items {
-  flex-direction: column;
-  gap: 0;
 }
 
 @media screen and (max-width: 768px) {
