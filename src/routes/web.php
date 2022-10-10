@@ -11,7 +11,8 @@
 |
 */
 
-Route::resource('/', RecordsController::class)
+// トップページ
+Route::get('/', 'RecordsController@index')
 ->middleware('auth')
 ->middleware('verified');
 

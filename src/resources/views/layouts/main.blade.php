@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>independent production</title>
+    <title>webapp</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/6c20dffe37.js" crossorigin="anonymous"></script>
