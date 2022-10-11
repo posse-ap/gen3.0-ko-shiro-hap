@@ -7,7 +7,7 @@
     @endphp
 
     <section class="quiz__hero">
-        <div class="quiz__hero__inner" style=" background-image: url('{{ asset('img/quiz/bg-hero.jpg') }}');">
+        <div class="quiz__hero__inner" style=" background-image: url('{{ asset('images/quiz/bg-hero.jpg') }}');">
             <div class="quiz__hero__heading">
                 <h2 class="quiz__hero__lead">POSSE課題</h2>
                 <h1 class="quiz__hero__title">ITクイズ</h1>
@@ -28,7 +28,7 @@
                 <h2 class="quiz__icon quiz__number" id="quizNumber">Q{{ $count }}</h2>
                 <h3 class="quiz__text">{{ $question->question }}</h3>
                 <div class="quiz__caption">
-                    <img src="{{ asset('storage/img/quiz/' . $question->image) }}" alt="クイズ画像">
+                    <img src="{{ asset('storage/images/quiz/' . $question->image) }}" alt="クイズ画像">
                 </div>
                 <div class="answer">
                     <h2 class="quiz__icon answer__icon">A</h2>
@@ -59,7 +59,7 @@
                 @foreach ($question->notes as $note)
                     <div class="quote">
                         <div class="quote__icon">
-                            <img src="../img/icon/icon-note.svg" alt="引用">
+                            <img src="{{ asset('images/icon/icon-note.svg') }}" alt="引用">
                         </div>
                         <p class="quote__text">{{ $note->note }}</p>
                     </div>

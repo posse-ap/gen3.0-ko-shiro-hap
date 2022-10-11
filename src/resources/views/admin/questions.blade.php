@@ -30,7 +30,8 @@
                 <tr class="table-lists">
                     <td>{{ $question->id }}</td>
                     <td><a href="{{ route('admin.edit', $question->id) }}">{{ $question->question }}</a></td>
-                    <td><img src="{{ asset('storage/img/quiz/' . $question->image) }}" alt="クイズ画像"></td>
+
+                    <td><img src="{{ asset('storage/images/quiz/' . $question->image) }}" alt="クイズ画像"></td>
                     <td><a href="{{ route('admin.edit', $question->id) }}">選択肢を編集する</a></td>
 
                     @foreach ($question->notes as $note)

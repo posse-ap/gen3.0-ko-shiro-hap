@@ -78,13 +78,13 @@ class AdminController extends Controller
             // 画像ファイルを保存できる状態にする
             $filename = $request->image->getClientOriginalName();
             $image = $request->image;
-            $path = isset($image) ? $image->storeAs('img/quiz', $filename, 'public') : '';
+            $path = isset($image) ? $image->storeAs('images/quiz', $filename, 'public') : '';
 
             // タイトルと画像
             $question = new Question;
             $question->question = $request->input('question');
             // 画像パスの'img/quiz/'の部分を切り抜いて保存
-            $question->image = mb_substr($path, 9);
+            $question->image = mb_substr($path, 12);
             $question->sort = $last_question_id + 1;
             $question->save();
 
@@ -184,13 +184,13 @@ class AdminController extends Controller
             // 画像ファイルを保存できる状態にする
             $filename = $request->image->getClientOriginalName();
             $image = $request->image;
-            $path = isset($image) ? $image->storeAs('img/quiz', $filename, 'public') : '';
+            $path = isset($image) ? $image->storeAs('images/quiz', $filename, 'public') : '';
 
             // タイトルと画像
             $question = Question::find($id);
             $question->question = $request->input('question');
             // 画像パスの'img/quiz/'の部分を切り抜いて保存
-            $question->image = mb_substr($path, 9);
+            $question->image = mb_substr($path, 12);
             $question->save();
 
             // 選択肢を一つずつ取り出して更新
