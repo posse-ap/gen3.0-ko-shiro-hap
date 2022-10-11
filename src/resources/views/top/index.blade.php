@@ -280,7 +280,6 @@
                     '{{ $name->language }}',
                 @endforeach
             ];
-            console.log(languagesLabels);
 
             // 100分率で表示するための、言語学習の合計時間を格納する
             @php
@@ -310,7 +309,6 @@
                     '{{ $name->content }}',
                 @endforeach
             ];
-            console.log(contentsLabels);
 
             // 100分率で表示するための、コンテンツ学習の合計時間を格納する
             @php
