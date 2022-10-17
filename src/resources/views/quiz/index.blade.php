@@ -28,7 +28,12 @@
                 <h2 class="quiz__icon quiz__number" id="quizNumber">Q{{ $count }}</h2>
                 <h3 class="quiz__text">{{ $question->question }}</h3>
                 <div class="quiz__caption">
-                    <img src="{{ asset('storage/images/quiz/' . $question->image) }}" alt="クイズ画像">
+                    {{-- ストレージにあるかどうか --}}
+                    @if (file_exists('storage/images/quiz/' . $question->image))
+                        <img src="{{ asset('storage/images/quiz/' . $question->image) }}" alt="クイズ画像">
+                    @else
+                        <img src="{{ asset('images/quiz/' . $question->image) }}" alt="クイズ画像">
+                    @endif
                 </div>
                 <div class="answer">
                     <h2 class="quiz__icon answer__icon">A</h2>
