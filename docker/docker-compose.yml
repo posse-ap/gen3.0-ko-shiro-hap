@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   app:
+    container_name: app-posse-website
     build:
       context: .
       dockerfile: ./app/Dockerfile
@@ -9,6 +10,7 @@ services:
       - ../src/:/app
 
   web:
+    container_name: web-posse-website
     build:
       context: .
       dockerfile: ./web/Dockerfile
@@ -20,6 +22,7 @@ services:
       - ../src/:/app
 
   db:
+    container_name: db-posse-website
     build:
       context: .
       dockerfile: ./db/Dockerfile
@@ -32,10 +35,10 @@ services:
       MYSQL_ROOT_PASSWORD: password
       TZ: "Asia/Tokyo"
     volumes:
-      - mysql-volume:/var/lib/mysql
+      - mysql-volume-posse-website:/var/lib/mysql
 
   phpmyadmin:
-    container_name: phpmyadmin
+    container_name: phpmyadmin-posse-website
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
@@ -46,4 +49,4 @@ services:
       - 3000:80
 
 volumes:
-  mysql-volume:
+  mysql-volume-posse-website:
