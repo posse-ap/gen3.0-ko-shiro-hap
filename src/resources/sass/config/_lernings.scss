@@ -8,10 +8,6 @@
     background-color: $white;
     box-shadow: $box-shadow;
 
-    @include mq(tb) {
-        padding: 10px;
-    }
-
     @include mq(sp) {
         padding: 10px;
         width: calc(50% - 28px);
