@@ -6,7 +6,7 @@ import TopHero from '@/Components/quiz/TopHero';
 import About from '@/Components/quiz/About';
 import Contact from '@/Components/quiz/Contact';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
+export default function Top() {
     return (
         <>
             <Header />
