@@ -1,5 +1,3 @@
-import { Link, Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
 import Header from '@/Components/quiz/Header';
 import Footer from '@/Components/quiz/Footer';
 import TopHero from '@/Components/quiz/TopHero';
